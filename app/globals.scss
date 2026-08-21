@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/CormorantGaramond/CormorantGaramond-Regular.ttf") format("ttf"),
+       url("/fonts/CormorantGaramond/CormorantGaramond-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ .first {
+                background-color: #8D9A6B;
+            }
+
+            .second {
+                background-color: #66734C
+            }
+
+            .tirth {
+                background-color: #B79A63;
+            }
+
+            .fourth {
+                background-color: #EAE4D8;
+            }
+
+            .fifth {
+                background-color: #F7F5F0;
+            }
+
+            .sixth {
+                background-color: #445238;
+            }
+
+            .light {
+                background-color: #FBFAF7;
+            }
+
+            .medium {
+                background-color: #B4B0A6;
+            }
+
+            .dark {
+                background-color: #2F352C;
+            }
+
+            .accent {
+                background-color: #c3ae84  // #C2D501; // /* #B8C95A; */ #917f5c
+            }
+
+            .new_green {
+                background-color: #87A16F;
+            }
+
+            .ice {
+                background-color: #DCEEF2;
+            }
+
+            .lora_font {
+                font-family: "Lora", serif;
+            }
+
+            .primary_font {
+                font-family: "Google Sans Flex", sans-serif;
+            }
+
+            .secondary_font {
+                font-family: "Figtree", sans-serif;
+            }
+
+            .menu_box {
+                color: #fff;
+                padding: 0 40px;
+            }
+
+            .menu_box_login {
+                color: #fff;
+                padding: 0 10px;
+            }
+
+            .p_start_40 {
+                padding-left: 40px;
+            }
+
+            .f_weight_500 {
+                font-weight: bold;
+            }
+
+            .f_size_12 {
+                font-size: 12px;
+            }
+
+            .f_size_14 {
+                font-size: 14px;
+            }
+
+            .f_size_16 {
+                font-size: 16px;
+            }
+
+            .f_size_18 {
+                font-size: 18px;
+            }
+
+            .f_size_20 {
+                font-size: 20px;
+            }
+
+            .f_size_22 {
+                font-size: 22px;
+            }
+
+            .f_size_24 {
+                font-size: 24px;
+            }
+
+            .f_size_26 {
+                font-size: 26px;
+            }
+
+            .f_size_28 {
+                font-size: 28px;
+            }
+
+            .f_size_30 {
+                font-size: 30px;
+            }
+
+            .f_size_32 {
+                font-size: 32px;
+            }
+
+            .d_block {
+                display: block;
+            }
+
+            .f_left {
+                float: left;
+            }
+              .section-header {
+            display: flex; /* Attiva Flexbox */
+            align-items: center; /* Allinea il testo e la linea verticalmente al centro */
+            justify-content: flex-start; /* Inizia dal bordo sinistro */
+            margin-top: 40px; /* Spazio sopra l'intestazione */
+            margin-bottom: 30px; /* Spazio sotto l'intestazione */
+            }
+
+            /* --- Il Testo --- */
+            .header-title {
+                color: #8D9A6B; /* Colore nero per il testo */
+                text-transform: uppercase; /* Rende tutto maiuscolo */
+                font-size: 18px; /* Dimensione del carattere (regolabile) */
+                margin: 0; /* Rimuovi i margini predefiniti di h2 */
+                margin-right: 20px; /* Spazio tra il testo e l'inizio della linea */
+                white-space: nowrap; /* Evita che il testo vada a capo, forzando la linea a restringersi */
+            }
+
+            /* --- La Linea Orizzontale --- */
+            .header-line {
+                height: 4px; /* Altezza/spessore della linea */
+                background-color: #8D9A6B; /* Colore verde acqua dell'immagine (Turchese) */
+                flex-grow: 1; /* LA CHIAVE: dice a questo elemento di espandersi e riempire tutto lo spazio rimanente */
+                border-radius: 2px; /* Opzionale: angoli leggermente arrotondati */
+            }
+
+            /* --- Regole per la Reattività (Mobile First o Mobile-Specific) --- */
+            @media (max-width: 600px) {
+                /* Regole per schermi piccoli (meno di 600px) */
+                .header-title {
+                    font-size: 20px; /* Riduci leggermente la dimensione del testo */
+                    margin-right: 10px; /* Riduci lo spazio tra testo e linea */
+                }
+                .header-line {
+                    height: 3px; /* Rendi la linea un po' più sottile */
+                }
+            }
+
+            .boxettino {
+              width: 200px; height: 200px; border: 2px solid; border-radius: 5px
+            }
+
+    .font-cormorant-regular {
+        font-family: "Cormorant Garamond", serif;
+    }
+
+p.drop-cap {
+    font-size: 1.1rem;
+    line-height: 1.6;
+
+    // Targets the very first letter of the paragraph
+    &::first-letter {
+        font-size: 3.5rem;
+        font-weight: bold;
+        float: left;
+        line-height: 0.85;
+        margin-right: 0.5rem;
+        margin-top: 0.2rem;
+    }
+}

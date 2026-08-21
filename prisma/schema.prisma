@@ -1,0 +1,104 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Language {
+  code      String   @id // e.g. "en", "it", "de"
+  name      String   // e.g. "English", "Italiano", "Deutsch"
+  isDefault Boolean  @default(false)
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model NavItem {
+  id          Int      @id @default(autoincrement())
+  title       Json     // Localized: { "en": "Members", "it": "Membri" }
+  subtitle    Json?    // Localized: { "en": "Directory", "it": "Elenco" }
+  description Json?    // Localized: { "en": "Our certified members", "it": "I nostri membri certificati" }
+  image       String?
+  href        String
+  order       Int      @default(0)
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model User {
+  id        String   @id @default(uuid()) @db.Uuid
+  firstName String?
+  lastName  String?
+  email     String   @unique
+  password  String
+  role      Role     @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model MemberCategory {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  slug      String   @unique
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  members   Member[]
+}
+
+model Member {
+  id             Int      @id @default(autoincrement())
+  name           String
+  location       String
+  description    String
+  website        String
+  certifiedSince Int
+  imageUrl       String?
+  published      Boolean        @default(true)
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  categoryId     Int
+  category       MemberCategory @relation(fields: [categoryId], references: [id])
+
+  @@index([categoryId])
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  USER
+}
+
+model Guest {
+  id        Int      @id @default(autoincrement())
+  firstName String
+  lastName  String
+  email     String   @unique
+  password  String
+  address   String
+  city      String
+  country   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Event {
+  id                String   @id @default(cuid())
+  title             String
+  dateRange         String   // e.g., "1 September 2026 - 24 November 2026"
+  location          String   // e.g., "Online", "Zurich / Hybrid"
+  accreditationText String?  // Optional accreditation tag
+  description       String   @db.Text
+  topic             String   // e.g., "Dermoscopy", "Paediatric", "Genomics"
+  month             String   // e.g., "September"
+  year              String   // e.g., "2026"
+  logoUrl           String?  // Optional image path or URL for institution logo
+  linkHref          String?  // Optional direct link to external event page
+  isFeatured        Boolean  @default(false) // For the home page section
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
