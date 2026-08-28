@@ -6,37 +6,42 @@ import { NAV_ITEMS } from '@/src/config/navigation';
 import LanguageSelector from '../LanguageSelector/page';
 import { db } from '@/lib/db';
 import NavLinks from '../../ui/NavbarLink/page';
+import UserMenu from '../../ui/UserMenu/page';
+import { cookies } from 'next/headers';
+import TopUtilityBar from '../TopUtilityBar/page';
+
+async function getUserFromSession() {
+  const cookieStore = await cookies();
+  const token = cookieStore.get('auth_token')?.value;
+
+  if (!token) return null;
+
+  try {
+    const sessionData = JSON.parse(token);
+    if (!sessionData?.userId) return null;
+
+    // Fetch user details from DB
+    const user = await db.user.findUnique({
+      where: { id: sessionData.userId },
+      select: { firstName: true, email: true, role: true },
+    });
+
+    return user;
+  } catch {
+    return null;
+  }
+}
 
 export default async function Navbar() {
-  // const languages = await db.language.findMany({
-  //   where: { active: true },
-  // });
-  const [languages, navItems] = await Promise.all([
-    db.language.findMany({
-      where: { active: true },
-    }),
-    db.navItem.findMany({
-      where: { active: true },
-      orderBy: { order: 'asc' },
-    }),
-  ]);
+  const navItems = await db.navItem.findMany({
+    where: { active: true },
+    orderBy: { order: 'asc' },
+  });
 
   return (
     <header className="w-full primary_font">
-      {/* 1. Top Utility Bar (Login) */}
-      <div className="w-full h-[40px] bg-[#F2F2F2] px-8">
-        <div className="max-w-7xl mx-auto h-full flex justify-end items-center text-[#2C3E35]">
-          {/* Language Selector from Database */}
-        <LanguageSelector languages={languages} />
-          <Link 
-            href="/user/login" 
-            className="flex items-center gap-1 text-sm font-medium hover:opacity-80 transition-opacity"
-          >
-            <User size={18} />
-            <span>Login</span>
-          </Link>
-        </div>
-      </div>
+      {/* 1. Top Utility Bar */}
+      <TopUtilityBar />
 
       {/* 2. Logo & Branding Bar */}
       <div className="w-full h-[130px] bg-white px-8">
@@ -60,7 +65,7 @@ export default async function Navbar() {
       </div>
 
       {/* 3. Main Navigation Bar */}
-      <nav className="w-full h-[70px] bg-[#758156] px-8">
+      <nav className="w-full h-[70px] bg-second px-8">
         <div className="max-w-7xl mx-auto h-full flex justify-between items-center text-white">
           {/* Dynamic Database Navigation Links */}
           <NavLinks items={navItems} />
@@ -68,7 +73,7 @@ export default async function Navbar() {
       </nav>
 
       {/* 4. Bottom Spacer Bar */}
-      <div className="w-full h-[15px] sixth" />
+      <div className="w-full h-[15px] bg-sixth" />
     </header>
   );
 }

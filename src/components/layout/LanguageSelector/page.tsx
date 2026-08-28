@@ -13,12 +13,12 @@ export default function LanguageSelector({ languages }: Props) {
   const { locale, setLocale } = useLanguage();
 
   return (
-    <div className="relative inline-flex items-center gap-1.5 rounded-xl px-2.5 py-1.5 text-sm text-gray-700">
+    <div className="relative inline-flex items-center gap-1.5 rounded-xl px-2.5 py-1.5 text-sm">
       {/* <Globe className="w-5.5 h-3.5 text-gray-500" /> */}
       <select
         value={locale}
         onChange={(e) => setLocale(e.target.value)}
-        className="bg-transparent border-none focus:outline-none cursor-pointer text-sm text-gray-800"
+        className="bg-transparent border-none focus:outline-none cursor-pointer text-sm font-medium "
       >
         {languages.map((lang) => (
           <option key={lang.code} value={lang.code}>

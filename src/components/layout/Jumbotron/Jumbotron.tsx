@@ -43,7 +43,7 @@ export default function Jumbotron() {
           effect="fade"
           fadeEffect={{ crossFade: true }}
           loop={true}
-          speed={600}
+          speed={800}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
           navigation={true}
@@ -53,19 +53,19 @@ export default function Jumbotron() {
             <SwiperSlide key={slide.id} className="w-full h-full">
               <div className="grid grid-cols-1 md:grid-cols-12 h-full w-full">
                 {/* Text Side */}
-                <div className="md:col-span-5 sixth flex flex-col justify-center px-8 md:pl-[100px] md:pr-[50px] text-white h-full">
-                  <span className="inline-block self-start mb-3 bg-[#445238] text-white text-xs font-semibold uppercase tracking-wider px-3 py-1">
+                <div className="md:col-span-5 bg-sixth flex flex-col justify-center px-8 md:pl-[100px] md:pr-[50px] text-white h-full">
+                  <span className="inline-block self-start mb-3 text-white text-xs font-semibold uppercase tracking-wider py-2.5">
                     {slide.badge}
                   </span>
 
-                  <h2 className="text-2xl lg:text-3xl font-bold mb-6 leading-[1.3]">
+                  <h2 className="text-2xl lg:text-3xl font-bold mb-4 leading-[1.3] border-t border-white py-5">
                     {slide.title}
                   </h2>
 
                   <div>
                     <Link
                       href={slide.link}
-                      className="inline-block border border-white text-white px-6 py-2 hover:bg-white hover:text-[#758156] transition-colors"
+                      className="tracking-widest inline-block border border-white text-white px-5 py-2.5 hover:bg-white hover:text-sixth text-sm transition-colors"
                     >
                       Read More
                     </Link>

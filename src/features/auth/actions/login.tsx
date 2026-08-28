@@ -2,7 +2,7 @@
 
 import bcrypt from 'bcryptjs';
 import { db } from '@/lib/db';
-import { redirect } from 'next/navigation';
+import { cookies } from 'next/headers';
 
 export async function login(prevState: any, formData: FormData) {
   const email = formData.get('email') as string;
@@ -29,13 +29,25 @@ export async function login(prevState: any, formData: FormData) {
       return { error: 'Invalid email or password.' };
     }
 
+    // 3. Set Secure Cookie for Authentication
+    const cookieStore = await cookies();
+    
+    // In production, sign/encrypt this payload (e.g., using `jose` or `jsonwebtoken`)
+    const tokenPayload = JSON.stringify({ userId: user.id, role: user.role });
+
+    cookieStore.set('auth_token', tokenPayload, {
+      httpOnly: true, // Prevents XSS attacks (client-side JS can't read it)
+      secure: process.env.NODE_ENV === 'production', // HTTPS only in production
+      sameSite: 'lax', // Protects against CSRF
+      path: '/',
+      maxAge: 60 * 60 * 24 * 7, // 1 week duration
+    });
+
     const redirectUrl = user.role === 'ADMIN' ? '/dashboard' : '/';
 
-    // 3. Authenticate User (e.g. set a cookie or JWT)
-    // For now, return success & basic user data (excluding password)
     return {
-        success: true,
-        redirectTo: redirectUrl
+      success: true,
+      redirectTo: redirectUrl,
     };
   } catch (err) {
     return { error: 'Something went wrong. Please try again.' };

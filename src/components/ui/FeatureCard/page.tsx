@@ -20,7 +20,7 @@ export function FeatureCard({
   customHeader,
 }: FeatureCardProps) {
   return (
-    <div className="flex flex-col h-[520px] overflow-hidden border border-gray-100 shadow-sm rounded-2xl ">
+    <div className="flex flex-col h-[520px] overflow-hidden border border-accent shadow-sm">
       {/* Top Header Section (Height: 200px) */}
       <div className="relative h-[200px] w-full bg-white flex items-center px-6 overflow-hidden">
         {customHeader ? (
@@ -46,7 +46,7 @@ export function FeatureCard({
 
         <Link
           href={buttonHref}
-          className="inline-block mt-4 text-center text-sm font-semibold uppercase tracking-wider text-white accent hover:bg-[#323d29] transition-colors px-6 py-3 rounded-md w-max"
+          className="inline-block mt-4 text-center text-sm tracking-widest bg-accent border border-transparent text-accent text-white hover:bg-white hover:border-accent hover:text-accent transition-colors px-5 py-2.5 w-max"
         >
           {buttonText}
         </Link>

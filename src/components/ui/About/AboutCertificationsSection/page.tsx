@@ -66,7 +66,7 @@ const CERTIFICATIONS_DATA: Certification[] = [
 
 export default function CertificationsSection() {
   return (
-    <section className="w-full bg-white py-16 px-4 md:px-8 font-sans">
+    <section className="w-full bg-white py-16 px-4 md:px-8">
       <div className="max-w-4xl mx-auto space-y-12">
         
         {/* Section Title */}
@@ -116,7 +116,7 @@ export default function CertificationsSection() {
                     <span className="text-[10px] font-bold tracking-widest leading-none">
                       AID
                     </span>
-                    <span className="text-[4px] uppercase leading-tight font-sans">
+                    <span className="text-[4px] uppercase leading-tight">
                       ORGANISMO DI CERTIFICAZIONE<br />
                       AZIENDA CERTIFICATA<br />
                       UNI/PdR 125:2022

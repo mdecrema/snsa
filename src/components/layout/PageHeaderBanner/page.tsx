@@ -68,7 +68,7 @@ export default function PageHeaderBanner({ navItems, children }: PageHeaderBanne
   return (
     <div className="relative w-full ">
       {/* 1. HERO SECTION WITH BACKGROUND IMAGE */}
-       <section className="relative w-full min-h-[360px] bg-[#0B2545] text-white overflow-hidden font-sans border-b border-slate-200">
+       <section className="relative w-full min-h-[360px] bg-[#0B2545] text-white overflow-hidden border-b border-slate-200">
       {/* Optional Background Image with Subtle Dark Overlay */}
       {bgImageSrc && (
         <div className="absolute inset-0 z-0">
@@ -84,31 +84,31 @@ export default function PageHeaderBanner({ navItems, children }: PageHeaderBanne
       )}
 
       {/* Main Banner Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 ">
         <div className="max-w-3xl space-y-4">
           
           {/* Breadcrumb / Tag */}
-          <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-slate-300">
-            <Link href="/" className="hover:text-white transition-colors">
+          <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-white">
+            <Link href="/" className="text-white transition-colors">
               Home
             </Link>
             <span>/</span>
-            <span className="text-slate-100">{activeTitle}</span>
+            <span className=" text-white">{activeTitle}</span>
           </div>
 
           {/* Title & Subtitle */}
           <div className="space-y-1">
-            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-white">
               {activeTitle}
             </h1>
-            <p className="text-sm sm:text-base text-slate-300 font-medium italic">
+            <p className="text-base sm:text-xl text-white font-bold italic">
               {activeSubtitle}
             </p>
           </div>
 
           {/* Description Body */}
           {activeDesc && (
-            <p className="text-xs sm:text-sm text-slate-200 leading-relaxed pt-2 font-light max-w-2xl">
+            <p className="text-xs sm:text-sm text-white leading-relaxed pt-2 font-light max-w-2xl tracking-widest">
               {activeDesc}
             </p>
           )}

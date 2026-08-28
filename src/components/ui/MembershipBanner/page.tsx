@@ -18,13 +18,13 @@ export function MembershipBanner({
   return (
     <div className="grid grid-cols-1 md:grid-cols-12 overflow-hidden min-h-[258px] shadow-sm">
       {/* Left Text Block (8 Columns) */}
-      <div className="md:col-span-8 bg-[#445238] p-8 md:px-10 md:py-12 flex flex-col justify-center items-start text-white">
+      <div className="md:col-span-8 bg-sixth p-8 md:px-10 md:py-12 flex flex-col justify-center items-start text-white">
         <h2 className="text-2xl md:text-3xl font-bold leading-snug">
           {title}
         </h2>
         <Link
           href={buttonHref}
-          className="mt-5 inline-block px-6 py-2.5 border-2 border-white text-white font-medium text-sm rounded-md uppercase hover:bg-white hover:text-[#445238] transition-colors"
+          className="mt-5 inline-block px-5 py-2.5 border-2 border-white text-white text-sm hover:bg-white hover:text-sixth transition-colors tracking-widest"
         >
           {buttonText}
         </Link>

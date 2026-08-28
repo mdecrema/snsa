@@ -238,7 +238,7 @@ export default function MemberForm({
         <button
           type="submit"
           disabled={isLoading}
-          className="bg-[#445238] hover:bg-[#35412b] text-white font-bold py-3 px-6 rounded-xl flex items-center gap-2 transition-all shadow-md mt-6 text-sm disabled:opacity-60"
+          className="bg-accent hover:bg-sixth text-white font-bold py-3 px-6 rounded-xl flex items-center gap-2 transition-all shadow-md mt-6 text-sm disabled:opacity-60 cursor-pointer"
         >
           {isLoading ? (
             <>

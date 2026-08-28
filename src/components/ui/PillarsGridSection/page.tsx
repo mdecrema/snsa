@@ -46,7 +46,7 @@ const PILLARS_DATA: PillarItem[] = [
 
 export default function PillarsGridSection() {
   return (
-    <section className="w-full ice py-16 sm:py-24 px-4 font-sans">
+    <section className="w-full bg-sixth py-16 sm:py-24 px-4">
       <div className="max-w-5xl mx-auto space-y-12">
         
         {/* 3x2 Checkerboard Grid Structure */}
@@ -66,14 +66,14 @@ export default function PillarsGridSection() {
           {/* Column 2: Text Box 1 (Missione / Mission) */}
           <div className="h-72 md:h-80 p-6 sm:p-8 flex flex-col justify-center items-center text-center bg-white space-y-3">
             <div className="space-y-0.5">
-              <h3 className="text-xl font-serif text-[#1A1A1A]">
+              <h3 className="text-2xl sm:text-3xl tracking-tight">
                 {PILLARS_DATA[0].titleIt}
               </h3>
-              <p className="text-sm font-serif italic text-gray-500 font-light">
+              <p className="text-base sm:text-lg italic text-gray-500 font-light">
                 {PILLARS_DATA[0].titleEn}
               </p>
             </div>
-            <div className="space-y-2 text-[11px] sm:text-xs font-light leading-relaxed max-w-xs">
+            <div className="space-y-2 text-[14px] font-light leading-relaxed max-w-xs">
               <p className="text-gray-700">{PILLARS_DATA[0].descIt}</p>
               {/* <p className="italic text-gray-400 font-light">{PILLARS_DATA[0].descEn}</p> */}
             </div>
@@ -93,14 +93,14 @@ export default function PillarsGridSection() {
           {/* Column 1: Text Box 2 (Qualità / Quality) */}
           <div className="h-72 md:h-80 p-6 sm:p-8 flex flex-col justify-center items-center text-center bg-white space-y-3">
             <div className="space-y-0.5">
-              <h3 className="text-xl font-serif text-[#1A1A1A]">
+              <h3 className="text-2xl sm:text-3xl tracking-tight">
                 {PILLARS_DATA[1].titleIt}
               </h3>
-              <p className="text-sm font-serif italic text-gray-500 font-light">
+              <p className="text-base sm:text-lg italic text-gray-500 font-light">
                 {PILLARS_DATA[1].titleEn}
               </p>
             </div>
-            <div className="space-y-2 text-[11px] sm:text-xs font-light leading-relaxed max-w-xs">
+            <div className="space-y-2 text-[14px] font-light leading-relaxed max-w-xs">
               <p className="text-gray-700">{PILLARS_DATA[1].descIt}</p>
               {/* <p className="italic text-gray-400 font-light">{PILLARS_DATA[1].descEn}</p> */}
             </div>
@@ -119,14 +119,14 @@ export default function PillarsGridSection() {
           {/* Column 3: Text Box 3 (Ricerca / Research) */}
           <div className="h-72 md:h-80 p-6 sm:p-8 flex flex-col justify-center items-center text-center bg-white space-y-3">
             <div className="space-y-0.5">
-              <h3 className="text-xl font-serif text-[#1A1A1A]">
+              <h3 className="text-2xl sm:text-3xl tracking-tight">
                 {PILLARS_DATA[2].titleIt}
               </h3>
-              <p className="text-sm font-serif italic text-gray-500 font-light">
+              <p className="text-base sm:text-lg italic text-gray-500 font-light">
                 {PILLARS_DATA[2].titleEn}
               </p>
             </div>
-            <div className="space-y-2 text-[11px] sm:text-xs font-light leading-relaxed max-w-xs">
+            <div className="space-y-2 text-[14px] font-light leading-relaxed max-w-xs">
               <p className="text-gray-700">{PILLARS_DATA[2].descIt}</p>
               {/* <p className="italic text-gray-400 font-light">{PILLARS_DATA[2].descEn}</p> */}
             </div>
@@ -138,7 +138,7 @@ export default function PillarsGridSection() {
         <div className="text-center pt-4">
           <Link
             href="/about"
-            className="inline-block accent text-white hover:bg-gray-100 transition-colors px-8 py-3 text-xs font-serif italic tracking-wide shadow-sm"
+            className="inline-block accent bg-white border border-transparent text-sixth hover:bg-sixth hover:border-white hover:text-white transition-colors px-5 py-2.5 text-sm font-serif tracking-widest shadow-sm"
           >
             Discover our Company
           </Link>

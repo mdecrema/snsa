@@ -20,7 +20,7 @@ export function QuickLinksList({ title = 'See More', links }: QuickLinksListProp
           <li key={index}>
             <Link
               href={link.href}
-              className="flex items-center justify-between py-5 text-gray-800 hover:text-[#445238] transition-colors font-medium group"
+              className="flex items-center justify-between py-5 text-gray-800 hover:text-accent transition-colors font-medium group"
             >
               <span>{link.label}</span>
               {/* Arrow Icon */}
@@ -30,7 +30,7 @@ export function QuickLinksList({ title = 'See More', links }: QuickLinksListProp
                 viewBox="0 0 24 24"
                 strokeWidth={2}
                 stroke="currentColor"
-                className="w-6 h-6 text-gray-500 group-hover:translate-x-1 group-hover:text-[#445238] transition-all"
+                className="w-6 h-6 text-gray-500 group-hover:translate-x-1 group-hover:text-accent transition-all"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
               </svg>

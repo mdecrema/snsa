@@ -3,18 +3,18 @@
 
 export default function AboutSection() {
   return (
-    <section className="w-full bg-[#FAF9F6] py-16 px-4 md:px-8 font-sans">
+    <section className="w-full bg-[#FAF9F6] py-16 px-4 md:px-8">
       <div className="max-w-6xl mx-auto space-y-16">
         
         {/* TOP SECTION: Editorial Headlines & 2-Column Text */}
         <div className="max-w-4xl mx-auto space-y-8">
           
-          {/* Main Titles (Italian / English Subtitle) */}
-          <div className="space-y-1 text-left">
-            <h2 className="text-2xl sm:text-3xl font-serif text-[#1A1A1A] tracking-tight">
+          {/* Main Titles */}
+          <div className="space-y-1 text-center">
+            <h2 className="text-2xl sm:text-3xl text-[#1A1A1A] tracking-tight">
               Siamo Sensibili e attenti alle esigenze del cliente
             </h2>
-            <p className="text-xl sm:text-2xl font-serif italic text-gray-500 font-light">
+            <p className="text-xl sm:text-2xl text-gray-500 font-light">
               We are sensitive and attentive to the needs of the customer
             </p>
           </div>
@@ -53,7 +53,7 @@ export default function AboutSection() {
           </div>
 
           {/* Right Column: Deep Blue Mission Box (5 Cols) */}
-          <div className="md:col-span-5 sixth text-white p-8 sm:p-12 flex flex-col justify-center space-y-6">
+          <div className="md:col-span-5 bg-sixth text-white p-8 sm:p-12 flex flex-col justify-center space-y-6">
             
             {/* Mission Section Header */}
             <div className="space-y-1">

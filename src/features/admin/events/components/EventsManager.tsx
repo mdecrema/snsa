@@ -71,7 +71,7 @@ export default function EventsManager({ initialEvents }: Props) {
   );
 
   return (
-    <div className="p-6 md:p-8 bg-[#F4F6F8] min-h-screen font-sans text-slate-800">
+    <div className="p-6 md:p-8 bg-[#F4F6F8] min-h-screen text-slate-800">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         
         {/* LEFT SIDEBAR CONTROL PANEL */}

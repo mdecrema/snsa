@@ -1,4 +1,5 @@
 import { db } from "@/lib/db";
+import { getDictionary } from "@/lib/internalization";
 import Jumbotron from "@/src/components/layout/Jumbotron/Jumbotron";
 import { FeatureCard } from "@/src/components/ui/FeatureCard/page";
 import FeaturedEventsSection from "@/src/components/ui/FeaturedEventsSection/page";
@@ -22,7 +23,9 @@ const quickLinks: QuickLink[] = [
 ];
 
 export default async function Home() {
-    const featuredEvents = await db.event.findMany({
+    const [dict, featuredEvents] = await await Promise.all([
+      getDictionary(),
+      db.event.findMany({
       where: {
         isFeatured: true,
       },
@@ -30,14 +33,15 @@ export default async function Home() {
       orderBy: {
         createdAt: 'desc',
       },
-    });
+      })
+    ]);
 
     return (
         <>
         <Jumbotron />
         
               {/* Main Feature Cards Section */}
-              <section className="max-w-7xl mx-auto py-16 px-6">
+              <section className="max-w-7xl mx-auto py-16 px-6 my-20">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                   
                   {/* Card 1: Logo & Text Header */}
@@ -78,24 +82,27 @@ export default async function Home() {
                   </div>
               </section>
         
-              <section>
+              <section className="my-20">
               {/* Section 2: Membership Callout Banner */}
                 <div className="w-full my-12">
                   <MembershipBanner
-                    title="Become a Member of the SNSA"
-                    buttonText="Find out more"
+                    title={dict.home.membershipBanner.title}
+                    buttonText={dict.home.membershipBanner.buttonText}
                     buttonHref="/membership"
                     imageSrc="/images/community_3.jpg"
                   />
                 </div>
               </section>
 
-              <section>
+              <section className="my-20">
                 {/* Section 3: Featured Events List */}
-                <FeaturedEventsSection events={featuredEvents} />
+                <FeaturedEventsSection 
+                  events={featuredEvents}
+                  labels={dict.home.featuredEventsSection}
+                />
               </section>
 
-              <section className="mb-50">
+              <section className="my-20">
                 {/* Section 4: Pillars Grid */}
                 <PillarsGridSection />
               </section>

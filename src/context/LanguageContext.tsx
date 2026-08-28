@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { useRouter } from 'next/navigation';
 
 interface LanguageContextType {
   locale: string;
@@ -14,16 +15,26 @@ const LanguageContext = createContext<LanguageContextType>({
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<string>('en');
+  const router = useRouter();
 
+  // Read the active cookie on initial mount so React state matches the server cookie
   useEffect(() => {
-    const saved = localStorage.getItem('app_locale');
-    if (saved) setLocaleState(saved);
+    const match = document.cookie.match(/(?:^|; )NEXT_LOCALE=([^;]*)/);
+    const cookieLocale = match ? decodeURIComponent(match[1]) : null;
+    if (cookieLocale) {
+      setLocaleState(cookieLocale);
+    }
   }, []);
 
   const setLocale = (code: string) => {
     setLocaleState(code);
     localStorage.setItem('app_locale', code);
+    
+    // Set cookie valid for 1 year
     document.cookie = `NEXT_LOCALE=${code}; path=/; max-age=31536000`;
+    
+    // Refresh Server Components so getDictionary() reads the updated cookie
+    router.refresh();
   };
 
   return (

@@ -1,0 +1,44 @@
+{
+    "common": {
+        "login": "Accedi",
+        "logout": "Esci",
+        "dashboard": "Dashboard",
+        "welcome": "Benvenuto"
+    },
+    "home": {
+            "cards": {
+                "card1": {
+                    "title": "Chi Siamo",
+                    "description": "L'Associazione Svizzera per la Cosmesi Naturale unisce professionisti e laboratori..."
+                },
+                "card2": {
+                    "title": "I Nostri Servizi",
+                    "description": "Forniamo consulenza e certificazioni ufficiali per i brand di skincare..."
+                }
+            },
+        "quickLinks": {
+            "title": "Scopri di più",
+            "research": "Ricerca e Sviluppo",
+            "guidelines": "Linee Guida e Standard",
+            "dermatology": "Riferimenti Dermatologici",
+            "news": "Notizie e Media",
+            "events": "Eventi"
+        },
+        "membershipBanner": {
+            "title": "Become a Member of the SNSA",
+            "buttonText": "Find out more"
+        },
+        "featuredEventsSection": {
+            "title": "Featured Upcoming Events",
+            "subtitle": "Join our workshops, webinars, and conferences on natural cosmetics.",
+            "viewAll": "All Events",
+            "readMore": "View Details",
+            "noEvents": "No featured events at this time."
+        }
+    },
+    "cta": {
+        "title": "Sei un laboratorio, brand o professionista della skincare?",
+        "subtitle": "Unisciti all'associazione svizzera di riferimento. Ottieni il badge di certificazione.",
+        "button": "RICHIEDI L'AFFILIAZIONE"
+    }
+}

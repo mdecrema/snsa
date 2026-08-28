@@ -2,9 +2,10 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Layout, Users, UserCheck, UserPlus, Calendar, Settings } from 'lucide-react';
+import { Layout, Users, UserCheck, UserPlus, Calendar, Settings, Gauge } from 'lucide-react';
 
 const navItems = [
+  { label: 'Dashboard', href: '/dashboard', icon: Gauge },
   { label: 'Pages', href: '/dashboard/pages', icon: Layout },
   { label: 'Users', href: '/dashboard/users', icon: Users },
   { label: 'Members', href: '/dashboard/members', icon: UserCheck },
@@ -21,8 +22,11 @@ export default function AdminNav() {
       <div className="max-w-7xl mx-auto flex gap-1">
         {navItems.map((item) => {
           const Icon = item.icon;
-          // Matches exact route or sub-routes
-          const isActive = pathname.startsWith(item.href) || (item.href === '/admin/pages' && pathname === '/admin');
+          
+          // Require exact match for root '/dashboard', prefix match for sub-routes
+          const isActive = item.href === '/dashboard' 
+            ? pathname === '/dashboard' 
+            : pathname.startsWith(item.href);
 
           return (
             <Link

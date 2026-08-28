@@ -34,10 +34,7 @@ export default function NavItemsManager({ navItems: initialNavItems, languages }
   const [image, setImage] = useState<string>('');
   const [href, setHref] = useState<string>('');
 
-  const handleSelect = (item: NavItem) => {
-    setSelectedId(item.id);
-    setMessage(null);
-
+  const populateFormFields = (item: NavItem) => {
     const titleObj = (item.title as Record<string, string>) || {};
     const subtitleObj = (item.subtitle as Record<string, string>) || {};
     const descObj = (item.description as Record<string, string>) || {};
@@ -59,9 +56,18 @@ export default function NavItemsManager({ navItems: initialNavItems, languages }
     setHref(item.href || '');
   };
 
-  if (selectedItem && Object.keys(titles).length === 0) {
-    handleSelect(selectedItem);
-  }
+  const handleSelect = (item: NavItem) => {
+    setSelectedId(item.id);
+    setMessage(null);
+    populateFormFields(item);
+  };
+
+  // Populate form fields cleanly on initial mount or item change
+  useEffect(() => {
+    if (selectedItem) {
+      populateFormFields(selectedItem);
+    }
+  }, [selectedId]);
 
   // Broadcast typed changes to iframe in real time
   useEffect(() => {
@@ -117,8 +123,8 @@ export default function NavItemsManager({ navItems: initialNavItems, languages }
   return (
     <div className="flex bg-gray-100 h-[calc(100vh-2rem)] rounded-2xl overflow-hidden border border-gray-200">
       
-      {/* LEFT COLUMN: EDITING PANEL (Fixed 420px width) */}
-      <aside className="w-[420px] bg-white flex flex-col border-r border-gray-200 shrink-0 shadow-sm z-10">
+      {/* LEFT COLUMN: EDITING PANEL */}
+      <aside className="w-[420px] bg-white flex flex-col border-r border-gray-200 shrink-0 shadow-sm z-30 relative">
         
         {/* 1. Page Selector Header */}
         <div className="p-4 border-b border-gray-100 bg-gray-50/50">
@@ -131,7 +137,7 @@ export default function NavItemsManager({ navItems: initialNavItems, languages }
               const item = items.find((i) => i.id === Number(e.target.value));
               if (item) handleSelect(item);
             }}
-            className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm font-medium text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#445238] shadow-sm"
+            className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm font-medium text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#445238] shadow-sm cursor-pointer"
           >
             {items.map((item) => {
               const displayTitle = getLocalizedField(item.title, 'en', 'en') || item.href;
@@ -207,7 +213,7 @@ export default function NavItemsManager({ navItems: initialNavItems, languages }
                         key={lang.code}
                         type="button"
                         onClick={() => setActiveLang(lang.code)}
-                        className={`px-2.5 py-1 rounded-md text-xs font-bold transition-all uppercase ${
+                        className={`px-2.5 py-1 rounded-md text-xs font-bold transition-all uppercase cursor-pointer ${
                           activeLang === lang.code
                             ? 'bg-white text-[#445238] shadow-sm'
                             : 'text-gray-500 hover:text-gray-800'
@@ -283,15 +289,15 @@ export default function NavItemsManager({ navItems: initialNavItems, languages }
             type="submit"
             form="nav-form"
             disabled={isSaving}
-            className="w-full bg-[#445238] hover:bg-[#35412b] text-white font-bold text-sm py-2.5 rounded-xl shadow-sm transition-colors disabled:opacity-50"
+            className="w-full bg-[#445238] hover:bg-[#35412b] text-white font-bold text-sm py-2.5 rounded-xl shadow-sm transition-colors disabled:opacity-50 cursor-pointer"
           >
             {isSaving ? 'Saving Changes...' : 'Save Changes'}
           </button>
         </div>
       </aside>
 
-      {/* RIGHT COLUMN: PREVIEW VIEWPORT (Flex Growing Container) */}
-      <section className="flex-1 bg-gray-200/70 flex flex-col overflow-hidden">
+      {/* RIGHT COLUMN: PREVIEW VIEWPORT */}
+      <section className="flex-1 bg-gray-200/70 flex flex-col overflow-hidden relative z-10">
         
         {/* Preview Toolbar */}
         <div className="px-6 py-3 bg-white border-b border-gray-200 flex items-center justify-between shadow-xs">
@@ -307,7 +313,7 @@ export default function NavItemsManager({ navItems: initialNavItems, languages }
             <button
               type="button"
               onClick={() => setDeviceView('mobile')}
-              className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
+              className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 deviceView === 'mobile'
                   ? 'bg-white text-[#445238] shadow-sm font-bold'
                   : 'text-gray-500 hover:text-gray-800'
@@ -318,7 +324,7 @@ export default function NavItemsManager({ navItems: initialNavItems, languages }
             <button
               type="button"
               onClick={() => setDeviceView('tablet')}
-              className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
+              className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 deviceView === 'tablet'
                   ? 'bg-white text-[#445238] shadow-sm font-bold'
                   : 'text-gray-500 hover:text-gray-800'
@@ -329,7 +335,7 @@ export default function NavItemsManager({ navItems: initialNavItems, languages }
             <button
               type="button"
               onClick={() => setDeviceView('desktop')}
-              className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
+              className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 deviceView === 'desktop'
                   ? 'bg-white text-[#445238] shadow-sm font-bold'
                   : 'text-gray-500 hover:text-gray-800'
@@ -347,23 +353,23 @@ export default function NavItemsManager({ navItems: initialNavItems, languages }
         {/* Resizable Canvas Area */}
         <div className="flex-1 w-full h-full flex items-center justify-center p-6 overflow-auto">
           <div
-            className={`transition-all duration-300 ease-in-out bg-white overflow-hidden ${deviceStyles[deviceView]}`}
+            className={`relative transition-all duration-300 ease-in-out bg-white overflow-hidden ${deviceStyles[deviceView]}`}
           >
-            {/* CLICK SHIELD THAT FORWARDS SCROLL EVENTS */}
+            {/* CLICK SHIELD OVERLAY (Properly contained & non-blocking) */}
             <div 
-            className="absolute inset-0 z-50 bg-transparent"
-            onWheel={(e) => {
+              className="absolute inset-0 z-20 bg-transparent pointer-events-auto"
+              onWheel={(e) => {
                 if (iframeRef.current?.contentWindow) {
-                iframeRef.current.contentWindow.scrollBy(0, e.deltaY);
+                  iframeRef.current.contentWindow.scrollBy(0, e.deltaY);
                 }
-            }}
+              }}
             />
             <iframe
               ref={iframeRef}
               src={href}
               key={href}
               title="Page Live Preview"
-              className="w-full h-full border-none pointer-events-none select-none"
+              className="w-full h-full border-none pointer-events-none select-none relative z-10"
               onLoad={() => {
                 iframeRef.current?.contentWindow?.postMessage(
                   {

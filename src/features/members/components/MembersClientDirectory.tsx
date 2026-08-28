@@ -3,8 +3,10 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Search, MapPin, ExternalLink, CheckCircle2 } from 'lucide-react';
+import { Search, MapPin, ExternalLink, CheckCircle2, ChevronRight } from 'lucide-react';
 import type { Member, MemberCategory } from '@/app/generated/prisma';
+import CtaBanner from '@/src/components/ui/CtaBanner/page';
+import PageHeader from '@/src/components/ui/PageHeader/page';
 
 export type MemberWithCategory = Member & {
   category: MemberCategory;
@@ -37,10 +39,19 @@ export default function MembersClientDirectory({
   }, [initialMembers, searchQuery, selectedCategory]);
 
   return (
-    <div className="bg-[#FAF9F6] min-h-screen pb-20 font-sans">
+    <div className="bg-[#FAF9F6] min-h-screen pb-20">
+      
+    <PageHeader
+      title="Association Members"
+      subtitle="Registrati per accedere ai servizi esclusivi e rimanere aggiornato"
+      quickActions={[
+        { label: 'Annual Meeting', href: '/annual-meeting', variant: 'filled' },
+        { label: 'Past Events', href: '/past-events', variant: 'outlined' },
+      ]}
+    />
       
       {/* SECTION 1: SEARCH & FILTER BAR */}
-      <section className="max-w-7xl mx-auto pt-10 pb-6 px-6">
+      <section className="max-w-6xl mx-auto pt-10 pb-6 px-6">
         <div className="bg-white p-6 border border-gray-200 shadow-sm space-y-6">
           <div className="relative w-full">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -60,9 +71,9 @@ export default function MembersClientDirectory({
 
             <button
               onClick={() => setSelectedCategory('Tutti')}
-              className={`px-4 py-2 text-xs font-medium tracking-wider uppercase transition-all ${
+              className={`px-4 py-2 text-xs font-medium tracking-wider uppercase transition-all cursor-pointer ${
                 selectedCategory === 'Tutti'
-                  ? 'sixth text-white'
+                  ? 'bg-accent text-white'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
@@ -75,9 +86,9 @@ export default function MembersClientDirectory({
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.name)}
-                  className={`px-4 py-2 text-xs font-medium tracking-wider uppercase transition-all ${
+                  className={`px-4 py-2 text-xs font-medium tracking-wider uppercase transition-all cursor-pointer ${
                     isActive
-                      ? 'sixth text-white'
+                      ? 'bg-accent text-white'
                       : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                   }`}
                 >
@@ -90,10 +101,10 @@ export default function MembersClientDirectory({
       </section>
 
       {/* SECTION 2: MEMBER CARDS GRID */}
-      <section className="max-w-7xl mx-auto px-6 py-6">
+      <section className="max-w-6xl mx-auto px-6 py-6">
         <div className="flex justify-between items-center mb-6 border-b border-gray-200 pb-3">
           <p className="text-xs uppercase tracking-widest text-gray-500 font-light">
-            Trovati <span className="text-[#004282] font-semibold">{filteredMembers.length}</span> soci certificati
+            Trovati <span className="text-accent font-semibold">{filteredMembers.length}</span> soci certificati
           </p>
         </div>
 
@@ -121,7 +132,7 @@ export default function MembersClientDirectory({
               >
                 <div>
                   {/* Card Header Image Area */}
-                  <div className="relative w-full h-52 sixth flex items-center justify-center overflow-hidden border-b border-gray-200">
+                  <div className="relative w-full h-52 bg-accent flex items-center justify-center overflow-hidden border-b border-gray-200">
                     {member.imageUrl ? (
                       <Image
                         src={member.imageUrl}
@@ -143,14 +154,14 @@ export default function MembersClientDirectory({
 
                     {/* Category Tag */}
                     <div className="absolute top-4 left-4 z-10">
-                      <span className="text-[10px] font-semibold tracking-widest uppercase text-white sixth/90 backdrop-blur-md px-3 py-1 border border-white/20 shadow-sm">
+                      <span className="text-[10px] font-semibold tracking-widest uppercase text-white bg-accent 90 backdrop-blur-md px-3 py-1 border border-white/20 shadow-sm">
                         {member.category.name}
                       </span>
                     </div>
 
                     {/* Member Since Badge */}
                     <div className="absolute top-4 right-4 z-10">
-                      <div className="text-[10px] font-serif italic text-blue-900 bg-white/95 backdrop-blur-md px-2.5 py-1 border border-gray-200 shadow-sm">
+                      <div className="text-[10px] font-serif italic text-accent bg-white/95 backdrop-blur-md px-2.5 py-1 border border-gray-200 shadow-sm">
                         Socio dal {member.certifiedSince}
                       </div>
                     </div>
@@ -164,7 +175,7 @@ export default function MembersClientDirectory({
                       </h3>
 
                       <div className="flex items-center gap-1.5 text-xs text-gray-500 font-light">
-                        <MapPin className="w-3.5 h-3.5 text-[#004282]" />
+                        <MapPin className="w-3.5 h-3.5 text-accent" />
                         <span>{member.location}</span>
                       </div>
                     </div>
@@ -178,7 +189,7 @@ export default function MembersClientDirectory({
                 {/* Card Footer */}
                 <div className="px-6 py-4 bg-[#FAF9F6] border-t border-gray-200 flex items-center justify-between mt-auto">
                   <div className="flex items-center gap-1.5 text-xs font-light text-gray-700">
-                    <CheckCircle2 className="w-4 h-4 text-[#004282]" />
+                    <CheckCircle2 className="w-4 h-4 text-accent" />
                     <span className="text-[11px] uppercase tracking-wider">Standard SNSA</span>
                   </div>
 
@@ -187,7 +198,7 @@ export default function MembersClientDirectory({
                       href={member.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-white sixth hover:bg-[#003366] transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium border border-transparent text-white bg-accent hover:border-accent hover:bg-white hover:text-accent transition-colors"
                       aria-label={`Visita il sito di ${member.name}`}
                     >
                       <span>Sito</span>
@@ -202,25 +213,12 @@ export default function MembersClientDirectory({
       </section>
 
       {/* SECTION 3: CALL TO ACTION BANNER */}
-      <section className="max-w-7xl mx-auto px-6 pt-12">
-        <div className="sixth text-white p-8 md:p-12 border border-[#003366] shadow-md flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="space-y-2 max-w-2xl text-center md:text-left">
-            <h2 className="text-2xl md:text-3xl font-serif">
-              Sei un laboratorio, brand o professionista della skincare?
-            </h2>
-            <p className="text-blue-100 text-xs md:text-sm font-light leading-relaxed">
-              Unisciti all'associazione svizzera di riferimento. Ottieni il badge di certificazione e accedi al nostro network di esperti.
-            </p>
-          </div>
-
-          <Link
-            href="/membership"
-            className="shrink-0 bg-white text-[#004282] hover:bg-blue-50 font-semibold px-6 py-3.5 text-xs tracking-widest uppercase transition-colors"
-          >
-            RICHIEDI L'AFFILIAZIONE
-          </Link>
-        </div>
-      </section>
+      <CtaBanner
+        title="Sei un laboratorio, brand o professionista della skincare?"
+        subtitle="Unisciti all'associazione svizzera di riferimento. Ottieni il badge di certificazione e accedi al nostro network di esperti."
+        buttonText="RICHIEDI L'AFFILIAZIONE"
+        buttonHref="/membership"
+      />
     </div>
   );
 }

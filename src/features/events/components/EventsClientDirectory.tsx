@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Search, ChevronRight, Download, MapPin } from 'lucide-react';
 import type { Event } from '@/app/generated/prisma';
+import PageHeader from '@/src/components/ui/PageHeader/page';
 
 interface Props {
   initialEvents: Event[];
@@ -52,56 +53,23 @@ export default function EventsClientDirectory({ initialEvents }: Props) {
   }, [initialEvents, searchQuery, selectedTopic, selectedLocation, selectedMonth, selectedYear]);
 
   return (
-    <div className="bg-[#FAF9F6] min-h-screen pb-20 font-sans">
+    <div className="min-h-screen pb-20">
+        {/* TOP QUICK ACTION TILES */}
+        <PageHeader
+          title="Calendario Eventi"
+          subtitle="Upcoming Events Calendar"
+          quickActions={[
+            { label: 'Annual Meeting', href: '/annual-meeting', variant: 'filled' },
+            { label: 'Past Events', href: '/past-events', variant: 'outlined' },
+          ]}
+        />
+
+        
       <div className="max-w-6xl mx-auto px-4 md:px-8 pt-10 space-y-12">
 
-        {/* TOP QUICK ACTION TILES */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          {/* <Link
-            href="/venue-hire"
-            className="bg-[#EAEAEA] hover:bg-gray-200 text-[#1A1A1A] p-5 flex items-center justify-between text-xs font-semibold tracking-wider uppercase transition-colors"
-          >
-            <span>Venue Hire</span>
-            <ChevronRight className="w-4 h-4 text-gray-500" />
-          </Link>
-
-          <Link
-            href="/submit-event"
-            className="bg-white hover:bg-gray-50 border border-gray-200 text-[#1A1A1A] p-5 flex items-center justify-between text-xs font-semibold tracking-wider uppercase transition-colors shadow-sm"
-          >
-            <span className="leading-tight">
-              Request your event to be added to the calendar
-            </span>
-            <Download className="w-4 h-4 text-gray-500 shrink-0 ml-2" />
-          </Link> */}
-
-          <Link
-            href="/annual-meeting"
-            className="bg-[#EAEAEA] hover:bg-gray-200 text-[#1A1A1A] p-5 flex items-center justify-between text-xs font-semibold tracking-wider uppercase transition-colors"
-          >
-            <span>Annual Meeting</span>
-            <ChevronRight className="w-4 h-4 text-gray-500" />
-          </Link>
-
-          <Link
-            href="/past-events"
-            className="bg-white hover:bg-gray-50 border border-gray-200 text-[#1A1A1A] p-5 flex items-center justify-between text-xs font-semibold tracking-wider uppercase transition-colors shadow-sm"
-          >
-            <span>Past Events</span>
-            <ChevronRight className="w-4 h-4 text-gray-500" />
-          </Link>
-        </div>
 
         {/* SECTION HEADER & SEARCH FILTER CONTAINER */}
         <div className="space-y-6">
-          <div className="text-center space-y-1">
-            <h1 className="text-2xl sm:text-3xl font-serif text-[#1A1A1A] tracking-tight">
-              Calendario Eventi
-            </h1>
-            <p className="text-xl font-serif italic text-gray-500 font-light">
-              Upcoming Events Calendar
-            </p>
-          </div>
 
           <div className="bg-white border border-gray-200 p-6 space-y-4 shadow-sm">
             {/* Search Input Bar */}
@@ -113,10 +81,10 @@ export default function EventsClientDirectory({ initialEvents }: Props) {
                   placeholder="Cerca evento..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-11 pr-4 py-2.5 bg-[#FAF9F6] border border-gray-200 text-xs font-light text-[#1A1A1A] focus:outline-none focus:border-[#004282]"
+                  className="w-full pl-11 pr-4 py-2.5  border border-gray-200 text-xs font-light text-[#1A1A1A] focus:outline-none focus:border-accent"
                 />
               </div>
-              <button className="bg-[#004282] text-white px-8 py-2.5 text-xs font-medium uppercase tracking-wider hover:bg-[#003366] transition-colors">
+              <button className="cursor-pointer border border-transparent text-white bg-accent hover:border-accent hover:bg-white hover:text-accent px-8 py-2.5 text-xs font-medium uppercase tracking-wider transition-colors">
                 Search
               </button>
             </div>
@@ -130,7 +98,7 @@ export default function EventsClientDirectory({ initialEvents }: Props) {
               <select
                 value={selectedTopic}
                 onChange={(e) => setSelectedTopic(e.target.value)}
-                className="bg-[#FAF9F6] border border-gray-200 px-3 py-2 text-xs font-light text-gray-700 focus:outline-none focus:border-[#004282]"
+                className=" border border-gray-200 px-3 py-2 text-xs font-light text-gray-700 focus:outline-none focus:border-accent"
               >
                 <option value="All">Event Topic (All)</option>
                 <option value="Dermoscopy">Dermoscopy</option>
@@ -141,7 +109,7 @@ export default function EventsClientDirectory({ initialEvents }: Props) {
               <select
                 value={selectedLocation}
                 onChange={(e) => setSelectedLocation(e.target.value)}
-                className="bg-[#FAF9F6] border border-gray-200 px-3 py-2 text-xs font-light text-gray-700 focus:outline-none focus:border-[#004282]"
+                className=" border border-gray-200 px-3 py-2 text-xs font-light text-gray-700 focus:outline-none focus:border-accent"
               >
                 <option value="All">Location (All)</option>
                 <option value="Online">Online</option>
@@ -152,7 +120,7 @@ export default function EventsClientDirectory({ initialEvents }: Props) {
               <select
                 value={selectedMonth}
                 onChange={(e) => setSelectedMonth(e.target.value)}
-                className="bg-[#FAF9F6] border border-gray-200 px-3 py-2 text-xs font-light text-gray-700 focus:outline-none focus:border-[#004282]"
+                className=" border border-gray-200 px-3 py-2 text-xs font-light text-gray-700 focus:outline-none focus:border-accent"
               >
                 <option value="All">Filter By Month</option>
                 <option value="September">September</option>
@@ -162,7 +130,7 @@ export default function EventsClientDirectory({ initialEvents }: Props) {
               <select
                 value={selectedYear}
                 onChange={(e) => setSelectedYear(e.target.value)}
-                className="bg-[#FAF9F6] border border-gray-200 px-3 py-2 text-xs font-light text-gray-700 focus:outline-none focus:border-[#004282]"
+                className=" border border-gray-200 px-3 py-2 text-xs font-light text-gray-700 focus:outline-none focus:border-accent"
               >
                 <option value="All">Filter By Year</option>
                 <option value="2026">2026</option>
@@ -184,7 +152,7 @@ export default function EventsClientDirectory({ initialEvents }: Props) {
             filteredEvents.map((event) => (
               <div
                 key={event.id}
-                className="bg-white border border-gray-200 shadow-sm flex flex-col md:flex-row hover:border-[#004282] transition-colors overflow-hidden"
+                className="bg-white border border-gray-200 shadow-sm flex flex-col md:flex-row hover:border-accent transition-colors overflow-hidden"
               >
                 {/* Left Body Section */}
                 <div className="flex-1 p-6 md:p-8 space-y-3">
@@ -196,7 +164,7 @@ export default function EventsClientDirectory({ initialEvents }: Props) {
                     {event.title}
                   </h3>
 
-                  <div className="flex items-center gap-2 text-xs text-[#004282] font-medium italic">
+                  <div className="flex items-center gap-2 text-xs text-accent font-medium italic">
                     <MapPin className="w-3.5 h-3.5" />
                     <span>{event.location}</span>
                     {event.accreditationText && (
@@ -215,7 +183,7 @@ export default function EventsClientDirectory({ initialEvents }: Props) {
                 </div>
 
                 {/* Right Accreditation Sidebar Section */}
-                <div className="w-full md:w-64 bg-[#FAF9F6] md:bg-white border-t md:border-t-0 md:border-l border-gray-200 p-6 flex flex-col items-center justify-between text-center space-y-4 shrink-0">
+                <div className="w-full md:w-64  md:bg-white border-t md:border-t-0 md:border-l border-gray-200 p-6 flex flex-col items-center justify-between text-center space-y-4 shrink-0">
                   {/* Institution Logo Placeholder */}
                   <div className="w-full h-20 flex items-center justify-center border border-gray-100 bg-white p-2">
                     {event.logoUrl ? (

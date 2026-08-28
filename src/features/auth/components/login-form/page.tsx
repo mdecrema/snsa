@@ -18,7 +18,7 @@ export function LoginForm() {
   }, [state, router]);
 
   return (
-    <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-xl shadow-md border border-gray-100">
+    <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-md border border-gray-100">
       <div className="text-center">
         <h1 className="text-2xl font-bold text-gray-900">Sign In</h1>
         <p className="text-sm text-gray-500">Welcome back! Please enter your details.</p>
@@ -27,14 +27,14 @@ export function LoginForm() {
       <form action={formAction} className="space-y-4">
         {/* Error Feedback */}
         {state?.error && (
-          <div className="p-3 text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg">
+          <div className="p-3 text-sm text-red-600 bg-red-50 border border-red-200">
             {state.error}
           </div>
         )}
 
         {/* Success Feedback */}
         {state?.success && (
-          <div className="p-3 text-sm text-green-600 bg-green-50 border border-green-200 rounded-lg">
+          <div className="p-3 text-sm text-green-600 bg-green-50 border border-green-200">
             Signed in successfully!
           </div>
         )}
@@ -45,7 +45,7 @@ export function LoginForm() {
             type="email"
             name="email"
             required
-            className="w-full px-3 py-2 mt-1 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+            className="w-full px-3 py-2 mt-1 border focus:ring-2 focus:ring-blue-500 outline-none"
             placeholder="you@example.com"
           />
         </div>
@@ -56,7 +56,7 @@ export function LoginForm() {
             type="password"
             name="password"
             required
-            className="w-full px-3 py-2 mt-1 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+            className="w-full px-3 py-2 mt-1 border focus:ring-2 focus:ring-blue-500 outline-none"
             placeholder="••••••••"
           />
         </div>
@@ -64,7 +64,7 @@ export function LoginForm() {
         <button
           type="submit"
           disabled={isPending}
-          className="w-full py-2.5 font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 disabled:opacity-50 transition-colors"
+          className="w-full py-2.5 cursor-pointer font-medium text-white bg-sixth border border-transparent text-white hover:bg-white hover:border-sixth hover:text-sixth disabled:opacity-50 transition-colors"
         >
           {isPending ? 'Logging in...' : 'Sign In'}
         </button>

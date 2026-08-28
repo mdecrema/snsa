@@ -1,15 +1,47 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* @theme {
+  --color-first: #8D9A6B; 
+  --color-second: #66734C;
+  --color-third: #D7C5A2;
+  --color-fourth: #EAE4D8;
+  --color-fifth: #F7F5F0;
+  --color-sixth: #445238;
+  --color-light: #FBFAF7;
+  --color-medium: #B4B0A6;
+  --color-dark: #2F352C;
+  --color-accent: #bc4749;
+  --color-new-green: #87A16F;
+  --color-ice: #DCEEF2;
+  --color-lightgrey: #F2F2F2;
+  --color-yellow: #C6CA53;
+} */
+
+@theme {
+  --color-first: #46503A; 
+  --color-second: #707858;
+  --color-third: #A8AD91;
+  --color-fourth: #D8C9A5;
+  --color-fifth: #F7F5F0;
+  --color-sixth: #46503A;
+  --color-light: #F7F6F1;
+  --color-medium: #B4B0A6;
+  --color-dark: #292C25;
+  --color-accent: #B49C6A;
+  --color-new-green: #87A16F;
+  --color-ice: #DCEEF2;
+  --color-lightgrey: #E5E2D8;
+  --color-yellow: #C6CA53;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
 }
 
 @font-face {
@@ -32,9 +64,11 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+
+
 }
 
- .first {
+/* .first {
                 background-color: #8D9A6B;
             }
 
@@ -43,7 +77,7 @@ body {
             }
 
             .tirth {
-                background-color: #B79A63;
+                background-color: #D7C5A2;
             }
 
             .fourth {
@@ -71,8 +105,8 @@ body {
             }
 
             .accent {
-                background-color: #c3ae84  // #C2D501; // /* #B8C95A; */ #917f5c
-            }
+                background-color: #c3ae84  /* #C2D501; // /* #B8C95A; */ /* #917f5c 
+            } *//*
 
             .new_green {
                 background-color: #87A16F;
@@ -81,6 +115,10 @@ body {
             .ice {
                 background-color: #DCEEF2;
             }
+
+            .lightgrey {
+                background-color: #F2F2F2;
+            } */
 
             .lora_font {
                 font-family: "Lora", serif;
@@ -213,7 +251,6 @@ p.drop-cap {
     font-size: 1.1rem;
     line-height: 1.6;
 
-    // Targets the very first letter of the paragraph
     &::first-letter {
         font-size: 3.5rem;
         font-weight: bold;
