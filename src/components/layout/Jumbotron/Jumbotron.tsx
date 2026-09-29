@@ -34,7 +34,7 @@ const SLIDES = [
 
 export default function Jumbotron() {
   return (
-    <section className="w-full pt-20">
+    <section className="w-full">
       {/* 2. Plain string ID */}
       <div id="heroSwiper" className="w-full h-[530px]">
         <Swiper
@@ -53,8 +53,8 @@ export default function Jumbotron() {
             <SwiperSlide key={slide.id} className="w-full h-full">
               <div className="grid grid-cols-1 md:grid-cols-12 h-full w-full">
                 {/* Text Side */}
-                <div className="md:col-span-5 bg-sixth flex flex-col justify-center px-8 md:pl-[100px] md:pr-[50px] text-white h-full">
-                  <span className="inline-block self-start mb-3 text-white text-xs font-semibold uppercase tracking-wider py-2.5">
+                <div className="md:col-span-5 bg-[#5F3F4E] flex flex-col justify-center px-8 md:pl-[100px] md:pr-[50px] text-white h-full">
+                  <span className="inline-block self-start mb-3 text-white text-xs font-semibold uppercase tracking-wider py-2.5 font-montserrat">
                     {slide.badge}
                   </span>
 
@@ -65,7 +65,7 @@ export default function Jumbotron() {
                   <div>
                     <Link
                       href={slide.link}
-                      className="tracking-widest inline-block border border-white text-white px-5 py-2.5 hover:bg-white hover:text-sixth text-sm transition-colors"
+                      className="tracking-widest inline-block border border-white text-white px-5 py-2.5 hover:bg-white hover:text-accent text-xs transition-colors font-montserrat"
                     >
                       Read More
                     </Link>

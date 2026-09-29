@@ -37,7 +37,7 @@ export default async function TopUtilityBar({ label, className = '' }: TopUtilit
   ]);
 
   return (
-    <div className={`w-full h-[40px] bg-lightgrey px-8 border-b border-gray-200 ${className}`}>
+    <div className={`w-full h-[40px] bg-lightgrey px-8 ${className}`}>
       <div className={`max-w-7xl mx-auto h-full flex items-center ${label ? 'justify-between' : 'justify-end'} text-[#2C3E35]`}>
         {label && (
           <span className="text-xs font-bold uppercase tracking-wider text-gray-500">

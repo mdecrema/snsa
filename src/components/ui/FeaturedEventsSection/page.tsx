@@ -35,7 +35,7 @@ export default function FeaturedEventsSection({ events, labels }: Props) {
 
           <Link
             href="/events"
-            className="text-sm tracking-widest bg-sixth border border-transparent text-white hover:bg-white hover:border-sixth hover:text-sixth transition-colors px-5 py-2.5"
+            className="text-xs tracking-widest bg-accent border border-transparent text-white hover:bg-lightgrey hover:border-accent hover:text-accent transition-colors px-5 py-2.5 font-montserrat"
           >
             {labels.viewAll}
           </Link>
@@ -53,7 +53,7 @@ export default function FeaturedEventsSection({ events, labels }: Props) {
             {featuredEvents.map((event) => (
               <div
                 key={event.id}
-                className="bg-white border border-gray-200 p-6 sm:p-8 flex flex-col justify-between min-h-[240px] shadow-sm hover:border-sixth transition-colors duration-200"
+                className="bg-white border border-gray-200 p-6 sm:p-8 flex flex-col justify-between min-h-[240px] shadow-sm hover:border-accent transition-colors duration-200"
               >
                 <div className="space-y-4">
                   {/* Date Range Tag */}
@@ -67,11 +67,11 @@ export default function FeaturedEventsSection({ events, labels }: Props) {
                   </h3>
                 </div>
 
-                {/* Action Link */}
+                {/* Action Link */} 
                 <div className="pt-4">
                   <Link
                     href={event.linkHref || `/events`}
-                    className="inline-block text-xs font-semibold tracking-wider uppercase text-gray-400 hover:text-sixth transition-colors border-b border-transparent hover:border-sixth pb-0.5"
+                    className="inline-block text-xs font-semibold tracking-wider uppercase text-gray-400 hover:text-accent transition-colors border-b border-transparent hover:border-accent pb-0.5 font-montserrat"
                   >
                     {labels.readMore}
                   </Link>

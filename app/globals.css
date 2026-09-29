@@ -17,7 +17,8 @@
   --color-yellow: #C6CA53;
 } */
 
-@theme {
+/** Actual Palette */
+/* @theme {
   --color-first: #46503A; 
   --color-second: #707858;
   --color-third: #A8AD91;
@@ -32,7 +33,99 @@
   --color-ice: #DCEEF2;
   --color-lightgrey: #E5E2D8;
   --color-yellow: #C6CA53;
+} */
+
+/** First Palette */
+/* @theme {
+  --color-first: #94B0DA; 
+  --color-second: #DCEDFF;
+  --color-third: #8F91A2;
+  --color-fourth: #343F3E;
+  --color-fifth: #F7F5F0;
+  --color-sixth: #94B0DA;
+  --color-light: #F7F6F1;
+  --color-medium: #505A5B;
+  --color-dark: #292C25;
+  --color-accent: #505A5B;
+  --color-new-green: #87A16F;
+  --color-ice: #DCEEF2;
+  --color-lightgrey: #E5E2D8;
+  --color-yellow: #C6CA53;
+} */
+
+/** Wine Palette */
+@theme {
+  --color-first: #46503A; 
+  --color-second: #707858;
+  --color-third: #AD6363;
+  --color-fourth: #343F3E;
+  --color-fifth: #F7F5F0;
+  --color-sixth: #46503A;
+  --color-light: #F7F6F1;
+  --color-medium: #DADCD0;
+  --color-dark: #292C25;
+  --color-accent: #5F3F4E /* #723D46 /* #472D30 /*  #6A2B6D /* #d32677 #d4bff5 #834a65; #AD6363 #FF9D80*/;
+  --color-new-green: #87A16F;
+  --color-ice: #DCEEF2;
+  --color-lightgrey: #F7F1F7;
+  --color-lightgreengrey: #DADCD0;
+  --color-yellow: #C6CA53;
 }
+
+/** blue/green/pink Palette */
+/* @theme {
+  --color-first: #122932; 
+  --color-second: #2C514C;
+  --color-third: #AD6363;
+  --color-fourth: #343F3E;
+  --color-fifth: #F7F5F0;
+  --color-sixth: #122932;
+  --color-light: #F7F6F1;
+  --color-medium: #505A5B;
+  --color-dark: #292C25;
+  --color-accent: #FF9D80;
+  --color-new-green: #87A16F;
+  --color-ice: #DCEEF2;
+  --color-lightgrey: #E7EBEF;
+  --color-yellow: #C6CA53;
+} */
+
+/** green/orange Palette */
+/* @theme {
+  --color-first: #797D62; 
+  --color-second: #9B9B7A;
+  --color-third: #AD6363;
+  --color-fourth: #343F3E;
+  --color-fifth: #F7F5F0;
+  --color-sixth: #797D62;
+  --color-light: #F7F6F1;
+  --color-medium: #505A5B;
+  --color-dark: #292C25;
+  --color-accent: #FF9D80;
+  --color-new-green: #87A16F;
+  --color-ice: #DCEEF2;
+  --color-lightgrey: #E5E2D8;
+  --color-yellow: #C6CA53;
+} */
+
+/** green/orange Palette */
+/* @theme {
+  --color-first: #B36A5E; 
+  --color-second: #EEE2DF;
+  --color-third: #AD6363;
+  --color-fourth: #343F3E;
+  --color-fifth: #F7F5F0;
+  --color-sixth: #B36A5E;
+  --color-light: #F7F6F1;
+  --color-medium: #505A5B;
+  --color-dark: #292C25;
+  --color-accent: #FF9D80;
+  --color-new-green: #87A16F;
+  --color-ice: #DCEEF2;
+  --color-lightgrey: #EEE2DF;
+  --color-yellow: #C6CA53;
+} */
+
 
 
 :root {
@@ -51,6 +144,119 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+}
+
+/* ==========================================
+   OUTFIT FONT FAMILY
+   ========================================== */
+
+/* Outfit Regular (400) */
+@font-face {
+  font-family: "Outfit";
+  src: url("/fonts/Outfit/static/Outfit-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Outfit Medium (500) */
+@font-face {
+  font-family: "Outfit";
+  src: url("/fonts/Outfit/static/Outfit-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Outfit Bold (700) */
+@font-face {
+  font-family: "Outfit";
+  src: url("/fonts/Outfit/static/Outfit-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================
+   INTER FONT FAMILY
+   ========================================== */
+
+/* Inter Regular (400) */
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/static/Inter_24pt-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter Bold (700) */
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/static/Inter_24pt-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================
+   MONTSERRAT FONT FAMILY
+   ========================================== */
+
+/* Montserrat Regular (400) */
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat/static/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Montserrat Medium (500) */
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat/static/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Montserrat SemiBold (600) */
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat/static/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Montserrat Bold (700) */
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat/static/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================
+   CLASSI DI UTILITÀ
+   ========================================== */
+
+.font-cormorant-regular {
+    font-family: "Cormorant Garamond", serif;
+}
+
+.font-outfit {
+  font-family: "Outfit", sans-serif;
+}
+
+.font-inter {
+  font-family: "Inter", sans-serif;
+}
+
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -243,9 +449,6 @@ body {
               width: 200px; height: 200px; border: 2px solid; border-radius: 5px
             }
 
-    .font-cormorant-regular {
-        font-family: "Cormorant Garamond", serif;
-    }
 
 p.drop-cap {
     font-size: 1.1rem;

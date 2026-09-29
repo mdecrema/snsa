@@ -24,7 +24,7 @@ export default function NavLinks({ items }: NavLinksProps) {
           <Link
             key={item.id}
             href={item.href}
-            className="font-serif text-white text-[14px] hover:text-white/80 transition-opacity tracking-wide whitespace-nowrap"
+            className="font-serif text-white text-[14px] hover:text-white/80 transition-opacity tracking-wide whitespace-nowrap font-inter"
           >
             {title}
           </Link>

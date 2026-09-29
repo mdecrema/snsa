@@ -16,20 +16,20 @@ export default function CtaBanner({
   className = '',
 }: CtaBannerProps) {
   return (
-    <section className={`max-w-6xl mx-auto px-6 pt-12 ${className}`}>
+    <section className={`max-w-6xl mx-auto px-6 py-20 ${className}`}>
       <div className="bg-accent text-white p-8 md:p-12 border border-transparent shadow-md flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="space-y-2 max-w-2xl text-center md:text-left">
-          <h2 className="text-2xl md:text-2xl font-serif">
+          <h2 className="text-2xl md:text-2xl">
             {title}
           </h2>
-          <p className="text-white text-xs md:text-sm font-light leading-relaxed">
+          <p className="text-white text-xs md:text-sm font-light leading-relaxed font-inter">
             {subtitle}
           </p>
         </div>
 
         <Link
           href={buttonHref}
-          className="shrink-0 bg-white text-accent border border-transparent hover:border-white hover:bg-accent hover:text-white font-semibold px-6 py-3.5 text-xs tracking-widest uppercase transition-colors"
+          className="shrink-0 bg-white text-accent border border-transparent hover:border-white hover:bg-accent hover:text-white font-semibold px-6 py-3.5 text-xs tracking-widest uppercase transition-colors font-montserrat"
         >
           {buttonText}
         </Link>

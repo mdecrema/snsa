@@ -8,7 +8,7 @@ export default function PublicLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen flex-col font-cormorant-regular "> 
+    <div className="flex min-h-screen flex-col font-cormorant-regular"> 
      {/* font-cormorant-regular */}
       <Navbar />
       <div className="flex-1">

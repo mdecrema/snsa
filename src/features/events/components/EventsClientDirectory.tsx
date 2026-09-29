@@ -7,13 +7,42 @@ import Image from 'next/image';
 import { Search, ChevronRight, Download, MapPin } from 'lucide-react';
 import type { Event } from '@/app/generated/prisma';
 import PageHeader from '@/src/components/ui/PageHeader/page';
+import { FeatureCard } from '@/src/components/ui/FeatureCard/page';
+import { HorizontalFeatureCard } from '@/src/components/ui/HorizontalFeatureCard/page';
+
+export interface Services {
+  title: string,
+  description: string
+}
+
+interface EventsClientDirectoryDict {
+  // ourCustomServices: string,
+  title1: string,
+  cards: {
+    card1: { title: string; description: string; };
+    card2: { title: string; description: string; };
+    card3: { title: string; description: string; };
+    card4: { title: string; description: string; };
+    card5: { title: string; description: string; };
+    card6: { title: string; description: string; };
+  },
+  title2: string,
+  text2: string,
+  title3: string
+  // ctaBanner: {
+  //   title: string,
+  //   subtitle: string,
+  //   buttonText: string
+  // }
+}
 
 interface Props {
   initialEvents: Event[];
+  dict: EventsClientDirectoryDict;
 }
 
-export default function EventsClientDirectory({ initialEvents }: Props) {
-   const [searchQuery, setSearchQuery] = useState('');
+export default function EventsClientDirectory({ initialEvents, dict }: Props) {
+  const [searchQuery, setSearchQuery] = useState('');
   const [selectedTopic, setSelectedTopic] = useState('All');
   const [selectedLocation, setSelectedLocation] = useState('All');
   const [selectedMonth, setSelectedMonth] = useState('All');
@@ -52,12 +81,40 @@ export default function EventsClientDirectory({ initialEvents }: Props) {
     });
   }, [initialEvents, searchQuery, selectedTopic, selectedLocation, selectedMonth, selectedYear]);
 
+  const EVENT_TYPES = [
+    {
+      title: dict.cards.card1.title,
+      description: dict.cards.card1.description
+    },
+    {
+      title: dict.cards.card2.title,
+      description: dict.cards.card2.description
+    },
+    {
+      title: dict.cards.card3.title,
+      description: dict.cards.card3.description
+    },
+    {
+      title: dict.cards.card4.title,
+      description: dict.cards.card4.description
+    },
+    {
+      title: dict.cards.card5.title,
+      description: dict.cards.card5.description
+    },
+    {
+      title: dict.cards.card6.title,
+      description: dict.cards.card6.description
+    },
+  ];
+
   return (
     <div className="min-h-screen pb-20">
         {/* TOP QUICK ACTION TILES */}
         <PageHeader
-          title="Calendario Eventi"
-          subtitle="Upcoming Events Calendar"
+          title={dict.title2}
+          subtitle="Our Formats"
+          description={dict.text2}
           quickActions={[
             { label: 'Annual Meeting', href: '/annual-meeting', variant: 'filled' },
             { label: 'Past Events', href: '/past-events', variant: 'outlined' },
@@ -65,7 +122,81 @@ export default function EventsClientDirectory({ initialEvents }: Props) {
         />
 
         
-      <div className="max-w-6xl mx-auto px-4 md:px-8 pt-10 space-y-12">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 pt-10 space-y-12">
+
+      
+                         
+
+          {/* SECTION: OUR FORMATS */}
+<section className="pb-12">
+
+  <div className="border-t border-b border-gray-200 divide-y divide-gray-200">
+  {EVENT_TYPES.map((item, index) => (
+    <details
+      key={index}
+      className="group py-4 transition-colors cursor-pointer [&_summary::-webkit-details-marker]:none"
+    >
+      <summary className="flex items-center justify-between font-cormorant text-xl md:text-2xl font-bold text-gray-900 group-hover:text-accent transition-colors">
+        <div className="flex items-center gap-4">
+          <span className="font-montserrat text-xs font-semibold text-accent/70 tracking-widest">
+            0{index + 1}
+          </span>
+          <span className="uppercase font-montserrat text-base">{item.title}</span>
+        </div>
+        <span className="font-sans text-sm text-gray-400 group-open:rotate-45 transition-transform">
+          +
+        </span>
+      </summary>
+
+      <div className="pl-9 pt-3 pb-2 text-sm font-inter text-gray-600 leading-relaxed tracking-wider max-w-3xl">
+        {item.description}
+      </div>
+    </details>
+  ))}
+</div>
+
+  {/* Griglia a 2 colonne su Desktop / 1 su Mobile */}
+ {/* {EVENT_TYPES.map((item, index) => (
+    <div
+      key={index}
+      className="group relative bg-[#FBFBFB] border border-gray-200/80 p-6 flex flex-col justify-between hover:bg-white hover:shadow-md transition-all duration-300"
+    >
+    
+      <div className="absolute top-0 left-0 w-1 h-full bg-accent opacity-80 group-hover:w-1.5 transition-all" />
+
+      <div className="pl-2">
+        <div className="flex items-center justify-between mb-3">
+          <span className="text-[11px] font-montserrat font-bold text-accent tracking-widest uppercase">
+            Format 0{index + 1}
+          </span>
+        </div>
+
+        <h3 className="text-2xl font-bold font-cormorant text-gray-900 group-hover:text-accent transition-colors mb-2">
+          {item.title}
+        </h3>
+
+        <p className="text-xs font-inter text-gray-600 leading-relaxed">
+          {item.description}
+        </p>
+      </div>
+    </div>
+  ))}
+</div> */}
+</section>
+
+
+{/* SECTION HEADER FOR SEARCH */}
+<div className="pt-6 space-y-2">
+  <span className="font-montserrat text-xs font-bold uppercase tracking-widest text-accent">
+    Event Directory
+  </span>
+  <h2 className="text-3xl font-bold font-cormorant text-gray-900">
+    {dict.title3}
+  </h2>
+</div>
+      
+                   
+
 
 
         {/* SECTION HEADER & SEARCH FILTER CONTAINER */}

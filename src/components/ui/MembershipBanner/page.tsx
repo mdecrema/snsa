@@ -24,7 +24,7 @@ export function MembershipBanner({
         </h2>
         <Link
           href={buttonHref}
-          className="mt-5 inline-block px-5 py-2.5 border-2 border-white text-white text-sm hover:bg-white hover:text-sixth transition-colors tracking-widest"
+          className="mt-5 inline-block px-5 py-2.5 border-2 border-white text-white text-sm hover:bg-white hover:text-sixth transition-colors tracking-widest font-montserrat"
         >
           {buttonText}
         </Link>

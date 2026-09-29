@@ -45,7 +45,7 @@ export default async function Navbar() {
 
       {/* 2. Logo & Branding Bar */}
       <div className="w-full h-[130px] bg-white px-8">
-        <div className="max-w-7xl mx-auto h-full flex justify-start items-center text-[#445238]">
+        <div className="max-w-7xl mx-auto h-full flex justify-start items-center ">
           <Link href="/" className="flex items-center gap-5">
             <div className="relative w-[100px] h-[100px]">
               <Image
@@ -73,7 +73,7 @@ export default async function Navbar() {
       </nav>
 
       {/* 4. Bottom Spacer Bar */}
-      <div className="w-full h-[15px] bg-sixth" />
+      <div className="w-full h-[10px] bg-sixth" />
     </header>
   );
 }

@@ -1,6 +1,7 @@
 import { db } from "@/lib/db";
 import { getDictionary } from "@/lib/internalization";
 import Jumbotron from "@/src/components/layout/Jumbotron/Jumbotron";
+import CommunityCards from "@/src/components/ui/CommunityCards/page";
 import { FeatureCard } from "@/src/components/ui/FeatureCard/page";
 import FeaturedEventsSection from "@/src/components/ui/FeaturedEventsSection/page";
 import { MembershipBanner } from "@/src/components/ui/MembershipBanner/page";
@@ -17,7 +18,7 @@ interface Product {
 const quickLinks: QuickLink[] = [
   { label: 'Research', href: '/research' },
   { label: 'Guidelines & Standards', href: '/guidelines' },
-  { label: 'Dermatology Referral Guidelines', href: '/dermatology' },
+  { label: 'Developing Natural Cosmetics', href: '/dermatology' },
   { label: 'News & Media', href: '/news' },
   { label: 'Events', href: '/events' },
 ];
@@ -39,6 +40,9 @@ export default async function Home() {
     return (
         <>
         <Jumbotron />
+
+            {/* Le 3 Card per Brands, Professionals, Individuals */}
+            <CommunityCards dict={dict.home.community_cards} />
         
               {/* Main Feature Cards Section */}
               <section className="max-w-7xl mx-auto py-16 px-6 my-20">
@@ -46,10 +50,13 @@ export default async function Home() {
                   
                   {/* Card 1: Logo & Text Header */}
                   <FeatureCard
-                    title="Title title"
-                    description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966..."
-                    buttonText="Find out more"
-                    buttonHref="/about"
+                    title={dict.home.cards.card1.title}
+                    subtitle=""
+                    description={dict.home.cards.card1.description}
+                    buttonVisible={true}
+                    buttonFullWidth={true}
+                    buttonText={dict.home.cards.card1.buttonText}
+                    buttonHref="/qualityMark"
                     customHeader={
                       <div className="flex items-center gap-4 w-full">
                         <div className="relative w-28 h-28 shrink-0">
@@ -69,9 +76,11 @@ export default async function Home() {
         
                   {/* Card 2: Image Banner Header */}
                   <FeatureCard
-                    title="Title title"
-                    description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966..."
-                    buttonText="Find out more"
+                    title={dict.home.cards.card2.title}
+                    description={dict.home.cards.card2.description}
+                    buttonVisible={true}
+                    buttonFullWidth={true}
+                    buttonText={dict.home.cards.card2.buttonText}
                     buttonHref="/services"
                     imageSrc="/images/consulenza.webp"
                   />
@@ -104,7 +113,7 @@ export default async function Home() {
 
               <section className="my-20">
                 {/* Section 4: Pillars Grid */}
-                <PillarsGridSection />
+                <PillarsGridSection dict={dict.home.pillarsGridSection} />
               </section>
             </>
     )

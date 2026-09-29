@@ -76,10 +76,11 @@ export default function PageHeaderBanner({ navItems, children }: PageHeaderBanne
             src={bgImageSrc}
             alt={activeTitle || 'Banner'}
             fill
-            className="object-cover object-center filter grayscale"
+            className="object-cover object-center filter grayscale"  
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#917f5c] via-[#917f5c]/90 to-[#917f5c]/70" />
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-[#917f5c] via-[#917f5c]/90 to-[#917f5c]/70" /> */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#776DA9] via-[#5F3F4E]/90 to-[#5F3F4E]/70" />
         </div>
       )}
 
@@ -88,7 +89,7 @@ export default function PageHeaderBanner({ navItems, children }: PageHeaderBanne
         <div className="max-w-3xl space-y-4">
           
           {/* Breadcrumb / Tag */}
-          <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-white">
+          <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-white font-montserrat">
             <Link href="/" className="text-white transition-colors">
               Home
             </Link>
@@ -98,17 +99,17 @@ export default function PageHeaderBanner({ navItems, children }: PageHeaderBanne
 
           {/* Title & Subtitle */}
           <div className="space-y-1">
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-white">
+            <h1 className="text-3xl sm:text-4xl font-bold text-white">
               {activeTitle}
             </h1>
-            <p className="text-base sm:text-xl text-white font-bold italic">
+            <p className="text-base sm:text-xl text-white italic">
               {activeSubtitle}
             </p>
           </div>
 
           {/* Description Body */}
           {activeDesc && (
-            <p className="text-xs sm:text-sm text-white leading-relaxed pt-2 font-light max-w-2xl tracking-widest">
+            <p className="text-xs sm:text-sm text-white leading-relaxed pt-2 font-light max-w-3xl tracking-widest font-inter">
               {activeDesc}
             </p>
           )}

@@ -14,13 +14,13 @@ interface QuickLinksListProps {
 export function QuickLinksList({ title = 'See More', links }: QuickLinksListProps) {
   return (
     <div className="h-[520px] p-6 flex flex-col">
-      <h3 className="text-2xl font-bold text-gray-900 mb-2">{title}</h3>
+      <h3 className="text-2xl font-bold text-gray-900 mb-6">{title}</h3>
       <ul className="divide-y divide-gray-200">
         {links.map((link, index) => (
           <li key={index}>
             <Link
               href={link.href}
-              className="flex items-center justify-between py-5 text-gray-800 hover:text-accent transition-colors font-medium group"
+              className="flex items-center justify-between py-5 text-gray-800 hover:text-accent transition-colors font-medium group font-montserrat"
             >
               <span>{link.label}</span>
               {/* Arrow Icon */}

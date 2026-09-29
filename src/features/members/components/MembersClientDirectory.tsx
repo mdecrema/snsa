@@ -12,14 +12,24 @@ export type MemberWithCategory = Member & {
   category: MemberCategory;
 };
 
+interface MembersClientDirectoryDict {
+  pageHeader: {
+    title: string,
+    subtitle: string,
+    description: string
+  }
+}
+
 interface Props {
   initialCategories: MemberCategory[];
   initialMembers: MemberWithCategory[];
+  dict: MembersClientDirectoryDict;
 }
 
 export default function MembersClientDirectory({
   initialCategories,
   initialMembers,
+  dict
 }: Props) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('Tutti');
@@ -42,8 +52,9 @@ export default function MembersClientDirectory({
     <div className="bg-[#FAF9F6] min-h-screen pb-20">
       
     <PageHeader
-      title="Association Members"
-      subtitle="Registrati per accedere ai servizi esclusivi e rimanere aggiornato"
+      title={dict.pageHeader.title}
+      subtitle={dict.pageHeader.subtitle}
+      description={dict.pageHeader.description}
       quickActions={[
         { label: 'Annual Meeting', href: '/annual-meeting', variant: 'filled' },
         { label: 'Past Events', href: '/past-events', variant: 'outlined' },

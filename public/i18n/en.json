@@ -6,14 +6,33 @@
         "welcome": "Benvenuto"
     },
     "home": {
+        "community_cards": {
+            "card1": {
+                "title": "Showcase & Connect",
+                "description": "Join SNSA to showcase your company, share your expertise and connect with the people shaping the natural skincare industry. Meet experienced formulators, marketing specialists, scientists, influencers and other industry professionals. Consider also the opportunity to adopt the Quality Mark of SNSA to get officially recognised by our professional committee.",
+                "buttonText": "FIND OUT MORE"
+            },
+            "card2": {
+                "title": "Elevate Your Practice",
+                "description": "Whether you run a beauty salon, work as an aesthetician, skincare specialist or aesthetic medicine professional, SNSA gives you access to a valuable network. Discover the latest trends and brands in natural skincare. Take part in dedicated training and expert events and strengthen your professional visibility within a growing industry community.",
+                "buttonText": "FIND OUT MORE"
+            },
+            "card3": {
+                "title": "Empower Your Skincare",
+                "description": "Are you passionate about skincare and conscious about your health? Join SNSA to stay informed about the latest natural skincare products, emerging trends, scientific discoveries and innovations. Stay up to date and become increasingly aware of the products you use every day.",
+                "buttonText": "FIND OUT MORE"
+            }
+        },
             "cards": {
                 "card1": {
-                    "title": "Chi Siamo",
-                    "description": "L'Associazione Svizzera per la Cosmesi Naturale unisce professionisti e laboratori..."
+                    "title": "SNSA Quality Mark",
+                    "description": "The SNSA Quality Mark recognizes brands and products that meet defined standards of quality and responsible natural skincare, helping consumers identify companies committed to excellence, scientific integrity and transparency.",
+                    "buttonText": "Discover the Quality Mark"
                 },
                 "card2": {
-                    "title": "I Nostri Servizi",
-                    "description": "Forniamo consulenza e certificazioni ufficiali per i brand di skincare..."
+                    "title": "Science&Natural Skincare",
+                    "description": "Through its Scientific Committee, SNSA promotes rigorous evaluation, knowledge exchange and a responsible approach to ingredients, formulations, sustainability and cosmetic communication.",
+                    "buttonText": "Our Scientific Approach"
                 }
             },
         "quickLinks": {
@@ -25,20 +44,118 @@
             "events": "Eventi"
         },
         "membershipBanner": {
-            "title": "Become a Member of the SNSA",
+            "title": "Join SNSA",
             "buttonText": "Find out more"
         },
         "featuredEventsSection": {
-            "title": "Featured Upcoming Events",
-            "subtitle": "Join our workshops, webinars, and conferences on natural cosmetics.",
-            "viewAll": "All Events",
+            "title": "Upcoming Events",
+            "subtitle": "Meet the people, ideas and expertise shaping the natural skincare industry.",
+            "viewAll": "View All Events",
             "readMore": "View Details",
             "noEvents": "No featured events at this time."
+        },
+        "pillarsGridSection": {
+            "card1": {
+                "title": "Our Mission",
+                "description": "To create an independent platform for natural skincare where scientific knowledge, responsible business practices and industry collaboration can develop together."
+            },
+            "card2": {
+                "title": "Quality",
+                "description": "We promote higher standards in natural skincare through transparent criteria, independent assessment and continuous improvement."
+            },
+            "card3": {
+                "title": "Research",
+                "description": "We encourage dialogue between science and industry, translating research and technical expertise into meaningful practices for skincare brands and professionals."
+            }
         }
     },
     "cta": {
         "title": "Sei un laboratorio, brand o professionista della skincare?",
         "subtitle": "Unisciti all'associazione svizzera di riferimento. Ottieni il badge di certificazione.",
         "button": "RICHIEDI L'AFFILIAZIONE"
+    },
+    "startUpIncubator": {
+        "pageHeader": {
+            "title": "Supporting the Next Generation of Skincare Brands",
+            "subtitle": "",
+            "description": "Building a skincare brand requires more than a good formulation. Regulatory requirements, positioning, communication, distribution and access to the right professional network can determine whether an idea becomes a sustainable business. We strongly believe in a new approach based on collaboration between companies. The challenges of today, the multidisciplinary knowledge required and the increasing importance of internationalisation, make synergies between companies operating in the same sector extremely valuable."
+        },
+        "ourCustomServices": "Our Custom Services",
+        "boxes": {
+            "box1": {
+                "title": "Consulting & Guidance",
+                "description": "Strategic support throughout the development of your skincare business."
+            },
+            "box2": {
+                "title": "Training",
+                "description": "Workshops and educational opportunities covering key areas of the cosmetic industry."
+            },
+            "box3": {
+                "title": "Networking & Partnerships",
+                "description": "Connections with brands, laboratories, professionals, retailers and industry partners."
+            },
+            "box4": {
+                "title": "Information & Opportunities",
+                "description": "Access to relevant industry information, initiatives and business opportunities."
+            },
+            "box5": {
+                "title": "Representation of Interests",
+                "description": "A collective voice supporting the interests and development of responsible skincare businesses."
+            },
+            "box6": {
+                "title": "Services & Agreements",
+                "description": "Access to selected services, collaborations and agreements developed for SNSA members."
+            }
+        },
+        "ctaBanner": {
+            "title": "Do you have a skincare idea ready to grow?",
+            "subtitle": "Tell us about your project and discover how the SNSA network can support its development.",
+            "buttonText": "Contact Us"
+        }
+    },
+    "events": {
+        "title1": "How We Work & Learn",
+        "cards": {
+            "card1": {
+                "title": "Workshops",
+                "subtitle": "",
+                "description": "Hands-on sessions designed to explore specific topics in depth, from natural ingredients and formulation to scientific innovation, sustainability, regulation and emerging technologies. Our workshops combine expert knowledge with practical insights and encourage active participation."
+            },
+            "card2": {
+                "title": "Courses & Training",
+                "subtitle": "",
+                "description": "Educational programmes developed to strengthen knowledge and professional expertise across the natural skincare sector. Courses may cover scientific, technical, regulatory, business and sustainability topics, helping professionals stay informed in a rapidly evolving industry."
+            },
+            "card3": {
+                "title": "Conferences",
+                "subtitle": "",
+                "description": "High-level events bringing together leading experts, researchers, companies and professionals to discuss the latest developments in natural skincare. Conferences provide a platform for sharing research, exploring emerging trends and fostering dialogue between science and industry."
+            },
+            "card4": {
+                "title": "Talks & Expert Sessions",
+                "subtitle": "",
+                "description": "Focused conversations with scientists, formulators, industry leaders and other specialists. These sessions offer accessible insights into key topics and provide an opportunity to question, challenge and explore new perspectives."
+            },
+            "card5": {
+                "title": "Roundtables & Industry Forums",
+                "subtitle": "",
+                "description": "Small-group discussions bringing together different voices from across the sector. Roundtables are designed to encourage open dialogue around shared challenges, opportunities, standards, innovation and the responsible development of natural skincare."
+            },
+            "card6": {
+                "title": "Networking & Community Events",
+                "subtitle": "",
+                "description": "Informal and professional gatherings that create space for members to connect, exchange ideas, discover potential collaborations and build lasting relationships within the SNSA community."
+            }
+        },
+        "title2": "Learn. Connect. Shape the future",
+        "text2": "Whether you are looking to deepen your expertise, discover new scientific perspectives, meet potential partners or contribute to the development of natural skincare, SNSA events offer a space to connect with a community committed to advancing the sector.",
+        "title3": "Discover Upcoming Events & Have Your Say"
+    },
+    "members": {
+        "pageHeader": {
+            "title": "SNSA Members",
+            "subtitle": "Organization",
+            "description": "Discover the companies, professionals and organisations that form our network."
+        }
     }
 }
