@@ -74,43 +74,55 @@
         "subtitle": "Join the reference Swiss association. Obtain the certification badge.",
         "button": "APPLY FOR MEMBERSHIP"
     },
+    "qualityMark": {
+        "pageHeader": {
+            "title": "",
+            "subtitle": "string",
+            "description": "string"
+        },
+        "ctaBanner": {
+            "title": "string",
+            "subtitle": "string",
+            "buttonText": "string"
+        }
+    },
     "startUpIncubator": {
         "pageHeader": {
-            "title": "Supporting the Next Generation of Skincare Brands",
+            "title": "Sostenere la prossima generazione di brand di skincare",
             "subtitle": "",
-            "description": "Building a skincare brand requires more than a good formulation. Regulatory requirements, positioning, communication, distribution and access to the right professional network can determine whether an idea becomes a sustainable business. We strongly believe in a new approach based on collaboration between companies. The challenges of today, the multidisciplinary knowledge required and the increasing importance of internationalisation, make synergies between companies operating in the same sector extremely valuable."
+            "description": "Creare un brand di skincare richiede molto più di una buona formulazione. Requisiti normativi, posizionamento, comunicazione, distribuzione e accesso alla rete di contatti professionale più adatta possono determinare se un'idea si trasformi in un'attività sostenibile. Crediamo fermamente in un nuovo approccio basato sulla collaborazione tra aziende. Le sfide attuali, le competenze multidisciplinari richieste e la crescente importanza dell'internazionalizzazione rendono estremamente preziose le sinergie tra imprese che operano nello stesso settore."
         },
         "ourCustomServices": "I Nostri Servizi Dedicati",
         "boxes": {
             "box1": {
-                "title": "Consulting & Guidance",
-                "description": "Strategic support throughout the development of your skincare business."
+                "title": "Consulenza e Orientamento",
+                "description": "Supporto strategico durante lo sviluppo della tua attività di skincare."
             },
             "box2": {
-                "title": "Training",
-                "description": "Workshops and educational opportunities covering key areas of the cosmetic industry."
+                "title": "Formazione",
+                "description": "Workshop e opportunità formative che coprono aree chiave dell'industria cosmetica."
             },
             "box3": {
                 "title": "Networking & Partnerships",
-                "description": "Connections with brands, laboratories, professionals, retailers and industry partners."
+                "description": "Collegamenti con brand, laboratori, professionisti, rivenditori e partner del settore."
             },
             "box4": {
-                "title": "Information & Opportunities",
-                "description": "Access to relevant industry information, initiatives and business opportunities."
+                "title": "Informazioni e Opportunità",
+                "description": "Accesso a informazioni rilevanti del settore, iniziative e opportunità di business."
             },
             "box5": {
-                "title": "Representation of Interests",
-                "description": "A collective voice supporting the interests and development of responsible skincare businesses."
+                "title": "Rappresentanza degli Interessi",
+                "description": "Una voce collettiva a sostegno degli interessi e dello sviluppo delle imprese responsabili del settore skincare."
             },
             "box6": {
-                "title": "Services & Agreements",
-                "description": "Access to selected services, collaborations and agreements developed for SNSA members."
+                "title": "Servizi e Accordi",
+                "description": "Accesso a servizi selezionati, collaborazioni e accordi sviluppati per i membri della SNSA."
             }
         },
         "ctaBanner": {
-            "title": "",
-            "subtitle": "",
-            "buttonText": ""
+            "title": "Hai un'idea per la cura della pelle pronta a crescere?",
+            "subtitle": "Parlaci del tuo progetto e scopri come la rete SNSA può sostenerne lo sviluppo.",
+            "buttonText": "Contattaci"
         }
     },
     "events": {
@@ -156,6 +168,92 @@
             "title": "Membri della SNSA",
             "subtitle": "Organizzazione",
             "description": "Scopri le aziende, i professionisti e le organizzazioni che costituiscono la nostra rete."
+        },
+        "memberList": {
+            "searchBar": {
+                "filterBy": "Filtra per",
+                "all": "Tutti",
+                "brands": "Marchi",
+                "laboratories": "Laboratori",
+                "professionals": "Professionisti",
+                "retailers": "Rivenditori",
+                "partners": "Partners"
+            },
+            "memberCard": {
+               
+            }
+        },
+        "ctaBanner": {
+            "title": "Fai parte del settore della cura della pelle?",
+            "subtitle": "Unisciti alla SNSA ed entra a far parte di una rete professionale dedicata a promuovere la cura della pelle a base di ingredienti naturali.",
+            "buttonText": "Diventa socio"
+        }
+    },
+    "membership": {
+        "pageHeader": {
+            "title": "Perché diventare socio?",
+            "subtitle": "Organizzazione",
+            "description": "L'adesione offre l'opportunità di partecipare alle attività della SNSA, sviluppare contatti professionali, accedere a iniziative dedicate e contribuire allo sviluppo del settore della cura della pelle a base di ingredienti naturali."
+        },
+        "ctaBanner": {
+            "title": "Domanda di iscrizione",
+            "subtitle": "Unisciti al nostro network e entra a far parte della comunità SNSA.",
+            "buttonText": "Diventa socio"
+        }
+    },
+    "aboutAndMore": {
+        "pageHeader": {
+            "title": "Scienza, tradizione e trasparenza",
+            "subtitle": "Progredire la cura naturale della pelle",
+            "description": "Unendo l'eredità delle tradizioni naturali alla ricerca e all'innovazione contemporanee, miriamo a delineare una visione della cura della pelle più credibile e lungimirante, fondata su qualità, conoscenza e benessere."
+        },
+        "ourValues": {
+            "title": "I Nostri Valori",
+            "subtitle": "Principi Chiave",
+            "listItem": {
+                "item1": {
+                    "title": "Qualità",
+                    "description": "Alzare gli standard nel settore della cura della pelle naturale."
+                },
+                "item2": {
+                    "title": "Integrità Scientifica",
+                    "description": "Promuovere la conoscenza basata su evidenze e la competenza indipendente."
+                },
+                "item3": {
+                    "title": "Trasparenza",
+                    "description": "Promuovere una comunicazione chiara e responsabile."
+                },
+                "item4": {
+                    "title": "Sostenibilità",
+                    "description": "Favorire scelte ponderate lungo l'intera catena del valore."
+                },
+                "item5": {
+                    "title": "Collaborazione",
+                    "description": "Creare connessioni tra scienza, imprese e industria."
+                },
+                "item6": {
+                    "title": "Innovazione e Tradiziohe",
+                    "description": "Recognising both scientific progress and the value of established natural skincare knowledge."
+                }
+            }
+        },
+        "governance": {
+            "title": "La Nostra Organizzazione",
+            "subtitle": "Organigramma",
+            "description": "La SNSA si avvale di una leadership dedicata e di competenze indipendenti per garantire rigore scientifico, trasparenza ed elevati standard in tutte le iniziative dell'associazione.",
+            "buttonText": "Scopri i comitati",
+            "commetees": {
+                "card1": {
+                    "title": "Comitato Direttivo",
+                    "subtitle": "Leadership Strategica",
+                    "description": "Responsabile dell'indirizzo strategico e della gestione complessiva della SNSA."
+                },
+                "card2": {
+                    "title": "Comitato Scientifico",
+                    "subtitle": "Competenza Indipendente",
+                    "description": "Esperti indipendenti a supporto delle attività scientifiche e tecniche e del processo di valutazione per il Marchio di Qualità SNSA."
+                }
+            }
         }
     }
 }

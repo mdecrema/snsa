@@ -44,26 +44,26 @@ export function HorizontalFeatureCard({
   // Gestione dinamica del layout di colonna
   const gridCols =
     imageRatio === '1/3'
-      ? 'grid-cols-1 md:grid-cols-3'
-      : 'grid-cols-1 md:grid-cols-2';
+      ? 'grid-cols-12 md:grid-cols-12'
+      : 'grid-cols-12 md:grid-cols-12';
 
   const imageSpan =
     imageRatio === '1/3'
-      ? 'md:col-span-1'
-      : 'md:col-span-1';
+      ? 'md:col-span-5'
+      : 'md:col-span-6';
 
   const textSpan =
     imageRatio === '1/3'
-      ? 'md:col-span-2'
-      : 'md:col-span-1';
+      ? 'md:col-span-7'
+      : 'md:col-span-6';
 
   return (
     <div
-      className={`w-full grid ${gridCols} overflow-hidden border border-[#F2F2F2] shadow-sm min-h-[150px] md:min-h-[150px]`}
+      className={`w-full grid ${gridCols} overflow-hidden min-h-[150px] md:min-h-[150px]`}
     >
       {/* SEZIONE TESTO */}
       <div
-        className={`${textSpan} ${bgColor} p-8 md:p-12 flex flex-col justify-center items-start ${
+        className={`${textSpan} ${bgColor} p-8 md:p-12 pr-0 md:pr-0 flex flex-col text-left ${
           imagePosition === 'left' ? 'md:order-2' : 'md:order-1'
         }`}
       >
@@ -73,7 +73,7 @@ export function HorizontalFeatureCard({
           </span>
         )}
 
-        <h3 className={`text-3xl md:text-2xl font-bold font-cormorant leading-tight ${textColor}`}>
+        <h3 className={`text-base md:text-base font-bold font-montserrat uppercase leading-tight ${textColor}`}>
           {title}
         </h3>
 
@@ -95,7 +95,7 @@ export function HorizontalFeatureCard({
 
       {/* SEZIONE IMMAGINE */}
       <div
-        className={`relative ${imageSpan} w-full min-h-[200px] md:min-h-full bg-white ${
+        className={`relative ${imageSpan} w-full min-h-[200px] md:min-h-full ${bgColor} ${
           imagePosition === 'left' ? 'md:order-1' : 'md:order-2'
         }`}
       >

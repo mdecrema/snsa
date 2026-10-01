@@ -3,7 +3,7 @@ import { getDictionary } from '@/lib/internalization';
 import MembersClientDirectory from '@/src/features/members/components/MembersClientDirectory';
 
 // Ensures fresh database results on page load
-export const revalidate = 0; 
+export const revalidate = 0;
 
 export default async function MembersDirectoryPage() {
   const dict = await getDictionary();

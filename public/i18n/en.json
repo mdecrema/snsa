@@ -74,6 +74,18 @@
         "subtitle": "Unisciti all'associazione svizzera di riferimento. Ottieni il badge di certificazione.",
         "button": "RICHIEDI L'AFFILIAZIONE"
     },
+    "qualityMark": {
+        "pageHeader": {
+            "title": "",
+            "subtitle": "string",
+            "description": "string"
+        },
+        "ctaBanner": {
+            "title": "string",
+            "subtitle": "string",
+            "buttonText": "string"
+        }
+    },
     "startUpIncubator": {
         "pageHeader": {
             "title": "Supporting the Next Generation of Skincare Brands",
@@ -156,6 +168,112 @@
             "title": "SNSA Members",
             "subtitle": "Organization",
             "description": "Discover the companies, professionals and organisations that form our network."
+        },
+        "memberList": {
+            "searchBar": {
+                "filterBy": "Filter by",
+                "all": "All",
+                "brands": "Brands",
+                "laboratories": "Laboratories",
+                "professionals": "Professionals",
+                "retailers": "Retailers",
+                "partners": "Partners"
+            },
+            "memberCard": {
+               
+            }
+        },
+        "ctaBanner": {
+            "title": "Are you part of the skincare industry?",
+            "subtitle": "Join SNSA and become part of a professional network dedicated to advancing natural skincare.",
+            "buttonText": "Become a Member"
+        }
+    },
+    "membership": {
+        "pageHeader": {
+            "title": "Why Become a Member?",
+            "subtitle": "Organizzazione",
+            "description": "Membership provides opportunities to participate in SNSA activities, develop professional connections, access dedicated initiatives and contribute to the development of the natural skincare sector."
+        },
+        "membershipTypesCards": {
+            "ordinary": {
+                "title": "Ordinary Member",
+                "subtitle": "Ordinary",
+                "description": "For individuals who wish to actively participate in and support the Association.",
+                "price": "CHF 450/year"
+            },
+            "organizations": {
+                "title": "Supporting Member",
+                "subtitle": "Organizations",
+                "description": "For companies, skincare brands, beauty institutes, distributors, retailers, associations and other organisations that support SNSA’s mission.",
+                "price": "CHF 190/year"
+            },
+            "byRecognition": {
+                "title": "Honorary Member",
+                "subtitle": "By Recognition",
+                "description": "For experts, professionals and other individuals or organisations recognised for their contribution to the Association’s mission.",
+                "price": "CHF 120/year"
+            }
+        },
+        "ctaBanner": {
+            "title": "Membership Application",
+            "subtitle": "Join our network and become part of the SNSA community.",
+            "buttonText": "Join us"
+        }
+    },
+    "aboutAndMore": {
+        "pageHeader": {
+            "title": "Science, Tradition & Transparency",
+            "subtitle": "Advancing Natural Skincare",
+            "description": "By bringing together the heritage of natural traditions with contemporary research and innovation, we seek to shape a more credible, forward-thinking vision of skincare, grounded in quality, knowledge and wellbeing."
+        },
+        "ourValues": {
+            "title": "Our Values",
+            "subtitle": "Core Principles",
+            "listItem": {
+                "item1": {
+                    "title": "Quality",
+                    "description": "Raising standards across natural skincare."
+                },
+                "item2": {
+                    "title": "Scientific Integrity",
+                    "description": "Encouraging evidence-based knowledge and independent expertise."
+                },
+                "item3": {
+                    "title": "Transparency",
+                    "description": "Promoting clear and responsible communication."
+                },
+                "item4": {
+                    "title": "Sustainability",
+                    "description": "Supporting thoughtful choices throughout the value chain."
+                },
+                "item5": {
+                    "title": "Collaboration",
+                    "description": "Creating connections across science, business and industry."
+                },
+                "item6": {
+                    "title": "Innovation & Tradition",
+                    "description": "Recognising both scientific progress and the value of established natural skincare knowledge."
+                }
+            }
+        },
+        "governance": {
+            "title": "Our Organisation",
+            "subtitle": "Governance",
+            "description": "SNSA is guided by dedicated leadership and independent expertise to uphold scientific rigor, transparency, and high standards across all association initiatives.",
+            "buttonText": "Meet the Committees",
+            "commetees": {
+                "card1": {
+                    "title": "Steering Committee",
+                    "subtitle": "Strategic Leadership",
+                    "description": "Responsible for the strategic direction and overall management of SNSA."
+                },
+                "card2": {
+                    "title": "Scientific Committee",
+                    "subtitle": "Independent Expertise",
+                    "description": "Independent experts supporting scientific and technical activities and the SNSA Quality Mark assessment process."
+                }
+            }
         }
     }
 }

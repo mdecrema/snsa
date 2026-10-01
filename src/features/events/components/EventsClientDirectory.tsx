@@ -215,21 +215,21 @@ export default function EventsClientDirectory({ initialEvents, dict }: Props) {
                   className="w-full pl-11 pr-4 py-2.5  border border-gray-200 text-xs font-light text-[#1A1A1A] focus:outline-none focus:border-accent"
                 />
               </div>
-              <button className="cursor-pointer border border-transparent text-white bg-accent hover:border-accent hover:bg-white hover:text-accent px-8 py-2.5 text-xs font-medium uppercase tracking-wider transition-colors">
+              <button className="cursor-pointer font-montserrat border border-transparent text-white bg-accent hover:border-accent hover:bg-white hover:text-accent px-8 py-2.5 text-xs font-medium uppercase tracking-wider transition-colors">
                 Search
               </button>
             </div>
 
             {/* Select Filters Row */}
             <div className="flex flex-wrap items-center gap-3 pt-2 text-xs">
-              <span className="font-semibold text-[#1A1A1A] tracking-wider uppercase">
+              <span className="font-semibold font-montserrat text-[#1A1A1A] tracking-wider uppercase">
                 Filter:
               </span>
 
               <select
                 value={selectedTopic}
                 onChange={(e) => setSelectedTopic(e.target.value)}
-                className=" border border-gray-200 px-3 py-2 text-xs font-light text-gray-700 focus:outline-none focus:border-accent"
+                className=" border font-inter border-gray-200 px-3 py-2 text-xs font-light text-gray-700 focus:outline-none focus:border-accent"
               >
                 <option value="All">Event Topic (All)</option>
                 <option value="Dermoscopy">Dermoscopy</option>
@@ -240,7 +240,7 @@ export default function EventsClientDirectory({ initialEvents, dict }: Props) {
               <select
                 value={selectedLocation}
                 onChange={(e) => setSelectedLocation(e.target.value)}
-                className=" border border-gray-200 px-3 py-2 text-xs font-light text-gray-700 focus:outline-none focus:border-accent"
+                className=" border font-inter border-gray-200 px-3 py-2 text-xs font-light text-gray-700 focus:outline-none focus:border-accent"
               >
                 <option value="All">Location (All)</option>
                 <option value="Online">Online</option>
@@ -251,7 +251,7 @@ export default function EventsClientDirectory({ initialEvents, dict }: Props) {
               <select
                 value={selectedMonth}
                 onChange={(e) => setSelectedMonth(e.target.value)}
-                className=" border border-gray-200 px-3 py-2 text-xs font-light text-gray-700 focus:outline-none focus:border-accent"
+                className=" border font-inter border-gray-200 px-3 py-2 text-xs font-light text-gray-700 focus:outline-none focus:border-accent"
               >
                 <option value="All">Filter By Month</option>
                 <option value="September">September</option>
@@ -261,7 +261,7 @@ export default function EventsClientDirectory({ initialEvents, dict }: Props) {
               <select
                 value={selectedYear}
                 onChange={(e) => setSelectedYear(e.target.value)}
-                className=" border border-gray-200 px-3 py-2 text-xs font-light text-gray-700 focus:outline-none focus:border-accent"
+                className=" border border-gray-200 font-inter px-3 py-2 text-xs font-light text-gray-700 focus:outline-none focus:border-accent"
               >
                 <option value="All">Filter By Year</option>
                 <option value="2026">2026</option>
@@ -275,7 +275,7 @@ export default function EventsClientDirectory({ initialEvents, dict }: Props) {
         <div className="space-y-6">
           {filteredEvents.length === 0 ? (
             <div className="bg-white border border-dashed border-gray-300 p-12 text-center">
-              <p className="text-gray-500 font-serif italic text-base">
+              <p className="text-gray-500 font-inter italic text-base">
                 Nessun evento trovato per i filtri selezionati.
               </p>
             </div>
@@ -287,15 +287,15 @@ export default function EventsClientDirectory({ initialEvents, dict }: Props) {
               >
                 {/* Left Body Section */}
                 <div className="flex-1 p-6 md:p-8 space-y-3">
-                  <div className="text-xs font-light text-gray-500 uppercase tracking-wider">
+                  <div className="text-xs font-montserrat font-light text-gray-500 uppercase tracking-wider">
                     {event.dateRange}
                   </div>
 
-                  <h3 className="text-xl font-serif text-[#1A1A1A]">
+                  <h3 className="text-xl font-cormorant text-[#1A1A1A]">
                     {event.title}
                   </h3>
 
-                  <div className="flex items-center gap-2 text-xs text-accent font-medium italic">
+                  <div className="flex items-center gap-2 text-xs text-accent font-inter font-medium italic">
                     <MapPin className="w-3.5 h-3.5" />
                     <span>{event.location}</span>
                     {event.accreditationText && (
@@ -308,7 +308,7 @@ export default function EventsClientDirectory({ initialEvents, dict }: Props) {
                     )}
                   </div>
 
-                  <p className="text-xs sm:text-sm text-gray-600 font-light leading-relaxed pt-2">
+                  <p className="text-xs sm:text-sm text-gray-600 font-light font-inter leading-relaxed pt-2">
                     {event.description}
                   </p>
                 </div>
@@ -326,18 +326,18 @@ export default function EventsClientDirectory({ initialEvents, dict }: Props) {
                         className="object-contain max-h-full"
                       />
                     ) : (
-                      <div className="text-[10px] font-serif text-gray-400 uppercase tracking-widest">
+                      <div className="text-[10px] font-inter text-gray-400 uppercase tracking-widest">
                         Partner Institution
                       </div>
                     )}
                   </div>
 
                   {/* Accreditation Footer Badge */}
-                  <div className="w-full pt-2 border-t border-gray-200 text-center">
+                  <div className="w-full pt-2 border-t border-gray-200 text-center font-inter">
                     <span className="block text-[9px] font-semibold tracking-wider text-gray-400 uppercase">
                       Educational Content Accredited
                     </span>
-                    <span className="block text-[10px] font-serif italic text-gray-600">
+                    <span className="block text-[10px] italic text-gray-600">
                       Standard SNSA / CME
                     </span>
                   </div>

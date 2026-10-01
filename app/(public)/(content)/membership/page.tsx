@@ -1,11 +1,16 @@
 import { db } from '@/lib/db';
+import { getDictionary } from '@/lib/internalization';
 import PageHeaderBanner from '@/src/components/layout/PageHeaderBanner/page';
+import MembershipClientDirectory from '@/src/features/membership/components/MembershipClientDirectory';
 import GuestRegisterForm from '@/src/features/membership/components/page';
 
 export default async function Membership() {
-  const navItems = await db.navItem.findMany({ orderBy: { order: 'asc' } });
+  const dict = await getDictionary();
 
   return (
-    <GuestRegisterForm /> 
+    <>
+    <MembershipClientDirectory dict={dict.membership} />
+    <GuestRegisterForm />
+    </>
   );
 }

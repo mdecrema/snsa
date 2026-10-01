@@ -71,16 +71,7 @@ export default function GuestRegisterForm() {
   return (
     <div className="min-h-screen pb-20">
 
-      <PageHeader
-        title="Membership Application"
-        subtitle="Registrati per accedere ai servizi esclusivi e rimanere aggiornato"
-        quickActions={[
-          { label: 'Home', href: '/', variant: 'filled' },
-          { label: 'Members', href: '/members', variant: 'outlined' },
-        ]}
-      />
-
-     {/* MAIN CONTENT CONTAINER */}
+    {/* MAIN CONTENT CONTAINER */}
     <div className="bg-lightgrey pt-20 pb-20 text-slate-800">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-8">
 

@@ -23,7 +23,7 @@ export default function PageHeader({
   className = '',
 }: PageHeaderProps) {
   return (
-    <div className={`max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 pt-10 space-y-12 ${className}`}>
+    <div className={`max-w-6xl mx-auto px-4 sm:px-6 pt-5 space-y-12 ${className}`}>
       
       {/* TOP QUICK ACTION TILES */}
       {/* {quickActions.length > 0 && (
@@ -101,7 +101,7 @@ export default function PageHeader({
 
       
              <section className="py-20 border-t border-gray-200">
-   <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+   <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
      {/* Colonna Sinistra (Titolo) */}
      {(title || subtitle) && (
      <div className="lg:col-span-5">
