@@ -188,7 +188,7 @@ export default function EventsClientDirectory({ initialEvents, dict }: Props) {
 {/* SECTION HEADER FOR SEARCH */}
 <div className="pt-6 space-y-2">
   <span className="font-montserrat text-xs font-bold uppercase tracking-widest text-accent">
-    Event Directory
+    // Event Directory
   </span>
   <h2 className="text-3xl font-bold font-cormorant text-gray-900">
     {dict.title3}

@@ -33,8 +33,8 @@ export function AssessmentSectionSplit() {
     <section className="max-w-6xl mx-auto py-16 px-4 sm:px-6">
       {/* Header */}
       <div className="space-y-2 mb-12">
-        <span className="font-montserrat text-xs font-bold uppercase tracking-widest text-[#758156]">
-          What We Assess
+        <span className="font-montserrat text-xs font-bold uppercase tracking-widest text-second">
+          // What We Assess
         </span>
         <h2 className="text-3xl md:text-4xl font-bold font-cormorant text-gray-900">
           A Comprehensive Evaluation
@@ -46,16 +46,16 @@ export function AssessmentSectionSplit() {
         
         {/* COLONNA SINISTRA: Immagine Editorial Sticky */}
         <div className="lg:col-span-5 sticky top-24">
-          <div className="relative w-full h-[520px] overflow-hidden border border-gray-200">
+          <div className="relative w-full h-[520px] overflow-hidden border border-gray-200 rounded-2xl overflow-hidden border border-gray-200 shadow-inner">
             <Image
               src="/images/laboratory-technician.jpg"
               alt="SNSA Scientific Assessment"
               fill
-              className="object-cover filter grayscale contrast-110 hover:grayscale-0 transition-all duration-700"
+              className="object-cover"
               priority
             />
             <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-xs p-4 border border-gray-200/60">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-[#758156] font-bold block">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-second font-bold block">
                 Standard Protocol
               </span>
               <p className="text-xs font-inter text-gray-700 mt-1">
@@ -73,11 +73,11 @@ export function AssessmentSectionSplit() {
               className="py-6 first:pt-4 last:pb-4 group hover:bg-[#FBFBFB] px-4 -mx-4 transition-colors"
             >
               <div className="flex items-start gap-6">
-                <span className="font-mono text-xs font-bold text-[#758156] pt-1">
+                <span className="font-mono text-xs font-bold text-second pt-1">
                   {item.num}
                 </span>
                 <div className="space-y-1.5 flex-1">
-                  <h3 className="text-lg font-bold font-cormorant text-gray-900 group-hover:text-[#758156] transition-colors">
+                  <h3 className="text-sm font-bold font-inter uppercase text-gray-900 group-hover:text-second transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-xs font-inter text-gray-600 leading-relaxed">

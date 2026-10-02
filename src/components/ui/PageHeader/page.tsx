@@ -106,8 +106,8 @@ export default function PageHeader({
      {(title || subtitle) && (
      <div className="lg:col-span-5">
       {subtitle && (
-       <span className="font-montserrat text-xs font-bold uppercase tracking-widest text-[#758156]">
-         {subtitle}
+       <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#758156]">
+         // {subtitle}
        </span>
       )}
        {title && (

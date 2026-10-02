@@ -141,8 +141,8 @@ export default function AboutSection({dict}: Props) {
       
       {/* Header */}
       <div className="space-y-2 shrink-0">
-        <span className="font-montserrat text-xs font-bold uppercase tracking-widest text-[#758156]">
-          {dict.ourValues.subtitle}
+        <span className="font-montserrat text-xs font-bold uppercase tracking-widest text-second">
+          // {dict.ourValues.subtitle}
         </span>
         <h2 className="text-3xl font-bold font-cormorant text-gray-900">
           {dict.ourValues.title}
@@ -154,7 +154,7 @@ export default function AboutSection({dict}: Props) {
         <img
           src="/images/ricercaAbout.jpg" // Sostituisci col tuo percorso immagine
           alt="SNSA Values - Nature & Science"
-          className="absolute inset-0 w-auto h-full"
+          className="absolute inset-0 w-auto h-full rounded-2xl"
         />
         {/* Sovrapposizione o piccola caption opzionale in stile Swiss */}
         <div className="absolute bottom-3 left-3 bg-white/90 backdrop-blur-xs px-2.5 py-1">
@@ -191,7 +191,7 @@ export default function AboutSection({dict}: Props) {
 
                 {/* 2. Titolo (4 colonne su desktop) */}
                 <div className="md:col-span-5">
-                  <h3 className="text-xl font-bold font-cormorant text-gray-900 group-hover:text-second transition-colors">
+                  <h3 className="text-sm font-bold font-inter uppercase text-gray-900 group-hover:text-second transition-colors">
                     {value.title}
                   </h3>
                 </div>
@@ -218,8 +218,8 @@ export default function AboutSection({dict}: Props) {
     {/* Colonna Sinistra: Titolo & CTA */}
     <div className="lg:col-span-5 space-y-6">
       <div className="space-y-2">
-        <span className="font-montserrat text-xs font-bold uppercase tracking-widest text-[#758156]">
-          {dict.governance.subtitle}
+        <span className="font-montserrat text-xs font-bold uppercase tracking-widest text-second">
+          // {dict.governance.subtitle}
         </span>
         <h2 className="text-3xl font-bold font-cormorant text-gray-900">
           {dict.governance.title}
@@ -234,7 +234,7 @@ export default function AboutSection({dict}: Props) {
       <div className="pt-2">
         <a
           href="/committees" // o la rotta corrispondente
-          className="inline-block bg-accent text-white hover:bg-white hover:text-accent border border-accent px-8 py-3 text-xs font-medium font-inter uppercase tracking-widest transition-colors cursor-pointer"
+          className="inline-block bg-accent text-white hover:bg-white hover:text-accent border border-accent px-8 py-3 text-xs font-montserrat tracking-widest transition-colors cursor-pointer"
         >
           {dict.governance.buttonText}
         </a>

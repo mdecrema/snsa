@@ -256,7 +256,8 @@
 }
 
 .font-montserrat {
-  font-family: "Montserrat", sans-serif;
+    /* font-family: "Montserrat", sans-serif; */
+  font-family: var(--font-mono);
 }
 
 @media (prefers-color-scheme: dark) {
