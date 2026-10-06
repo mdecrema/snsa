@@ -13,8 +13,16 @@ export async function getCurrentUser() {
   if (!userId) return null;
 
   const user = await db.user.findUnique({
-    where: { id: userId },
-    select: { id: true, email: true, name: true, role: true },
+    where: { 
+      id: userId 
+    },
+    select: { 
+      id: true, 
+      email: true, 
+      firstName: true,
+      lastName: true,
+      role: true 
+    },
   });
 
   return user;
