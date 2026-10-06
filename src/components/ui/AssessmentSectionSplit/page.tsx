@@ -36,7 +36,7 @@ export function AssessmentSectionSplit() {
         <span className="font-montserrat text-xs font-bold uppercase tracking-widest text-second">
           // What We Assess
         </span>
-        <h2 className="text-3xl md:text-4xl font-bold font-cormorant text-gray-900">
+        <h2 className="text-3xl md:text-3xl font-bold font-cormorant text-gray-900">
           A Comprehensive Evaluation
         </h2>
       </div>

@@ -239,6 +239,159 @@
   font-display: swap;
 }
 
+
+/* ==========================================
+   SYNE FONT FAMILY
+   ========================================== */
+
+@font-face {
+  font-family: 'Syne';
+  src: url('/fonts/Syne/static/Syne-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Syne';
+  src: url('/fonts/Syne/static/Syne-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Syne';
+  src: url('/fonts/Syne/static/Syne-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================
+   PLUS JAKARTA SANS FONT FAMILY
+   ========================================== */
+
+@font-face {
+  font-family: 'Plus Jakarta';
+  src: url('/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta';
+  src: url('/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta';
+  src: url('/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================
+   SPACE GROTESK FONT FAMILY
+   ========================================== */
+
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/Space_Grotesk/static/SpaceGrotesk-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/Space_Grotesk/static/SpaceGrotesk-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/Space_Grotesk/static/SpaceGrotesk-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================
+   CLASH DISPLAY FONT FAMILY
+   ========================================== */
+
+/* @font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/ClashDisplay_Complete/Fonts/OTF/ClashDisplay-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/ClashDisplay_Complete/Fonts/OTF/ClashDisplay-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+} */
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/ClashDisplay_Complete/Fonts/OTF/ClashDisplay-Light.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================
+   CABINET GROTESK FONT FAMILY
+   ========================================== */
+
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('/fonts/CabinetGrotesk_Complete/Fonts/OTF/CabinetGrotesk-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('/fonts/CabinetGrotesk_Complete/Fonts/OTF/CabinetGrotesk-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('/fonts/CabinetGrotesk_Complete/Fonts/OTF/CabinetGrotesk-Extrabold.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================
+   INSTRUMENT SERIF FONT FAMILY
+   ========================================== */
+
+@font-face {
+  font-family: 'Instrument';
+  src: url('/fonts/Instrument_Serif/InstrumentSerif-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ==========================================
    CLASSI DI UTILITÀ
    ========================================== */
@@ -258,6 +411,30 @@
 .font-montserrat {
     /* font-family: "Montserrat", sans-serif; */
   font-family: var(--font-mono);
+}
+
+.font-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-plus-jakarta {
+  font-family: 'Plus Jakarta', sans-serif;
+}
+
+.font-space-grotesk {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-clash-display {
+  font-family: 'Clash Display', sans-serif;
+}
+
+.font-cabinet-grotesk {
+  font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+.font-instrument {
+  font-family: 'Instrument', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {

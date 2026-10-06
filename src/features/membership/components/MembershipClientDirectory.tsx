@@ -76,7 +76,7 @@ export default function MembershipClientDirectory({
           <span className="font-montserrat text-xs font-bold uppercase tracking-widest text-accent">
             Join the Network
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold font-cormorant text-gray-900">
+          <h2 className="text-3xl md:text-3xl font-bold font-cormorant text-gray-900">
             Membership Types
           </h2>
         </div>
@@ -98,7 +98,7 @@ export default function MembershipClientDirectory({
               <div
                 key={index}
                 onMouseEnter={() => setHoveredIndex(index)}
-                className={`relative border-2 p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer ${
+                className={`relative border-2 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer ${
                   isActive
                     ? 'bg-[#FBFBFB] border-second shadow-md -translate-y-1'
                     : 'bg-white border-gray-200 hover:border-gray-300'

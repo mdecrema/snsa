@@ -56,7 +56,7 @@ export default async function Navbar() {
                 priority
               />
             </div>
-            <div className="font-serif text-2xl font-bold leading-tight">
+            <div className="font-serif text-2xl font-bold leading-tight text-sixth">
               Swiss Natural <br />
               Skincare Association
             </div>

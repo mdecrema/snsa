@@ -202,7 +202,7 @@ export default function EventsClientDirectory({ initialEvents, dict }: Props) {
         {/* SECTION HEADER & SEARCH FILTER CONTAINER */}
         <div className="space-y-6">
 
-          <div className="bg-white border border-gray-200 p-6 space-y-4 shadow-sm">
+          <div className="bg-white border rounded-2xl border-gray-200 p-6 space-y-4 shadow-sm">
             {/* Search Input Bar */}
             <div className="flex flex-col sm:flex-row gap-2">
               <div className="relative flex-1">
@@ -283,7 +283,7 @@ export default function EventsClientDirectory({ initialEvents, dict }: Props) {
             filteredEvents.map((event) => (
               <div
                 key={event.id}
-                className="bg-white border border-gray-200 shadow-sm flex flex-col md:flex-row hover:border-accent transition-colors overflow-hidden"
+                className="bg-white border rounded-2xl border-gray-200 shadow-sm flex flex-col md:flex-row hover:border-accent transition-colors overflow-hidden"
               >
                 {/* Left Body Section */}
                 <div className="flex-1 p-6 md:p-8 space-y-3">

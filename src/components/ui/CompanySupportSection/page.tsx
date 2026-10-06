@@ -118,7 +118,7 @@ export default function CompanySupportSection({ dict }: CompanySupportSectionPro
         <span className="text-xs font-mono font-bold text-accent uppercase tracking-widest block mb-2">
           // Ecosistema di Incubazione
         </span>
-        <h2 className="text-xl md:text-5xl font-bold font-cormorant text-gray-900 tracking-tight">
+        <h2 className="text-3xl md:text-3xl font-bold font-cormorant text-gray-900 tracking-tight">
           How We Incubate Your Vision
         </h2>
       </div>

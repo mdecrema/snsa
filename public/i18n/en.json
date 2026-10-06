@@ -275,5 +275,12 @@
                 }
             }
         }
+    },
+    "contacts": {
+        "pageHeader": {
+            "title": "Contatti e Richieste",
+            "subtitle": "Contattaci",
+            "description": "Siamo a disposizione per informazioni su membership, marchio di qualità, programma di incubazione e partnership strategiche."
+        }
     }
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Search, MapPin, ExternalLink, CheckCircle2, ChevronRight, Sparkles, Shield, Check } from 'lucide-react';
@@ -47,6 +47,39 @@ const levels = [
     },
   ];
 
+  const STEPS = [
+        {
+          step: "01",
+          title: "Application",
+          desc: "Submission of product details, ingredient declarations, and company documentation.",
+        },
+        {
+          step: "02",
+          title: "Documentation Review",
+          desc: "Initial screening to verify completeness, compliance, and preliminary requirements.",
+        },
+        {
+          step: "03",
+          title: "Scientific Evaluation",
+          desc: "In-depth technical analysis conducted by qualified scientific committee members.",
+        },
+        {
+          step: "04",
+          title: "Technical Report",
+          desc: "Compilation of detailed findings, compliance metrics, and assessment outcome.",
+        },
+        {
+          step: "05",
+          title: "Quality Mark Decision",
+          desc: "Formal evaluation and awarding of the appropriate Quality Mark recognition level.",
+        },
+        {
+          step: "06",
+          title: "Annual Verification",
+          desc: "Ongoing monitoring and periodic reviews to ensure continuous standard adherence.",
+        },
+      ];
+
 interface QualityMarkClientDirectoryDict {
   pageHeader: {
     title: string,
@@ -68,6 +101,20 @@ export default function QualityMarkClientDirectory({
   dict
 }: Props) {
 const [selectedLevel, setSelectedLevel] = useState(2);
+const [activeIndex, setActiveIndex] = useState<number>(0);
+const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+const [isPaused, setIsPaused] = useState<boolean>(false);
+
+  // Animazione in loop ogni 4 secondi
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % STEPS.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
 const current = levels[selectedLevel];
   const IconComponent = current.icon;
@@ -233,118 +280,161 @@ const current = levels[selectedLevel];
 
 
       {/* 4. PROCESS: HOW IT WORKS */}
-      <section className="max-w-6xl mx-auto py-15 px-4 sm:px-6 border-t border-gray-200 space-y-12">
-        
-        {/* Section Header */}
-  <div className="text-center mx-auto space-y-2">
-    <span className="font-montserrat text-xs font-bold uppercase tracking-widest text-accent">
-      // Process
-    </span>
-    <h2 className="text-3xl md:text-4xl font-bold font-cormorant text-gray-900">
-      How It Works
-    </h2>
-    <p className="text-sm font-inter text-gray-500 tracking-wide pt-1">
-      A rigorous, multi-stage evaluation process ensuring complete compliance and transparency.
-    </p>
-  </div>
+              <section className="max-w-7xl mx-auto py-16 px-4 sm:px-6 border-t border-gray-200 space-y-16">
+      {/* Section Header */}
+      <div className="text-center mx-auto space-y-2 max-w-2xl">
+        <span className="font-mono text-xs font-bold uppercase tracking-widest text-accent">
+          // Process
+        </span>
+        <h2 className="text-3xl md:text-4xl font-bold font-cabinet text-gray-900">
+          How It Works
+        </h2>
+        <p className="text-sm font-inter text-gray-600 tracking-wide pt-1">
+          A rigorous, multi-stage evaluation process ensuring complete compliance and transparency.
+        </p>
+      </div>
 
-  {/* TIMELINE CONTAINER */}
-  <div className="relative max-w-4xl mx-auto px-4">
-    
-    {/* 
-      LINEA VERTICALE DEL TEMPO:
-      - Su Mobile (default): posizionata a sinistra (left-6)
-      - Su Desktop (lg): posizionata esattamente al centro (lg:left-1/2)
-    */}
-    <div className="absolute top-3 bottom-3 left-6 lg:left-1/2 -translate-x-1/2 w-px bg-gray-300" />
+      {/* TIMELINE CONTAINER (ORIZZONTALE) */}
+      <div className="relative py-20 hidden lg:block">
+        {/* Linea Orizzontale Centrale Perfettamente Centrata */}
+        <div className="absolute top-1/2 left-8 right-8 h-0.5 bg-gray-200 -translate-y-1/2 z-0" />
 
-    {/* LISTA DEGLI STEP */}
-    <div className="space-y-12 lg:space-y-16">
-      {[
-        {
-          step: "01",
-          title: "Application",
-          desc: "Submission of product details, ingredient declarations, and company documentation.",
-        },
-        {
-          step: "02",
-          title: "Documentation Review",
-          desc: "Initial screening to verify completeness, compliance, and preliminary requirements.",
-        },
-        {
-          step: "03",
-          title: "Scientific Evaluation",
-          desc: "In-depth technical analysis conducted by qualified scientific committee members.",
-        },
-        {
-          step: "04",
-          title: "Technical Report",
-          desc: "Compilation of detailed findings, compliance metrics, and assessment outcome.",
-        },
-        {
-          step: "05",
-          title: "Quality Mark Decision",
-          desc: "Formal evaluation and awarding of the appropriate Quality Mark recognition level.",
-        },
-        {
-          step: "06",
-          title: "Annual Verification",
-          desc: "Ongoing monitoring and periodic reviews to ensure continuous standard adherence.",
-        },
-      ].map((item, index) => {
-        const isEven = index % 2 === 0;
+        {/* Griglia a 6 colonne per gli Step */}
+        <div className="grid grid-cols-6 gap-5 relative z-10">
+          {STEPS.map((item, index) => {
+            const isTop = index % 2 === 0; // Alternanza: pari sopra, dispari sotto
+            const isActive = activeIndex === index;
 
-        return (
-          <div
-            key={index}
-            className={`relative flex flex-col lg:flex-row items-start lg:items-center  ${
-              isEven ? "lg:flex-row-reverse" : ""
-            }`}
-          >
-            {/* 1. CONTENUTO DELLO STEP (Card o Blocco Testo) */}
-            <div className="w-full lg:w-1/2 pl-14 lg:pl-0">
+            return (
               <div
-                className={`bg-[#FBFBFB] p-6 rounded-2xl overflow-hidden border border-gray-200 shadow-2xl  space-y-2 hover:border-accent transition-all duration-300 group  ${
-                  isEven ? "lg:text-right" : "lg:text-left"
-                }`}
+                key={index}
+                onMouseEnter={() => {
+                  setIsPaused(true);
+                  setActiveIndex(index);
+                }}
+                onMouseLeave={() => {
+                  setIsPaused(false);
+                }}
+                className="relative flex flex-col items-center cursor-pointer"
               >
+                {/* 1. BLOCCO SOPRA LA LINEA */}
                 <div
-                  className={`flex items-center gap-2 ${
-                    isEven ? "lg:justify-end" : "lg:justify-start"
+                  className={`min-h-[210px] flex flex-col justify-end transition-all duration-500 ${
+                    isTop ? "opacity-100 mb-8" : "opacity-0 pointer-events-none"
                   }`}
                 >
-                  <span className="font-mono text-xs font-bold text-accent bg-accent/10 px-2 py-0.5 inline-block">
-                    Step {item.step}
-                  </span>
+                  {isTop && (
+                    <div
+                      className={`p-5 rounded-2xl  w-[250px] min-h-[200px] border transition-all duration-500 ${
+                        isActive
+                          ? "bg-white border-accent shadow-2xl scale-105 ring-1 ring-accent/20"
+                          : "bg-white/70 border-gray-200/90 shadow-md opacity-80"
+                      }`}
+                    >
+                      <span
+                        className={`font-mono text-xs font-bold px-2.5 py-1 rounded inline-block mb-2 transition-colors duration-500 ${
+                          isActive
+                            ? "bg-accent text-white"
+                            : "bg-accent/10 text-accent"
+                        }`}
+                      >
+                        Step {item.step}
+                      </span>
+                      <h3
+                        className={`text-base font-bold font-cabinet uppercase transition-colors duration-500 mt-2 ${
+                          isActive ? "text-accent" : "text-gray-900"
+                        }`}
+                      >
+                        {item.title}
+                      </h3>
+                      <p className="text-sm font-inter text-gray-600 leading-relaxed mt-4">
+                        {item.desc}
+                      </p>
+                    </div>
+                  )}
                 </div>
-                <h3 className="text-sm font-bold font-inter uppercase mt-5 text-gray-900 group-hover:text-accent transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-sm font-inter text-gray-600 leading-relaxed pt-1">
-                  {item.desc}
-                </p>
-              </div>
-            </div>
 
-            {/* 2. PALLINO CENTRALE SULLA LINEA */}
-            <div className="absolute left-6 lg:left-1/2 -translate-x-1/2 top-6 lg:top-1/2 lg:-translate-y-1/2 flex items-center justify-center z-10">
-              {/* Cerchietto Esterno con Bordo */}
-              <div className="w-5 h-5 rounded-full bg-white border-2 border-accent flex items-center justify-center">
-                {/* Pallino Interno */}
-                <div className="w-2 h-2 rounded-full bg-accent" />
-              </div>
-            </div>
+                {/* 2. PALLINO CENTRALE SULLA LINEA */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex items-center justify-center">
+                  <div
+                    className={`w-7 h-7 rounded-full bg-white border-2 flex items-center justify-center transition-all duration-500 ${
+                      isActive
+                        ? "border-accent scale-125 shadow-lg ring-4 ring-accent/10"
+                        : "border-gray-300"
+                    }`}
+                  >
+                    <div
+                      className={`w-3 h-3 rounded-full transition-colors duration-500 ${
+                        isActive ? "bg-accent" : "bg-gray-300"
+                      }`}
+                    />
+                  </div>
+                </div>
 
-            {/* 3. BLOCCO VUOTO DI BILANCIAMENTO PER DESKTOP */}
-            <div className="hidden lg:block lg:w-1/2" />
+                {/* 3. BLOCCO SOTTO LA LINEA */}
+                <div
+                  className={`min-h-[210px] flex flex-col justify-start transition-all duration-500 ${
+                    !isTop ? "opacity-100 mt-8" : "opacity-0 pointer-events-none"
+                  }`}
+                >
+                  {!isTop && (
+                    <div
+                      className={`p-5 rounded-2xl  w-[250px] min-h-[200px] border transition-all duration-500 ${
+                        isActive
+                          ? "bg-white border-accent shadow-2xl scale-105 ring-1 ring-accent/20"
+                          : "bg-white/70 border-gray-200/90 shadow-md opacity-80"
+                      }`}
+                    >
+                      <span
+                        className={`font-mono text-xs font-bold px-2.5 py-1 rounded inline-block mb-2 transition-colors duration-500 ${
+                          isActive
+                            ? "bg-accent text-white"
+                            : "bg-accent/10 text-accent"
+                        }`}
+                      >
+                        Step {item.step}
+                      </span>
+                      <h3
+                        className={`text-base font-bold font-cabinet uppercase transition-colors duration-500 mt-2 ${
+                          isActive ? "text-accent" : "text-gray-900"
+                        }`}
+                      >
+                        {item.title}
+                      </h3>
+                      <p className="text-sm font-inter text-gray-600 leading-relaxed mt-4">
+                        {item.desc}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* FALLBACK RESPONSIVE PER MOBILE E TABLET */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-5">
+        {STEPS.map((item, index) => (
+          <div
+            key={index}
+            className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm flex items-start gap-4"
+          >
+            <span className="font-mono text-xs font-bold text-accent bg-accent/10 px-3 py-1 rounded">
+              {item.step}
+            </span>
+            <div>
+              <h3 className="text-sm font-bold font-cabinet text-gray-900 mb-1">
+                {item.title}
+              </h3>
+              <p className="text-xs font-inter text-gray-600 leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
           </div>
-        );
-      })}
-    </div>
-
-  </div>
-
-      </section>
+        ))}
+      </div>
+    </section>
 
       {/* SECTION 3: CALL TO ACTION BANNER */}
       <CtaBanner
@@ -355,4 +445,8 @@ const current = levels[selectedLevel];
       />
     </div>
   );
+}
+
+function setActiveIndex(arg0: (prevIndex: any) => number) {
+  throw new Error('Function not implemented.');
 }
