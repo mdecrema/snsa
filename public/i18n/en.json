@@ -161,7 +161,8 @@
         },
         "title2": "Learn. Connect. Shape the future",
         "text2": "Whether you are looking to deepen your expertise, discover new scientific perspectives, meet potential partners or contribute to the development of natural skincare, SNSA events offer a space to connect with a community committed to advancing the sector.",
-        "title3": "Discover Upcoming Events & Have Your Say"
+        "title3": "Discover Upcoming Events & Have Your Say",
+        "no_event_found": "No event found."
     },
     "members": {
         "pageHeader": {

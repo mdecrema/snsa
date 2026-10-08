@@ -28,7 +28,8 @@ interface EventsClientDirectoryDict {
   },
   title2: string,
   text2: string,
-  title3: string
+  title3: string,
+  no_event_found: string
   // ctaBanner: {
   //   title: string,
   //   subtitle: string,
@@ -276,7 +277,7 @@ export default function EventsClientDirectory({ initialEvents, dict }: Props) {
           {filteredEvents.length === 0 ? (
             <div className="bg-white border border-dashed border-gray-300 p-12 text-center">
               <p className="text-gray-500 font-inter italic text-base">
-                Nessun evento trovato per i filtri selezionati.
+                {dict.no_event_found}
               </p>
             </div>
           ) : (

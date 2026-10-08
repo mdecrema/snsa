@@ -161,7 +161,8 @@
         },
         "title2": "Impara. Connettiti. Plasma il futuro",
         "text2": "Che tu voglia approfondire le tue competenze, scoprire nuove prospettive scientifiche, incontrare potenziali partner o contribuire allo sviluppo della cura della pelle a base di ingredienti naturali, gli eventi della SNSA offrono l'opportunità di entrare in contatto con una comunità impegnata a far progredire il settore.",
-        "title3": "Scopri i Prossimi Eventi e Partecipa alla Conversazione" 
+        "title3": "Scopri i Prossimi Eventi e Partecipa alla Conversazione",
+        "no_event_found": "Nessun evento trovato per i filtri selezionati."
     },
     "members": {
         "pageHeader": {

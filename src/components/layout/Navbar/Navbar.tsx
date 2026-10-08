@@ -9,6 +9,7 @@ import NavLinks from '../../ui/NavbarLink/page';
 import UserMenu from '../../ui/UserMenu/page';
 import { cookies } from 'next/headers';
 import TopUtilityBar from '../TopUtilityBar/page';
+import MobileNavbar from '../../ui/MobileNavbar/page';
 
 async function getUserFromSession() {
   const cookieStore = await cookies();
@@ -39,41 +40,47 @@ export default async function Navbar() {
   });
 
   return (
-    <header className="w-full primary_font">
-      {/* 1. Top Utility Bar */}
-      <TopUtilityBar />
+    <>
+      {/* 1. NAVBAR MOBILE (Visibile solo su schermi piccoli < 768px) */}
+      <MobileNavbar items={navItems} />
 
-      {/* 2. Logo & Branding Bar */}
-      <div className="w-full h-[130px] bg-white px-8">
-        <div className="max-w-7xl mx-auto h-full flex justify-start items-center ">
-          <Link href="/" className="flex items-center gap-5">
-            <div className="relative w-[100px] h-[100px]">
-              <Image
-                src="/images/image_logo_1_edited.png"
-                alt="Swiss Natural Skincare Association Logo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-            <div className="font-serif text-2xl font-bold leading-tight text-sixth">
-              Swiss Natural <br />
-              Skincare Association
-            </div>
-          </Link>
+      {/* 2. NAVBAR DESKTOP (Visibile solo da 768px in su) */}
+      <header className="hidden md:block w-full primary_font">
+        {/* 1. Top Utility Bar */}
+        <TopUtilityBar />
+
+        {/* 2. Logo & Branding Bar */}
+        <div className="w-full h-[130px] bg-white px-8">
+          <div className="max-w-7xl mx-auto h-full flex justify-start items-center ">
+            <Link href="/" className="flex items-center gap-5">
+              <div className="relative w-[100px] h-[100px]">
+                <Image
+                  src="/images/image_logo_1_edited.png"
+                  alt="Swiss Natural Skincare Association Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <div className="font-serif text-2xl font-bold leading-tight text-sixth">
+                Swiss Natural <br />
+                Skincare Association
+              </div>
+            </Link>
+          </div>
         </div>
-      </div>
 
-      {/* 3. Main Navigation Bar */}
-      <nav className="w-full h-[70px] bg-second px-8">
-        <div className="max-w-7xl mx-auto h-full flex justify-between items-center text-white">
-          {/* Dynamic Database Navigation Links */}
-          <NavLinks items={navItems} />
-        </div>
-      </nav>
+        {/* 3. Main Navigation Bar */}
+        <nav className="w-full h-[70px] bg-second px-8">
+          <div className="max-w-7xl mx-auto h-full flex justify-between items-center text-white">
+            {/* Dynamic Database Navigation Links */}
+            <NavLinks items={navItems} />
+          </div>
+        </nav>
 
-      {/* 4. Bottom Spacer Bar */}
-      <div className="w-full h-[10px] bg-sixth" />
-    </header>
+        {/* 4. Bottom Spacer Bar */}
+        <div className="w-full h-[10px] bg-sixth" />
+      </header>
+    </>
   );
 }

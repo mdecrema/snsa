@@ -18,8 +18,8 @@ const SLIDES = [
     id: 1,
     badge: 'Report',
     title: 'Integrating Innovation: Charting the course for AI in Dermatology',
-    link: '/news',
-    image: '/images/doctor.avif',
+    link: '/startupIncubator',
+    image: '/images/nurse_img.webp',
     alt: 'Dermatology AI',
   },
   {
@@ -27,7 +27,15 @@ const SLIDES = [
     badge: 'News',
     title: 'Natural Skincare Accreditation Standards for 2026',
     link: '/about',
-    image: '/images/nurse_img.webp',
+    image: '/images/face_1.webp',
+    alt: 'Skincare',
+  },
+  {
+    id: 3,
+    badge: 'News',
+    title: 'Bringing the natural skincare community together',
+    link: '/events',
+    image: '/images/doctor.avif',
     alt: 'Skincare',
   },
 ];
@@ -51,7 +59,7 @@ export default function Jumbotron() {
         >
           {SLIDES.map((slide) => (
             <SwiperSlide key={slide.id} className="w-full h-full">
-              <div className="grid grid-cols-1 md:grid-cols-12 h-full w-full">
+              <div className="flex flex-col-reverse md:grid md:grid-cols-12 h-full w-full">
                 {/* Text Side */}
                 <div className="md:col-span-5 bg-[#5F3F4E] flex flex-col justify-center px-8 md:pl-[100px] md:pr-[50px] text-white h-full">
                   <span className="inline-block self-start mb-3 text-white text-xs font-semibold uppercase tracking-wider py-2.5 font-montserrat">

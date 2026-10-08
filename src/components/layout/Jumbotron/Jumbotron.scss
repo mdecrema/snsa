@@ -8,9 +8,16 @@
     width: 2.5rem;
     height: 2.5rem;
     transition: opacity 0.2s ease;
+    /* Nasconde le frecce Swiper di default (mobile) */
+    display: none !important;
 
     &:hover {
       opacity: 0.7;
+    }
+
+    /* Le mostra solo da schermi medi (768px) in su */
+    @media (min-width: 768px) {
+      display: flex !important;
     }
   }
 
@@ -20,6 +27,13 @@
     left: 50% !important;
     bottom: 1.5rem !important;
     width: auto !important;
+    /* Nasconde gli indicatori della Slide attiva di default (mobile) */
+    display: none !important;
+
+    /* Le mostra gli indicatori della Slide attiva solo da schermi medi (768px) in su */
+    @media (min-width: 768px) {
+      display: flex !important;
+    }
   }
 
   /* Convert circular dots into horizontal lines */
