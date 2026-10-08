@@ -10,44 +10,29 @@ import UserMenu from '../../ui/UserMenu/page';
 import { cookies } from 'next/headers';
 import TopUtilityBar from '../TopUtilityBar/page';
 import MobileNavbar from '../../ui/MobileNavbar/page';
-
-async function getUserFromSession() {
-  const cookieStore = await cookies();
-  const token = cookieStore.get('auth_token')?.value;
-
-  if (!token) return null;
-
-  try {
-    const sessionData = JSON.parse(token);
-    if (!sessionData?.userId) return null;
-
-    // Fetch user details from DB
-    const user = await db.user.findUnique({
-      where: { id: sessionData.userId },
-      select: { firstName: true, email: true, role: true },
-    });
-
-    return user;
-  } catch {
-    return null;
-  }
-}
+import { getUserFromSession } from '@/src/features/auth/utils/session';
 
 export default async function Navbar() {
-  const navItems = await db.navItem.findMany({
-    where: { active: true },
-    orderBy: { order: 'asc' },
-  });
+  const [navItems, languages, user] = await Promise.all([
+    db.navItem.findMany({
+      where: { active: true },
+      orderBy: { order: 'asc' },
+    }),
+    db.language.findMany({ 
+      where: { active: true } 
+    }),
+    getUserFromSession(),
+  ]);
 
   return (
     <>
       {/* 1. NAVBAR MOBILE (Visibile solo su schermi piccoli < 768px) */}
-      <MobileNavbar items={navItems} />
+      <MobileNavbar items={navItems} languages={languages} user={user} />
 
       {/* 2. NAVBAR DESKTOP (Visibile solo da 768px in su) */}
       <header className="hidden md:block w-full primary_font">
         {/* 1. Top Utility Bar */}
-        <TopUtilityBar />
+        <TopUtilityBar languages={languages} user={user} />
 
         {/* 2. Logo & Branding Bar */}
         <div className="w-full h-[130px] bg-white px-8">
