@@ -18,7 +18,7 @@ export default function CommunitCards({ dict }: CommunityCardsProps) {
       title: dict.card1.title,
       description: dict.card1.description,
       buttonText: dict.card1.buttonText,
-      buttonHref: '/membership/brands',
+      buttonHref: '/', // '/membership/brands',
       imageSrc: '/images/microscopio.webp',
     },
     {
@@ -26,7 +26,7 @@ export default function CommunitCards({ dict }: CommunityCardsProps) {
       title: dict.card2.title,
       description: dict.card2.description,
       buttonText: dict.card2.buttonText,
-      buttonHref: '/membership/professionals',
+      buttonHref: '/', // '/membership/professionals',
       imageSrc: '/images/community_2.png',
     },
     {
@@ -34,7 +34,7 @@ export default function CommunitCards({ dict }: CommunityCardsProps) {
       title: dict.card3.title,
       description: dict.card3.description,
       buttonText: dict.card3.buttonText,
-      buttonHref: '/membership/individuals',
+      buttonHref: '/', // '/membership/individuals',
       imageSrc: '/images/skincare.webp',
     },
   ];

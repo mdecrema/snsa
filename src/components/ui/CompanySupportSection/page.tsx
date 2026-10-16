@@ -371,7 +371,7 @@ function GlassMosaicCard({ item, index, spanClass, Icon }: any) {
       )}
 
       {/* 2. LAYER GLASS (Sfocatura Backdrop + Sfumatura Vetro Chiaro) */}
-      <div className="absolute inset-0 z-10 bg-white/20 group-hover:bg-white/30 transition-all duration-500" />
+      <div className="absolute inset-0 z-10 bg-white/10 group-hover:bg-white/30 transition-all duration-500" />
 
       {/* 3. LIGHT SPOTLIGHT MAGNETICO (Riflesso di luce bianca al passaggio del mouse) */}
       <div
@@ -395,15 +395,15 @@ function GlassMosaicCard({ item, index, spanClass, Icon }: any) {
       </div> */}
 
       {/* 5. BOTTOM: SCHEDA DI TESTO IN VETRO SMERIGLIATO (Garantisce massima leggibilità) */}
-      <div className="relative z-20 mt-auto bg-white/85 p-5 rounded-xl shadow-lg group-hover:bg-white/85 transition-all duration-300">
-        <div className="flex items-center justify-between mb-1.5">
-          <h3 className="font-inter uppercase font-bold uppercase tracking-tight text-sm text-accent">
+      <div className="relative z-20 mt-auto bg-second/85 p-5 rounded-xl shadow-lg group-hover:bg-second/85 transition-all duration-300">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="font-inter uppercase font-bold uppercase tracking-widest text-sm text-white/85">
             {item.title}
           </h3>
-          <ArrowUpRight className="w-5 h-5 text-accent transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+          <ArrowUpRight className="w-5 h-5 text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
         </div>
 
-        <p className="text-xs font-inter leading-relaxed tracking-wider text-gray-700 line-clamp-2">
+        <p className="text-xs font-inter leading-relaxed tracking-widest text-white/65 line-clamp-2">
           {item.description}
         </p>
       </div>
