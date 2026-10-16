@@ -19,7 +19,7 @@ export default function CommunitCards({ dict }: CommunityCardsProps) {
       description: dict.card1.description,
       buttonText: dict.card1.buttonText,
       buttonHref: '/membership/brands',
-      imageSrc: '/images/brand_hero.webp',
+      imageSrc: '/images/microscopio.webp',
     },
     {
       id: 'professionals',
@@ -27,7 +27,7 @@ export default function CommunitCards({ dict }: CommunityCardsProps) {
       description: dict.card2.description,
       buttonText: dict.card2.buttonText,
       buttonHref: '/membership/professionals',
-      imageSrc: '/images/nurse_img.webp',
+      imageSrc: '/images/community_2.png',
     },
     {
       id: 'individuals',
@@ -35,7 +35,7 @@ export default function CommunitCards({ dict }: CommunityCardsProps) {
       description: dict.card3.description,
       buttonText: dict.card3.buttonText,
       buttonHref: '/membership/individuals',
-      imageSrc: '/images/doctor.avif',
+      imageSrc: '/images/skincare.webp',
     },
   ];
 

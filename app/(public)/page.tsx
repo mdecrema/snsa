@@ -57,6 +57,7 @@ export default async function Home() {
                     buttonFullWidth={true}
                     buttonText={dict.home.cards.card1.buttonText}
                     buttonHref="/qualityMark"
+                    shareable={false}
                     customHeader={
                       <div className="flex items-center gap-4 w-full">
                         <div className="relative w-28 h-28 shrink-0">
@@ -83,6 +84,7 @@ export default async function Home() {
                     buttonText={dict.home.cards.card2.buttonText}
                     buttonHref="/services"
                     imageSrc="/images/consulenza.webp"
+                    shareable={false}
                   />
         
                   {/* Column 3: Quick Links List */}

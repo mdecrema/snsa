@@ -1,6 +1,7 @@
 // src/components/ui/FeatureCard.tsx
 import Image from 'next/image';
 import Link from 'next/link';
+import { ShareButton } from '../ShareButton/page';
 
 interface FeatureCardProps {
   title: string;
@@ -15,6 +16,7 @@ interface FeatureCardProps {
   size?: 'x1' | 'x2';
   bgColor?: string;
   titleColor? : string;
+  shareable?: boolean;
 }
 
 // Config object mapping size variants to Tailwind classes
@@ -41,7 +43,8 @@ export function FeatureCard({
   customHeader,
   size = 'x1',
   bgColor = 'lightgrey',
-  titleColor = 'accent'
+  titleColor = 'accent',
+  shareable = true  
 }: FeatureCardProps) {
   const currentVariant = SIZE_VARIANTS[size];
 
@@ -60,6 +63,17 @@ export function FeatureCard({
             className="object-cover"
           />
         ) : null}
+
+        {/* Pulsante di condivisione posizionato in alto a destra */}
+        {shareable && (
+          <div className="absolute top-3 right-3 z-20">
+            <ShareButton
+              title={title}
+              text={description}
+              url={buttonHref !== '#' ? buttonHref : undefined}
+            />
+          </div>
+        )}
       </div>
 
      {/* Card Body Section */}
