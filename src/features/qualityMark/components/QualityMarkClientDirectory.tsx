@@ -122,7 +122,7 @@ const current = levels[selectedLevel];
   return (
     <div className="min-h-screen pb-20">
       
-    <PageHeader
+    {/* <PageHeader
       title={dict.pageHeader.title}
       subtitle={dict.pageHeader.subtitle}
       description={dict.pageHeader.description}
@@ -130,7 +130,7 @@ const current = levels[selectedLevel];
         { label: 'Home', href: '/', variant: 'filled' },
         { label: 'Membership', href: '/membership', variant: 'outlined' },
       ]}
-    />
+    /> */}
       
     {/* 1. HERO / INTRODUCTION: THE LABEL */}
       <section className="max-w-6xl mx-auto py-15 px-4 sm:px-6">
@@ -437,12 +437,12 @@ const current = levels[selectedLevel];
     </section>
 
       {/* SECTION 3: CALL TO ACTION BANNER */}
-      <CtaBanner
+      {/* <CtaBanner
         title={dict.ctaBanner.title}
         subtitle={dict.ctaBanner.subtitle}
         buttonText={dict.ctaBanner.buttonText}
         buttonHref="/membership"
-      />
+      /> */}
     </div>
   );
 }
