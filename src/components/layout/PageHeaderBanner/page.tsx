@@ -102,9 +102,9 @@ export default function PageHeaderBanner({ navItems, children }: PageHeaderBanne
             <h1 className="text-3xl sm:text-3xl font-bold text-white">
               {activeTitle}
             </h1>
-            <p className="text-base sm:text-xl text-white italic">
+            <h2 className="text-base sm:text-xl text-white italic">
               {activeSubtitle}
-            </p>
+            </h2>
           </div>
 
           {/* Description Body */}
