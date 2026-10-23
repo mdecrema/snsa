@@ -23,18 +23,18 @@
                 "buttonText": "FIND OUT MORE"
             }
         },
-            "cards": {
-                "card1": {
-                    "title": "SNSA Quality Mark",
-                    "description": "The SNSA Quality Mark recognizes brands and products that meet defined standards of quality and responsible natural skincare, helping consumers identify companies committed to excellence, scientific integrity and transparency.",
-                    "buttonText": "Discover the Quality Mark"
-                },
-                "card2": {
-                    "title": "Science&Natural Skincare",
-                    "description": "Through its Scientific Committee, SNSA promotes rigorous evaluation, knowledge exchange and a responsible approach to ingredients, formulations, sustainability and cosmetic communication.",
-                    "buttonText": "Our Scientific Approach"
-                }
+        "cards": {
+            "card1": {
+                "title": "SNSA Quality Mark",
+                "description": "The SNSA Quality Mark recognizes brands and products that meet defined standards of quality and responsible natural skincare, helping consumers identify companies committed to excellence, scientific integrity and transparency.",
+                "buttonText": "Discover the Quality Mark"
             },
+            "card2": {
+                "title": "Science&Natural Skincare",
+                "description": "Through its Scientific Committee, SNSA promotes rigorous evaluation, knowledge exchange and a responsible approach to ingredients, formulations, sustainability and cosmetic communication.",
+                "buttonText": "Our Scientific Approach"
+             }
+        },
         "quickLinks": {
             "title": "Scopri di più",
             "research": "Ricerca e Sviluppo",
@@ -79,6 +79,55 @@
             "title": "",
             "subtitle": "string",
             "description": "string"
+        },
+        "levelsOfRecognition": {
+            "title": "Three Levels of Recognition",
+            "subtitle": "Interactive Guide",
+            "levelCards": {
+                "basic": {
+                    "code": "LEVEL 01",
+                    "title": "Basic",
+                    "subtitle": "Essential Natural Certification",
+                    "desc": "It ensures compliance with basic criteria for natural formulation, the absence of harmful substances, and a minimum level of ingredient traceability.",
+                    "features": {
+                        "feat1": "Checking key ingredients",
+                        "feat2": "Compliant packaging",
+                        "feat3": "Basic document audit",
+                        "feat4": ""
+                    },
+                    "badgeText": "Basic Compliance"
+                },
+                "advanced": {
+                    "code": "LEVEL 02",
+                    "title": "Advanced",
+                    "subtitle": "Enhanced Sustainable Quality",
+                    "desc": "Demonstrates a superior standard for a sustainable supply chain, responsible sourcing, and a high percentage of organic ingredients.",
+                    "features": {
+                        "feat1": "All Basic requirements",
+                        "feat2": "Verifica della filiera sostenibile",
+                        "feat3": "+80% recyclable packaging",
+                        "feat4": ""
+                        },
+                    "badgeText": "Advanced Standard"
+                },
+                "excellence": {
+                    "code": "LEVEL 03",
+                    "title": "Excellence",
+                    "subtitle": "The Gold Standard of Natural Skincare",
+                    "desc": "The highest level of SNSA recognition. Reserved for products that excel across every scientific, ethical, and circular packaging parameter.",
+                    "features": {
+                        "feat1": "All Advanced requirements",
+                        "feat2": "Carbon-neutral or carbon-positive impact",
+                        "feat3": "100% biodegradable formula",
+                        "feat4": "Annual consulting priorities"
+                    },
+                    "badgeText": "Highest Excellence"
+                }
+            }
+        },
+        "howItWorks": {
+            "title": "",
+            "subtitle": ""
         },
         "ctaBanner": {
             "title": "string",

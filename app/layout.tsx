@@ -70,6 +70,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       '@type': 'PostalAddress',
       'addressCountry': 'CH',
     },
+    // Aggiunta dei profili social per l'autorità di brand
+    // 'sameAs': [
+    //   'https://www.instagram.com/tuo_profilo',
+    //   'https://www.facebook.com/tua_pagina'
+    // ],
+    // Dettaglio di contatto opzionale
+    // 'contactPoint': {
+    //   '@type': 'ContactPoint',
+    //   'contactType': 'customer service',
+    //   'email': 'info@swissnaturalskincare.ch'
+    // },
     'knowsAbout': [
       'Natural Skincare',
       'Swiss Natural Skincare',

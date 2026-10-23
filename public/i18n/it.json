@@ -80,6 +80,55 @@
             "subtitle": "string",
             "description": "string"
         },
+        "levelsOfRecognition": {
+            "title": "Tre Livelli di Riconoscimento",
+            "subtitle": "Guida interattiva",
+            "levelCards": {
+                "basic": {
+                    "code": "LIVELLO 01",
+                    "title": "Basic",
+                    "subtitle": "Essential Natural Certification",
+                    "desc": "Garantisce il rispetto dei criteri base di formulazione naturale, assenza di sostanze dannose e tracciabilità minima degli ingredienti.",
+                    "features": {
+                        "feat1": "Controllo ingredienti chiave",
+                        "feat2": "Packaging a norma",
+                        "feat3": "Audit documentale base",
+                        "feat4": ""
+                    },
+                    "badgeText": "Conformità Base"
+                },
+                "advanced": {
+                    "code": "LIVELLO 02",
+                    "title": "Advanced",
+                    "subtitle": "Qualità Sostenibile Potenziata",
+                    "desc": "Dimostra uno standard superiore di filiera sostenibile, approvvigionamento responsabile ed elevata percentuale di ingredienti biologici.",
+                    "features": {
+                        "feat1": "Tutti i requisiti Basic",
+                        "feat2": "Verifica della filiera sostenibile",
+                        "feat3": "Packaging riciclabile +80%",
+                        "feat4": ""
+                        },
+                    "badgeText": "Standard Avanzato"
+                },
+                "excellence": {
+                    "code": "LIVELLO 03",
+                    "title": "Excellence",
+                    "subtitle": "Il Punto di Riferimento per la Cura Naturale della Pelle",
+                    "desc": "Il livello più elevato di riconoscimento SNSA. Riservato ai prodotti che eccellono in ogni parametro scientifico, etico e di packaging circolare.",
+                    "features": {
+                        "feat1": "Tutti i requisiti Advanced",
+                        "feat2": "Impatto carbonio neutro o positivo",
+                        "feat3": "Formula 100% biodegradabile",
+                        "feat4": "Priorità di consulenza annuale"
+                    },
+                    "badgeText": "Massima Eccellenza"
+                }
+            }
+        },
+        "howItWorks": {
+            "title": "",
+            "subtitle": ""
+        },
         "ctaBanner": {
             "title": "string",
             "subtitle": "string",

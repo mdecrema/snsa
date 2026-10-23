@@ -11,41 +11,22 @@ import { HorizontalFeatureCard } from '@/src/components/ui/HorizontalFeatureCard
 import { AssessmentSectionSplit } from '@/src/components/ui/AssessmentSectionSplit/page';
 import { ShieldCheck, Award, Crown } from "lucide-react";
 
-const levels = [
-    {
-      id: 0,
-      code: "LEVEL 01",
-      title: "Basic",
-      subtitle: "Essential Natural Certification",
-      desc: "Garantisce il rispetto dei criteri base di formulazione naturale, assenza di sostanze dannose e tracciabilità minima degli ingredienti.",
-      features: ["Controllo ingredienti chiave", "Packaging a norma", "Audit documentale base"],
-      image: "/images/skincare_2.jpg",
-      icon: ShieldCheck,
-      badgeText: "Conformità Base",
+export interface Level {
+    id: number,
+    code: string,
+    title: string,
+    subtitle: string,
+    desc: string,
+    features: {
+      feat1: string,
+      feat2: string,
+      feat3: string,
+      feat4: string
     },
-    {
-      id: 1,
-      code: "LEVEL 02",
-      title: "Advanced",
-      subtitle: "Enhanced Sustainable Quality",
-      desc: "Dimostra uno standard superiore di filiera sostenibile, approvvigionamento responsabile ed elevata percentuale di ingredienti biologici.",
-      features: ["Tutti i requisiti Basic", "Verifica della filiera sostenibile", "Packaging riciclabile > 80%"],
-      image: "/images/laboratory-technician.jpg",
-      icon: Award,
-      badgeText: "Standard Avanzato",
-    },
-    {
-      id: 2,
-      code: "LEVEL 03",
-      title: "Excellence",
-      subtitle: "The Gold Standard of Natural Skincare",
-      desc: "Il livello più elevato di riconoscimento SNSA. Riservato ai prodotti che eccellono in ogni parametro scientifico, etico e di packaging circolare.",
-      features: ["Tutti i requisiti Advanced", "Impatto carbonio neutro o positivo", "Formula 100% biodegradabile", "Priorità di consulenza annuale"],
-      image: "/images/consulenza.webp",
-      icon: Crown,
-      badgeText: "Massima Eccellenza",
-    },
-  ];
+    image: string,
+    icon: React.ComponentType<{ className?: string }>,
+    badgeText: string,
+}
 
   const STEPS = [
         {
@@ -86,6 +67,51 @@ interface QualityMarkClientDirectoryDict {
     subtitle: string,
     description: string
   },
+  levelsOfRecognition: {
+    subtitle: string,
+    title: string,
+    levelCards: {
+      basic: {
+        code: string,
+        title: string,
+        subtitle: string,
+        desc: string,
+        features: {
+          feat1: string,
+          feat2: string,
+          feat3: string,
+          feat4: string
+        },
+        badgeText: string,
+      },
+      advanced: {
+        code: string,
+        title: string,
+        subtitle: string,
+        desc: string,
+        features: {
+          feat1: string,
+          feat2: string,
+          feat3: string,
+          feat4: string
+        },
+        badgeText: string,
+      },
+      excellence: {
+          code: string,
+          title: string,
+          subtitle: string,
+          desc: string,
+          features: {
+            feat1: string,
+            feat2: string,
+            feat3: string,
+            feat4: string
+          },
+          badgeText: string,
+      }
+    }
+  },
   ctaBanner: {
     title: string
     subtitle: string
@@ -115,6 +141,57 @@ const [isPaused, setIsPaused] = useState<boolean>(false);
 
     return () => clearInterval(interval);
   }, [isPaused]);
+
+  const levels = [
+    {
+      id: 0,
+      code: dict.levelsOfRecognition.levelCards.basic.code,
+      title: dict.levelsOfRecognition.levelCards.basic.title,
+      subtitle: dict.levelsOfRecognition.levelCards.basic.subtitle,
+      desc: dict.levelsOfRecognition.levelCards.basic.desc,
+      features: {
+        feat1: dict.levelsOfRecognition.levelCards.basic.features.feat1,
+        feat2: dict.levelsOfRecognition.levelCards.basic.features.feat2,
+        feat3: dict.levelsOfRecognition.levelCards.basic.features.feat3,
+        feat4: dict.levelsOfRecognition.levelCards.basic.features.feat4
+      },
+      image: "/images/skincare_2.jpg",
+      icon: ShieldCheck,
+      badgeText: dict.levelsOfRecognition.levelCards.basic.badgeText,
+    },
+    {
+      id: 1,
+      code: dict.levelsOfRecognition.levelCards.advanced.code,
+      title: dict.levelsOfRecognition.levelCards.advanced.title,
+      subtitle: dict.levelsOfRecognition.levelCards.advanced.subtitle,
+      desc: dict.levelsOfRecognition.levelCards.advanced.desc,
+      features: {
+        feat1: dict.levelsOfRecognition.levelCards.advanced.features.feat1,
+        feat2: dict.levelsOfRecognition.levelCards.advanced.features.feat2,
+        feat3: dict.levelsOfRecognition.levelCards.advanced.features.feat3,
+        feat4: dict.levelsOfRecognition.levelCards.advanced.features.feat4
+      },
+      image: "/images/laboratory-technician.jpg",
+      icon: Award,
+      badgeText: dict.levelsOfRecognition.levelCards.advanced.badgeText,
+    },
+    {
+      id: 2,
+      code: dict.levelsOfRecognition.levelCards.excellence.code,
+      title: dict.levelsOfRecognition.levelCards.excellence.title,
+      subtitle: dict.levelsOfRecognition.levelCards.excellence.subtitle,
+      desc: dict.levelsOfRecognition.levelCards.excellence.subtitle,
+      features: {
+        feat1: dict.levelsOfRecognition.levelCards.excellence.features.feat1,
+        feat2: dict.levelsOfRecognition.levelCards.excellence.features.feat2,
+        feat3: dict.levelsOfRecognition.levelCards.excellence.features.feat3,
+        feat4: dict.levelsOfRecognition.levelCards.excellence.features.feat4
+      },
+      image: "/images/consulenza.webp",
+      icon: Crown,
+      badgeText: dict.levelsOfRecognition.levelCards.excellence.badgeText,
+    },
+  ];
 
 const current = levels[selectedLevel];
   const IconComponent = current.icon;
@@ -177,10 +254,10 @@ const current = levels[selectedLevel];
       {/* Header */}
       <div className="text-center max-w-xl mx-auto space-y-3 mb-12">
         <span className="font-montserrat text-xs font-bold uppercase tracking-widest text-second">
-          // Interactive Guide
+          // {dict.levelsOfRecognition.subtitle}
         </span>
         <h2 className="text-3xl font-bold font-cormorant text-gray-900">
-          Three Levels of Recognition
+          {dict.levelsOfRecognition.title}
         </h2>
       </div>
 
@@ -235,7 +312,7 @@ const current = levels[selectedLevel];
               Incluso in questo livello:
             </span>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              {current.features.map((feat, idx) => (
+              {Object.values(current.features).map((feat: string, idx: number) => (
                 <li key={idx} className="flex items-center gap-2 text-xs font-inter text-gray-700">
                   <div className="p-1 rounded-full bg-second/10 text-second">
                     <Check className="w-3 h-3" />
