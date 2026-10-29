@@ -11,6 +11,12 @@ import { HorizontalFeatureCard } from '@/src/components/ui/HorizontalFeatureCard
 import { AssessmentSectionSplit } from '@/src/components/ui/AssessmentSectionSplit/page';
 import { ShieldCheck, Award, Crown } from "lucide-react";
 
+export interface Step {
+  step: string,
+  title: string,
+  desc: string
+}
+
 export interface Level {
     id: number,
     code: string,
@@ -27,39 +33,6 @@ export interface Level {
     icon: React.ComponentType<{ className?: string }>,
     badgeText: string,
 }
-
-  const STEPS = [
-        {
-          step: "01",
-          title: "Application",
-          desc: "Submission of product details, ingredient declarations, and company documentation.",
-        },
-        {
-          step: "02",
-          title: "Documentation Review",
-          desc: "Initial screening to verify completeness, compliance, and preliminary requirements.",
-        },
-        {
-          step: "03",
-          title: "Scientific Evaluation",
-          desc: "In-depth technical analysis conducted by qualified scientific committee members.",
-        },
-        {
-          step: "04",
-          title: "Technical Report",
-          desc: "Compilation of detailed findings, compliance metrics, and assessment outcome.",
-        },
-        {
-          step: "05",
-          title: "Quality Mark Decision",
-          desc: "Formal evaluation and awarding of the appropriate Quality Mark recognition level.",
-        },
-        {
-          step: "06",
-          title: "Annual Verification",
-          desc: "Ongoing monitoring and periodic reviews to ensure continuous standard adherence.",
-        },
-      ];
 
 interface QualityMarkClientDirectoryDict {
   pageHeader: {
@@ -147,6 +120,37 @@ interface QualityMarkClientDirectoryDict {
       }
     }
   },
+  howItWorks: {
+  title: string,
+  subtitle: string,
+  description: string,
+  boxes: {
+      box1: {
+        title: string,
+        description: string 
+      },
+      box2: {
+        title: string,
+        description: string 
+      },
+      box3: {
+        title: string,
+        description: string 
+      },
+      box4: {
+        title: string,
+        description: string 
+      },
+      box5: {
+        title: string,
+        description: string 
+      },
+      box6: {
+        title: string,
+        description: string 
+      }
+    }
+  }
   ctaBanner: {
     title: string
     subtitle: string
@@ -215,7 +219,7 @@ const [isPaused, setIsPaused] = useState<boolean>(false);
       code: dict.levelsOfRecognition.levelCards.excellence.code,
       title: dict.levelsOfRecognition.levelCards.excellence.title,
       subtitle: dict.levelsOfRecognition.levelCards.excellence.subtitle,
-      desc: dict.levelsOfRecognition.levelCards.excellence.subtitle,
+      desc: dict.levelsOfRecognition.levelCards.excellence.desc,
       features: {
         feat1: dict.levelsOfRecognition.levelCards.excellence.features.feat1,
         feat2: dict.levelsOfRecognition.levelCards.excellence.features.feat2,
@@ -228,8 +232,41 @@ const [isPaused, setIsPaused] = useState<boolean>(false);
     },
   ];
 
-const current = levels[selectedLevel];
+  const current = levels[selectedLevel];
   const IconComponent = current.icon;
+
+  const STEPS = [
+        {
+          step: "01",
+          title: dict.howItWorks.boxes.box1.title,
+          desc: dict.howItWorks.boxes.box1.description,
+        },
+        {
+          step: "02",
+          title: dict.howItWorks.boxes.box2.title,
+          desc: dict.howItWorks.boxes.box2.description,
+        },
+        {
+          step: "03",
+          title: dict.howItWorks.boxes.box3.title,
+          desc: dict.howItWorks.boxes.box3.description,
+        },
+        {
+          step: "04",
+          title: dict.howItWorks.boxes.box4.title,
+          desc: dict.howItWorks.boxes.box4.description,
+        },
+        {
+          step: "05",
+          title: dict.howItWorks.boxes.box5.title,
+          desc: dict.howItWorks.boxes.box5.description,
+        },
+        {
+          step: "06",
+          title: dict.howItWorks.boxes.box6.title,
+          desc: dict.howItWorks.boxes.box6.description,
+        },
+      ];
 
   return (
     <div className="min-h-screen pb-20">
@@ -395,13 +432,13 @@ const current = levels[selectedLevel];
       {/* Section Header */}
       <div className="text-center mx-auto space-y-2 max-w-2xl">
         <span className="font-mono text-xs font-bold uppercase tracking-widest text-accent">
-          // Process
+          // {dict.howItWorks.subtitle}
         </span>
         <h2 className="text-3xl md:text-4xl font-bold font-cabinet text-gray-900">
-          How It Works
+          {dict.howItWorks.title}
         </h2>
         <p className="text-sm font-inter text-gray-600 tracking-wide pt-1">
-          A rigorous, multi-stage evaluation process ensuring complete compliance and transparency.
+          {dict.howItWorks.description}
         </p>
       </div>
 

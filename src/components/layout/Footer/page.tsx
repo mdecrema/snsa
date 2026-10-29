@@ -23,14 +23,14 @@ export default function Footer() {
               />
             </div>
             <div>
-              <p className="font-bold text-sm tracking-wider uppercase leading-tight">
+              <p className="font-bold text-sm tracking-widest font-serif">
                 Swiss Natural <br /> Skincare Association
               </p>
             </div>
           </div>
 
           {/* Contact Details with Dividers */}
-          <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 text-sm font-semibold">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 text-sm tracking-wider">
             {/* <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-white" />
               <span>+41 (0)22 123 45 67</span>

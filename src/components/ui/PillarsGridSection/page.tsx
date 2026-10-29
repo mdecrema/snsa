@@ -18,6 +18,7 @@ interface PillarsGridSectionDict {
   card1: { title: string; subtitle?: string; description: string; };
   card2: { title: string; subtitle?: string; description: string; };
   card3: { title: string; subtitle?: string; description: string; };
+  buttonText: string
 }
 
 interface PillarsGridSectionProps {
@@ -72,7 +73,7 @@ export default function PillarsGridSection({ dict }: PillarsGridSectionProps) {
           {/* Column 2: Text Box 1 (Missione / Mission) */}
           <div className="h-72 md:h-80 p-6 sm:p-8 flex flex-col justify-center items-center text-center bg-white space-y-3">
             <div className="space-y-0.5 mb-6">
-              <h3 className="text-2xl sm:text-3xl">
+              <h3 className="text-2xl font-bold text-accent font-cormorant leading-tight">
                 {PILLARS_DATA[0].title}
               </h3>
               {/* <p className="text-base sm:text-lg italic text-gray-500 font-light">
@@ -99,7 +100,7 @@ export default function PillarsGridSection({ dict }: PillarsGridSectionProps) {
           {/* Column 1: Text Box 2 (Qualità / Quality) */}
           <div className="h-72 md:h-80 p-6 sm:p-8 flex flex-col justify-center items-center text-center bg-white space-y-3">
             <div className="space-y-0.5 mb-6">
-              <h3 className="text-2xl sm:text-3xl">
+              <h3 className="text-2xl font-bold text-accent font-cormorant leading-tight">
                 {PILLARS_DATA[1].title}
               </h3>
               {/* <p className="text-base sm:text-lg italic text-gray-500 font-light">
@@ -125,7 +126,7 @@ export default function PillarsGridSection({ dict }: PillarsGridSectionProps) {
           {/* Column 3: Text Box 3 (Ricerca / Research) */}
           <div className="h-72 md:h-80 p-6 sm:p-8 flex flex-col justify-center items-center text-center bg-white space-y-3">
             <div className="space-y-0.5 mb-6">
-              <h3 className="text-2xl sm:text-3xl">
+              <h3 className="text-2xl font-bold text-accent font-cormorant leading-tight">
                 {PILLARS_DATA[2].title}
               </h3>
               {/* <p className="text-base sm:text-lg italic text-gray-500 font-light">
@@ -146,7 +147,7 @@ export default function PillarsGridSection({ dict }: PillarsGridSectionProps) {
             href="/about"
             className="inline-block accent bg-accent border border-transparent text-white hover:bg-transparent hover:border-accent hover:text-accent transition-colors px-5 py-2.5 text-xs font-serif tracking-widest shadow-sm font-montserrat"
           >
-            How To Join
+            {dict.buttonText}
           </Link>
         </div>
 

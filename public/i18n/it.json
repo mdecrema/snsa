@@ -42,7 +42,7 @@
                 "buttonText": "Scopri Quality Mark"
             },
             "card2": {
-                "title": "Scienza e cura naturale della pelle",
+                "title": "Natura e Scienza della pelle",
                 "description": "Attraverso il proprio Comitato Scientifico, SNSA promuove una valutazione rigorosa, lo scambio di conoscenze e un approccio responsabile in merito a ingredienti, formulazioni, sostenibilità e comunicazione nel settore cosmetico.",
                 "buttonText": "Il nostro approccio scientifico"
             }
@@ -68,17 +68,18 @@
         },
         "pillarsGridSection": {
             "card1": {
-                "title": "Our Mission",
-                "description": "To create an independent platform for natural skincare where scientific knowledge, responsible business practices and industry collaboration can develop together."
+                "title": "La nostra missione",
+                "description": "Creare una piattaforma indipendente dedicata alla cura naturale della pelle, in cui conoscenze scientifiche, pratiche aziendali responsabili e collaborazione nel settore possano svilupparsi insieme."
             },
             "card2": {
-                "title": "Quality",
-                "description": "We promote higher standards in natural skincare through transparent criteria, independent assessment and continuous improvement."
+                "title": "Qualità",
+                "description": "Promuoviamo standard più elevati nella cura naturale della pelle attraverso criteri trasparenti, valutazioni indipendenti e un miglioramento continuo."
             },
             "card3": {
-                "title": "Research",
-                "description": "We encourage dialogue between science and industry, translating research and technical expertise into meaningful practices for skincare brands and professionals."
-            }
+                "title": "Ricerca",
+                "description": "Promuoviamo il dialogo tra scienza e industria, traducendo la ricerca e le competenze tecniche in pratiche concrete per i brand e i professionisti del settore skincare."
+            },
+            "buttonText": "Come Iscriversi"
         }
     },
     "cta": {
@@ -135,7 +136,7 @@
                     "code": "LIVELLO 01",
                     "title": "Basic",
                     "subtitle": "Essential Natural Certification",
-                    "desc": "Garantisce il rispetto dei criteri base di formulazione naturale, assenza di sostanze dannose e tracciabilità minima degli ingredienti.",
+                    "desc": "Garantisce il rispetto dei criteri di base per una formulazione naturale, un buon livello di tracciabilità degli ingredienti e chiarezza nella comunicazione.",
                     "features": {
                         "feat1": "Controllo ingredienti chiave",
                         "feat2": "Packaging a norma",
@@ -148,12 +149,12 @@
                     "code": "LIVELLO 02",
                     "title": "Advanced",
                     "subtitle": "Qualità Sostenibile Potenziata",
-                    "desc": "Dimostra uno standard superiore di filiera sostenibile, approvvigionamento responsabile ed elevata percentuale di ingredienti biologici.",
+                    "desc": "Dimostra standard di eccellenza per una filiera sostenibile, una scelta superiore di materiali per l'imballaggio e un'elevata percentuale di ingredienti biologici.",
                     "features": {
-                        "feat1": "Tutti i requisiti Basic",
-                        "feat2": "Verifica della filiera sostenibile",
-                        "feat3": "Packaging riciclabile +80%",
-                        "feat4": ""
+                        "feat1": "Requisiti avanzati",
+                        "feat2": "Attenta selezione dei materiali",
+                        "feat3": "Ingredienti biologici",
+                        "feat4": "Ottima comunicazione con i clienti"
                         },
                     "badgeText": "Standard Avanzato"
                 },
@@ -161,20 +162,47 @@
                     "code": "LIVELLO 03",
                     "title": "Excellence",
                     "subtitle": "Il Punto di Riferimento per la Cura Naturale della Pelle",
-                    "desc": "Il livello più elevato di riconoscimento SNSA. Riservato ai prodotti che eccellono in ogni parametro scientifico, etico e di packaging circolare.",
+                    "desc": "Un’eccellenza che abbraccia tutti gli ambiti esaminati dalla commissione, a testimonianza di un’intensa attività di ricerca nello sviluppo dei prodotti e di una visione orientata al futuro del settore.",
                     "features": {
-                        "feat1": "Tutti i requisiti Advanced",
-                        "feat2": "Impatto carbonio neutro o positivo",
-                        "feat3": "Formula 100% biodegradabile",
-                        "feat4": "Priorità di consulenza annuale"
+                        "feat1": "Ingredienti biologici",
+                        "feat2": "Tracciabilità rigorosa",
+                        "feat3": "Accurata selezione delle materie prime",
+                        "feat4": "Spiegazione scientifica delle proprietà"
                     },
                     "badgeText": "Massima Eccellenza"
                 }
             }
         },
         "howItWorks": {
-            "title": "",
-            "subtitle": ""
+            "title": "Come Funziona",
+            "subtitle": "Processo",
+            "description": "Un processo di valutazione rigoroso e articolato in più fasi, che garantisce piena conformità e trasparenza.",
+            "boxes": {
+                "box1": {
+                    "title": "Applicazione",
+                    "description": "Presentazione di dettagli sui prodotti, dichiarazioni degli ingredienti e documentazione aziendale."
+                },
+                "box2": {
+                    "title": "Revisione della documentazione",
+                    "description": "Verifica iniziale per accertare la completezza, la conformità e i requisiti preliminari."
+                },
+                "box3": {
+                    "title": "Valutazione scientifica",
+                    "description": "Analisi tecnica approfondita condotta da membri qualificati di un comitato scientifico."
+                },
+                "box4": {
+                    "title": "Rapporto tecnico",
+                    "description": "Raccolta di risultati dettagliati, metriche di conformità ed esito della valutazione."
+                },
+                "box5": {
+                    "title": "Decisione sul Quality Mark",
+                    "description": "Valutazione formale e conferimento del relativo livello di riconoscimento «Quality Mark»."
+                },
+                "box6": {
+                    "title": "Verifica annuale",
+                    "description": "Monitoraggio costante e revisioni periodiche per garantire il continuo rispetto degli standard."
+                }
+            }
         },
         "ctaBanner": {
             "title": "string",
@@ -363,6 +391,24 @@
             "title": "Contatti e Richieste",
             "subtitle": "Contattaci",
             "description": "Siamo a disposizione per informazioni su membership, marchio di qualità, programma di incubazione e partnership strategiche."
+        },
+        "form": {
+            "title": "Come Possiamo Aiutarvi?",
+            "firstName": "Nome",
+            "lastName": "Cognome",
+            "company": "Azienda / Organizzazione",
+            "email": "Email",
+            "phone": "Telefono",
+            "subject": "Sezione",
+            "privacyDesc1": "Ho letto l'",
+            "privacyPolicy": " Informativa sulla Privacy ",
+            "privacyDesc2": "e acconsento al trattamento dei miei dati personali.",
+            "buttonText": "Invia Messaggio",
+            "successMessage": {
+                "title": "Messaggio Inviato Correttamente!",
+                "description": "Grazie per averci contattato. Un membro del team SNSA ti risponderà a breve.",
+                "buttonText": "Invia un Altro Messaggio"
+            }
         }
     }
 }

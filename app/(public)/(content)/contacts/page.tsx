@@ -22,7 +22,7 @@ export default async function Contacts() {
                     { label: 'Companies', href: '/past-events', variant: 'outlined' },
                 ]}
             />
-            <ContactsClientDirectory />
+            <ContactsClientDirectory dict={dict.contacts} />
         </>
     )
 }

@@ -151,7 +151,7 @@ export default function MembersClientDirectory({
                 setSearchQuery('');
                 setSelectedCategory('Tutti');
               }}
-              className="mt-4 text-xs font-semibold text-[#004282] hover:underline uppercase tracking-wider font-inter"
+              className="mt-4 text-xs font-semibold text-accent hover:underline uppercase tracking-wider font-inter"
             >
               {dict.memberList.searchBar.filtersReset}
             </button>

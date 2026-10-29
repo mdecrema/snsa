@@ -78,7 +78,8 @@
             "card3": {
                 "title": "Research",
                 "description": "We encourage dialogue between science and industry, translating research and technical expertise into meaningful practices for skincare brands and professionals."
-            }
+            },
+            "buttonText": "How To Join"
         }
     },
     "cta": {
@@ -135,7 +136,7 @@
                     "code": "LEVEL 01",
                     "title": "Basic",
                     "subtitle": "Essential Natural Certification",
-                    "desc": "It ensures compliance with basic criteria for natural formulation, the absence of harmful substances, and a minimum level of ingredient traceability.",
+                    "desc": "It ensures compliance with basic criteria for natural formulation, good level of ingredient traceability and clarity in communication.",
                     "features": {
                         "feat1": "Checking key ingredients",
                         "feat2": "Compliant packaging",
@@ -148,12 +149,12 @@
                     "code": "LEVEL 02",
                     "title": "Advanced",
                     "subtitle": "Enhanced Sustainable Quality",
-                    "desc": "Demonstrates a superior standard for a sustainable supply chain, responsible sourcing, and a high percentage of organic ingredients.",
+                    "desc": "Demonstrates a superior standard for a sustainable supply chain, superior chois of materials for packaging and high level of organic ingredients.",
                     "features": {
-                        "feat1": "All Basic requirements",
-                        "feat2": "Verifica della filiera sostenibile",
-                        "feat3": "+80% recyclable packaging",
-                        "feat4": ""
+                        "feat1": "Advanced requirements",
+                        "feat2": "Carful selection of materials",
+                        "feat3": "Organic ingredients",
+                        "feat4": "Great communication to the customers"
                         },
                     "badgeText": "Advanced Standard"
                 },
@@ -161,20 +162,47 @@
                     "code": "LEVEL 03",
                     "title": "Excellence",
                     "subtitle": "The Gold Standard of Natural Skincare",
-                    "desc": "The highest level of SNSA recognition. Reserved for products that excel across every scientific, ethical, and circular packaging parameter.",
+                    "desc": "Excellence that includes all the areas examined by the commitee, which denotes intense research for product development and a vision for the future in this sector.",
                     "features": {
-                        "feat1": "All Advanced requirements",
-                        "feat2": "Carbon-neutral or carbon-positive impact",
-                        "feat3": "100% biodegradable formula",
-                        "feat4": "Annual consulting priorities"
+                        "feat1": "Organic ingredients",
+                        "feat2": "Rigorous traceability",
+                        "feat3": "Careful selection of raw materials",
+                        "feat4": "Scientific explanation of the properties"
                     },
                     "badgeText": "Highest Excellence"
                 }
             }
         },
         "howItWorks": {
-            "title": "",
-            "subtitle": ""
+            "title": "How It Works",
+            "subtitle": "Process",
+            "description": "A rigorous, multi-stage evaluation process ensuring complete compliance and transparency.",
+            "boxes": {
+                "box1": {
+                    "title": "Application",
+                    "description": "Submission of product details, ingredient declarations, and company documentation."
+                },
+                "box2": {
+                    "title": "Documentation Review",
+                    "description": "Initial screening to verify completeness, compliance, and preliminary requirements."
+                },
+                "box3": {
+                    "title": "Scientific Evaluation",
+                    "description": "In-depth technical analysis conducted by qualified scientific committee members."
+                },
+                "box4": {
+                    "title": "Technical Report",
+                    "description": "Compilation of detailed findings, compliance metrics, and assessment outcome."
+                },
+                "box5": {
+                    "title": "Quality Mark Decision",
+                    "description": "Formal evaluation and awarding of the appropriate Quality Mark recognition level."
+                },
+                "box6": {
+                    "title": "Annual Verification",
+                    "description": "Ongoing monitoring and periodic reviews to ensure continuous standard adherence."
+                }
+            }
         },
         "ctaBanner": {
             "title": "string",
@@ -383,6 +411,24 @@
             "title": "Contatti e Richieste",
             "subtitle": "Contattaci",
             "description": "Siamo a disposizione per informazioni su membership, marchio di qualità, programma di incubazione e partnership strategiche."
+        },
+        "form": {
+            "title": "How Can We Help?",
+            "firstName": "Name",
+            "lastName": "Surname",
+            "company": "Company / Organisation",
+            "email": "Email",
+            "phone": "Phone",
+            "subject": "Subject",
+            "privacyDesc1": "I have read the",
+            "privacyPolicy": " Privacy Policy ",
+            "privacyDesc2": "and consent to the processing of my personal data.",
+            "buttonText": "Send Message",
+            "successMessage": {
+                "title": "Message Sent Successfully!",
+                "description": "Thank you for reaching out. A member of the SNSA team will get back to you shortly.",
+                "buttonText": "Send Another Message"
+            }
         }
     }
 }

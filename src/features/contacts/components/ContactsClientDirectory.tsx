@@ -26,7 +26,32 @@ const CONTACT_BLOCKS = [
   },
 ];
 
-export default function ContactsClientDirectory() {
+interface ContactsClientDirectoryDict {
+  form: {
+    title: string,
+    firstName: string,
+    lastName: string,
+    company: string,
+    email: string,
+    phone: string,
+    subject: string,
+    privacyDesc1: string,
+    privacyPolicy: string,
+    privacyDesc2: string,
+    buttonText: string,
+    successMessage: {
+      title: string,
+      description: string,
+      buttonText: string
+    }
+  } 
+}
+
+interface Props {
+  dict: ContactsClientDirectoryDict;
+}
+
+export default function ContactsClientDirectory({dict}: Props) {
   return (
     <section className="relative max-w-6xl mx-auto py-20 px-4 sm:px-6 lg:px-8  border-t border-gray-200">
 
@@ -82,7 +107,7 @@ export default function ContactsClientDirectory() {
 
         {/* COLONNA DESTRA: Componente Form */}
         <div className="lg:col-span-7">
-          <ContactForm />
+          <ContactForm dict={dict.form} />
         </div>
 
       </div>

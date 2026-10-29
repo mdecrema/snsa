@@ -13,7 +13,31 @@ const SUBJECT_OPTIONS = [
   "Other",
 ];
 
-export default function ContactForm() {
+interface ContactFormDict {
+  title: string,
+  firstName: string,
+  lastName: string,
+  company: string,
+  email: string,
+  phone: string,
+  subject: string,
+  privacyDesc1: string,
+  privacyPolicy: string,
+  privacyDesc2: string,
+  buttonText: string,
+  successMessage: {
+    title: string,
+    description: string,
+    buttonText: string
+  }
+}
+
+
+interface Props {
+  dict: ContactFormDict;
+}
+
+export default function ContactForm({dict}: Props) {
   const [formData, setFormData] = useState({
     name: "",
     surname: "",
@@ -43,23 +67,23 @@ export default function ContactForm() {
       <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
 
       <h3 className="font-cabinet text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-6">
-        How Can We Help?
+        {dict.title}
       </h3>
 
       {isSubmitted ? (
         <div className="py-12 text-center space-y-4">
           <CheckCircle2 className="w-16 h-16 text-accent mx-auto animate-bounce" />
           <h4 className="font-cabinet text-2xl font-bold text-gray-900">
-            Message Sent Successfully!
+            {dict.successMessage.title}
           </h4>
           <p className="font-inter text-sm text-gray-600 max-w-sm mx-auto">
-            Thank you for reaching out. A member of the SNSA team will get back to you shortly.
+            {dict.successMessage.description}
           </p>
           <button
             onClick={() => setIsSubmitted(false)}
             className="mt-4 text-xs font-mono font-bold text-accent underline tracking-wider uppercase hover:opacity-80"
           >
-            Send another message
+            {dict.successMessage.buttonText}
           </button>
         </div>
       ) : (
@@ -68,7 +92,7 @@ export default function ContactForm() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1">
               <label className="block text-xs font-mono font-bold uppercase tracking-wider text-gray-700">
-                Name *
+                {dict.firstName} *
               </label>
               <input
                 type="text"
@@ -82,7 +106,7 @@ export default function ContactForm() {
 
             <div className="space-y-1">
               <label className="block text-xs font-mono font-bold uppercase tracking-wider text-gray-700">
-                Surname *
+                {dict.lastName} *
               </label>
               <input
                 type="text"
@@ -98,7 +122,7 @@ export default function ContactForm() {
           {/* Company / Organisation */}
           <div className="space-y-1">
             <label className="block text-xs font-mono font-bold uppercase tracking-wider text-gray-700">
-              Company / Organisation
+              {dict.company}
             </label>
             <input
               type="text"
@@ -113,7 +137,7 @@ export default function ContactForm() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1">
               <label className="block text-xs font-mono font-bold uppercase tracking-wider text-gray-700">
-                Email *
+                {dict.email} *
               </label>
               <input
                 type="email"
@@ -127,7 +151,7 @@ export default function ContactForm() {
 
             <div className="space-y-1">
               <label className="block text-xs font-mono font-bold uppercase tracking-wider text-gray-700">
-                Phone
+                {dict.phone}
               </label>
               <input
                 type="tel"
@@ -142,7 +166,7 @@ export default function ContactForm() {
           {/* Menu a Tendina (Subject Select) */}
           <div className="space-y-1">
             <label className="block text-xs font-mono font-bold uppercase tracking-wider text-gray-700">
-              Subject *
+              {dict.subject} *
             </label>
             <select
               value={formData.subject}
@@ -170,11 +194,11 @@ export default function ContactForm() {
               className="mt-1 h-4 w-4 rounded border-gray-300 text-accent focus:ring-accent accent-accent cursor-pointer"
             />
             <label htmlFor="privacy" className="text-xs font-inter leading-relaxed text-gray-700 cursor-pointer">
-              I have read the{" "}
+              {dict.privacyDesc1}{" "}
               <a href="/privacy" className="underline font-semibold hover:text-accent">
-                Privacy Policy
+                {dict.privacyPolicy}
               </a>{" "}
-              and consent to the processing of my personal data.
+              {dict.privacyDesc2}
             </label>
           </div>
 
@@ -188,7 +212,7 @@ export default function ContactForm() {
               <span>Sending...</span>
             ) : (
               <>
-                <span>Send Message</span>
+                <span>{dict.buttonText}</span>
                 <Send className="w-4 h-4" />
               </>
             )}
