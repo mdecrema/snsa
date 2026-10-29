@@ -25,10 +25,10 @@ export default function FeaturedEventsSection({ events, labels }: Props) {
         {/* Header Row */}
         <div className="flex items-center justify-between border-b border-gray-200 pb-4">
           <div className="space-y-0.5">
-            <h2 className="text-2xl sm:text-3xl tracking-tight">
+            <h2 className="text-2xl font-bold text-accent font-cormorant leading-tight">
               {labels.title}
             </h2>
-            <p className="text-base sm:text-lg italic text-gray-500 font-light">
+            <p className="text-sm text-gray-500 font-inter">
               {labels.subtitle}
             </p>
           </div>

@@ -6,33 +6,45 @@
             "welcome": "Welcome"
     },
     "home": {
+        "jumbotron": {
+            "jumbo1": {
+                "title": "Sostenere la prossima generazione di brand di skincare"
+            },
+            "jumbo2": {
+                "title": "Standard di accreditamento per la cura della pelle naturale 2026"
+            },
+            "jumbo3": {
+                "title": "Unire la community della cura della pelle naturale"
+            },
+            "buttonText": "Scopri di più"
+        },
         "community_cards": {
             "card1": {
-                "title": "Showcase & Connect",
-                "description": "Join SNSA to showcase your company, share your expertise and connect with the people shaping the natural skincare industry. Meet experienced formulators, marketing specialists, scientists, influencers and other industry professionals. Consider also the opportunity to adopt the Quality Mark of SNSA to get officially recognised by our professional committee.",
-                "buttonText": "FIND OUT MORE"
+                "title": "Metti in mostra e connettiti",
+                "description": "Unisciti a SNSA per mettere in luce la tua azienda, condividere le tue competenze ed entrare in contatto con le figure che stanno plasmando il settore della cosmesi naturale. Incontra formulatori esperti, specialisti del marketing, scienziati, influencer e altri professionisti del settore. Valuta inoltre la possibilità di adottare il Marchio di Qualità SNSA, per ottenere un riconoscimento ufficiale da parte del nostro comitato di esperti.",
+                "buttonText": "Scopri di più"
             },
             "card2": {
-                "title": "Showcase & Connect",
-                "description": "Join SNSA to showcase your company, share your expertise and connect with the people shaping the natural skincare industry. Meet experienced formulators, marketing specialists, scientists, influencers and other industry professionals. Consider also the opportunity to adopt the Quality Mark of SNSA to get officially recognised by our professional committee.",
-                "buttonText": "FIND OUT MORE"
+                "title": "Eleva la tua pratica",
+                "description": "Che tu gestisca un centro estetico, lavori come estetista, specialista della cura della pelle o professionista della medicina estetica, SNSA ti offre l'accesso a una rete di grande valore. Scopri le ultime tendenze e i marchi più interessanti nel campo della cura naturale della pelle. Partecipa a percorsi formativi dedicati ed eventi con esperti, e rafforza la tua visibilità professionale all'interno di una comunità di settore in costante crescita.",
+                "buttonText": "Scopri di più"
             },
             "card3": {
-                "title": "Showcase & Connect",
-                "description": "Join SNSA to showcase your company, share your expertise and connect with the people shaping the natural skincare industry. Meet experienced formulators, marketing specialists, scientists, influencers and other industry professionals. Consider also the opportunity to adopt the Quality Mark of SNSA to get officially recognised by our professional committee.",
-                "buttonText": "FIND OUT MORE"
+                "title": "Potenzia la tua cura della pelle",
+                "description": "Ti appassiona la cura della pelle e hai a cuore la tua salute? Unisciti a SNSA per rimanere informato sui più recenti prodotti naturali per la cura della pelle, sulle tendenze emergenti, sulle scoperte scientifiche e sulle innovazioni del settore. Resta aggiornato e acquisisci una maggiore consapevolezza sui prodotti che utilizzi ogni giorno.",
+                "buttonText": "Scopri di più"
             }
         },
         "cards": {
             "card1": {
                 "title": "SNSA Quality Mark",
-                "description": "L'Associazione Svizzera per la Cosmesi Naturale unisce professionisti e laboratori...",
-                "buttonText": "Discover the Quality Mark"
+                "description": "Il marchio di qualità SNSA riconosce brand e prodotti che soddisfano determinati standard di qualità e di cura naturale e responsabile della pelle, aiutando i consumatori a individuare le aziende che si impegnano a favore dell'eccellenza, dell'integrità scientifica e della trasparenza.",
+                "buttonText": "Scopri Quality Mark"
             },
             "card2": {
-                "title": "I Nostri Servizi",
-                "description": "Forniamo consulenza e certificazioni ufficiali per i brand di skincare...",
-                "buttonText": "Discover the Quality Mark"
+                "title": "Scienza e cura naturale della pelle",
+                "description": "Attraverso il proprio Comitato Scientifico, SNSA promuove una valutazione rigorosa, lo scambio di conoscenze e un approccio responsabile in merito a ingredienti, formulazioni, sostenibilità e comunicazione nel settore cosmetico.",
+                "buttonText": "Il nostro approccio scientifico"
             }
         },
         "quickLinks": {
@@ -79,6 +91,41 @@
             "title": "",
             "subtitle": "string",
             "description": "string"
+        },
+        "label": {
+            "title": "The Label",
+            "subtitle": "Standard di certificazione",
+            "description": "Tutto è trasparente: le persone che si occupano della valutazione sono identificate pubblicamente e l'associazione è un'organizzazione aperta, impegnata a condividere i propri risultati e le proprie valutazioni. Il Marchio di Qualità viene assegnato sulla base di requisiti specifici, definiti con un approccio pragmatico e pensati per valutare l'impatto effettivo del prodotto sull'ambiente e sul benessere.",
+            "card": {
+                "title": "Trasparente e indipendente",
+                "description": "Il protocollo di valutazione è pienamente pubblico e trasparente. Anche i membri del comitato scientifico, responsabili della valutazione, sono resi noti pubblicamente e vengono selezionati con cura dall'associazione in base alle loro competenze in svariati ambiti."
+            }
+        },
+        "assessmentSection": {
+            "title": "Una valutazione completa",
+            "subtitle": "Cosa valutiamo",
+            "criterias": {
+                "criteria1": {
+                    "title": "Ingredienti e formulazione",
+                    "description": "Ingredienti naturali e di origine naturale, scelte di formulazione e composizione complessiva."
+                },
+                "criteria2": {
+                    "title": "Origine e lavorazione",
+                    "description": "Tracciabilità, approvvigionamento, coltivazione, raccolta e lavorazione delle principali materie prime."
+                },
+                "criteria3": {
+                    "title": "Etica e sostenibilità",
+                    "description": "Impatto ambientale, biodiversità, approvvigionamento responsabile e benessere animale."
+                },
+                "criteria4": {
+                    "title": "Confezionamento",
+                    "description": "Scelte dei materiali, riciclabilità, utilizzo delle risorse e imballaggi secondari superflui."
+                },
+                "criteria5": {
+                    "title": "Trasparenza e dichiarazioni",
+                    "description": "Accuratezza e trasparenza della comunicazione sui prodotti, delle dichiarazioni ambientali e del marketing."
+                }
+            }
         },
         "levelsOfRecognition": {
             "title": "Tre Livelli di Riconoscimento",
@@ -221,13 +268,18 @@
         },
         "memberList": {
             "searchBar": {
+                "placeholder": "Cerca per nome, città (es. Zürich, Lugano) o parola chiave...",
                 "filterBy": "Filtra per",
                 "all": "Tutti",
                 "brands": "Marchi",
                 "laboratories": "Laboratori",
                 "professionals": "Professionisti",
                 "retailers": "Rivenditori",
-                "partners": "Partners"
+                "partners": "Partners",
+                "found": "Trovati",
+                "certifiedMembers": "Soci certificati",
+                "noMembersFound": "Nessun socio trovato per la ricerca effettuata",
+                "filtersReset": "Reset Filtri"
             },
             "memberCard": {
                

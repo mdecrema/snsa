@@ -67,6 +67,41 @@ interface QualityMarkClientDirectoryDict {
     subtitle: string,
     description: string
   },
+  label: {
+    title: string,
+    subtitle: string,
+    description: string,
+    card: {
+      title: string,
+      description: string
+    }
+  },
+  assessmentSection: {
+    title: string,
+    subtitle: string,
+    criterias: {
+      criteria1: {
+        title: string,
+        description: string
+      },
+      criteria2: {
+        title: string,
+        description: string
+      },
+      criteria3: {
+        title: string,
+        description: string
+      },
+      criteria4: {
+        title: string,
+        description: string
+      },
+      criteria5: {
+        title: string,
+        description: string
+      },
+    }
+  },
   levelsOfRecognition: {
     subtitle: string,
     title: string,
@@ -217,25 +252,24 @@ const current = levels[selectedLevel];
         {/* Titolo e Badge */}
         <div className="lg:col-span-5 space-y-3">
           <span className="font-montserrat text-xs font-bold uppercase tracking-widest text-second">
-            // Certification Standard
+            // {dict.label.subtitle }
           </span>
           <h1 className="text-3xl font-bold font-cormorant text-gray-900 leading-tight">
-            The Label
+            {dict.label.title }
           </h1>
         </div>
 
         {/* Testo Introduttivo */}
         <div className="lg:col-span-7 space-y-6 lg:pt-2">
           <p className="text-sm font-inter text-gray-700 leading-relaxed tracking-wide">
-            Everything is transparent: the people behind the assessment are publicly identified, and the association is an open organisation committed to sharing its results and evaluations.
-            The Quality Mark is awarded based on specific requirements established with a pragmatic approach, designed to assess the product’s actual impact on the environment and on well-being.
+            {dict.label.description}
           </p>
           <div className="p-6 bg-[#FBFBFB] border-l-4 border-l-second border-y border-r border-gray-200 space-y-2">
             <span className="text-xs font-montserrat font-bold text-second uppercase tracking-widest block">
-              Transparent & Independent
+              {dict.label.card.title}
             </span>
             <p className="text-sm font-inter text-gray-600 leading-relaxed">
-              The assessment protocol is fully public and transparent. The members of the scientific committee, responsible for the evaluation, are also publicly identified and are carefully selected by the association based on their expertise across a wide range of fields.
+              {dict.label.card.description}
             </p>
           </div>
         </div>
@@ -245,7 +279,7 @@ const current = levels[selectedLevel];
     {/* 2. WHAT WE ASSESS (I 5 CRITERI DI VALUTAZIONE) */}
     <section className="max-w-6xl mx-auto py-15 px-4 sm:px-6">
         
-      <AssessmentSectionSplit></AssessmentSectionSplit>
+      <AssessmentSectionSplit dict={dict.assessmentSection} ></AssessmentSectionSplit>
 
     </section>
 

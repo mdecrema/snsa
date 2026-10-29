@@ -6,21 +6,33 @@
         "welcome": "Benvenuto"
     },
     "home": {
+        "jumbotron": {
+            "jumbo1": {
+                "title": "Supporting the next generation of skincare brands"
+            },
+            "jumbo2": {
+                "title": "Natural Skincare Accreditation Standards for 2026"
+            },
+            "jumbo3": {
+                "title": "Bringing the natural skincare community together"
+            },
+            "buttonText": "Read More"
+        },
         "community_cards": {
             "card1": {
                 "title": "Showcase & Connect",
                 "description": "Join SNSA to showcase your company, share your expertise and connect with the people shaping the natural skincare industry. Meet experienced formulators, marketing specialists, scientists, influencers and other industry professionals. Consider also the opportunity to adopt the Quality Mark of SNSA to get officially recognised by our professional committee.",
-                "buttonText": "FIND OUT MORE"
+                "buttonText": "Read More"
             },
             "card2": {
                 "title": "Elevate Your Practice",
                 "description": "Whether you run a beauty salon, work as an aesthetician, skincare specialist or aesthetic medicine professional, SNSA gives you access to a valuable network. Discover the latest trends and brands in natural skincare. Take part in dedicated training and expert events and strengthen your professional visibility within a growing industry community.",
-                "buttonText": "FIND OUT MORE"
+                "buttonText": "Read More"
             },
             "card3": {
                 "title": "Empower Your Skincare",
                 "description": "Are you passionate about skincare and conscious about your health? Join SNSA to stay informed about the latest natural skincare products, emerging trends, scientific discoveries and innovations. Stay up to date and become increasingly aware of the products you use every day.",
-                "buttonText": "FIND OUT MORE"
+                "buttonText": "Read More"
             }
         },
         "cards": {
@@ -79,6 +91,41 @@
             "title": "",
             "subtitle": "string",
             "description": "string"
+        },
+        "label": {
+            "title": "The Label",
+            "subtitle": "Certification Standard",
+            "description": "Everything is transparent: the people behind the assessment are publicly identified, and the association is an open organisation committed to sharing its results and evaluations. The Quality Mark is awarded based on specific requirements established with a pragmatic approach, designed to assess the product’s actual impact on the environment and on well-being.",
+            "card": {
+                "title": "Transparent & Independent",
+                "description": "The assessment protocol is fully public and transparent. The members of the scientific committee, responsible for the evaluation, are also publicly identified and are carefully selected by the association based on their expertise across a wide range of fields."
+            }
+        },
+        "assessmentSection": {
+            "title": "A Comprehensive Evaluation",
+            "subtitle": "What We Assess",
+            "criterias": {
+                "criteria1": {
+                    "title": "Ingredients & Formulation",
+                    "description": "Natural and natural-origin ingredients, formulation choices and overall composition."
+                },
+                "criteria2": {
+                    "title": "Origin & Processing",
+                    "description": "Traceability, sourcing, cultivation, harvesting and processing of key raw materials."
+                },
+                "criteria3": {
+                    "title": "Ethics & Sustainability",
+                    "description": "Environmental impact, biodiversity, responsible sourcing and animal welfare."
+                },
+                "criteria4": {
+                    "title": "Packaging",
+                    "description": "Material choices, recyclability, resource use and unnecessary secondary packaging."
+                },
+                "criteria5": {
+                    "title": "Transparency & Claims",
+                    "description": "Accuracy and transparency of product communication, environmental claims and marketing."
+                }
+            }
         },
         "levelsOfRecognition": {
             "title": "Three Levels of Recognition",
@@ -221,13 +268,18 @@
         },
         "memberList": {
             "searchBar": {
+                "placeholder": "Search by name, city (e.g., Zürich, Lugano), or keyword...",
                 "filterBy": "Filter by",
                 "all": "All",
                 "brands": "Brands",
                 "laboratories": "Laboratories",
                 "professionals": "Professionals",
                 "retailers": "Retailers",
-                "partners": "Partners"
+                "partners": "Partners",
+                "found": "Found",
+                "certifiedMembers": "Certified members",
+                "noMembersFound": "No member found for the search performed",
+                "filtersReset": "Reset Filters"
             },
             "memberCard": {
                

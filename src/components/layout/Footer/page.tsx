@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import { FaInstagram, FaFacebook, FaEnvelope, FaLinkedin, FaLinkedinIn } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -30,17 +31,17 @@ export default function Footer() {
 
           {/* Contact Details with Dividers */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 text-sm font-semibold">
-            <div className="flex items-center gap-2">
+            {/* <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-white" />
               <span>+41 (0)22 123 45 67</span>
             </div>
 
-            <span className="hidden sm:inline text-white/40">|</span>
+            <span className="hidden sm:inline text-white/40">|</span> */}
 
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-white" />
               <a href="mailto:info@snsa.ch" className="hover:underline">
-                info@snsa.ch
+                info@swissnaturalskincare.ch
               </a>
             </div>
 
@@ -48,7 +49,7 @@ export default function Footer() {
 
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4 text-white shrink-0" />
-              <span>Bahnhofstrasse 10, 8001 Zürich, Switzerland</span>
+              <span>Switzerland</span>
             </div>
           </div>
 
@@ -57,31 +58,31 @@ export default function Footer() {
         {/* MIDDLE SECTION: Social Icons (Aligned Right) */}
         <div className="flex justify-end items-center gap-3 pt-2">
           <a
-            href="https://facebook.com"
+            href="https://www.linkedin.com/company/swiss-natural-skincare-association/home/?viewAsMember=true"
+            target="_blank"
+            rel="noreferrer"
+            className="w-8 h-8 rounded-full bg-white text-[#445238] flex items-center justify-center hover:bg-gray-200 transition-colors"
+            aria-label="Linkedin"
+          >
+            <FaLinkedin className="w-4 h-4 fill-current stroke-none" />
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=61595892236106"
             target="_blank"
             rel="noreferrer"
             className="w-8 h-8 rounded-full bg-white text-[#445238] flex items-center justify-center hover:bg-gray-200 transition-colors"
             aria-label="Facebook"
           >
-            <Mail className="w-4 h-4 fill-current stroke-none" />
+            <FaFacebook className="w-4 h-4 fill-current stroke-none" />
           </a>
           <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noreferrer"
-            className="w-8 h-8 rounded-full bg-white text-[#445238] flex items-center justify-center hover:bg-gray-200 transition-colors"
-            aria-label="LinkedIn"
-          >
-            <Mail className="w-4 h-4 fill-current stroke-none" />
-          </a>
-          <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/snsa_association?dlrf=MTZmamZmMHFjZWZjYw=="
             target="_blank"
             rel="noreferrer"
             className="w-8 h-8 rounded-full bg-white text-[#445238] flex items-center justify-center hover:bg-gray-200 transition-colors"
             aria-label="Instagram"
           >
-            <Mail className="w-4 h-4 stroke-[2.5]" />
+            <FaInstagram className="w-4 h-4 stroke-[2.5]" />
           </a>
         </div>
 

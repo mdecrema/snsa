@@ -12,35 +12,56 @@ import 'swiper/css/effect-fade';
 
 // 1. Direct SCSS import (non-module)
 import './Jumbotron.scss';
+import { getLocalizedField } from '@/lib/utils';
+import { useLanguage } from '@/src/context/LanguageContext';
 
-const SLIDES = [
-  {
-    id: 1,
-    badge: 'Report',
-    title: 'Integrating Innovation: Charting the course for AI in Dermatology',
-    link: '/startupIncubator',
-    image: '/images/nurse_img.webp',
-    alt: 'Dermatology AI',
+interface JumbotronDict {
+  jumbo1: {
+    title: string
   },
-  {
-    id: 2,
-    badge: 'News',
-    title: 'Natural Skincare Accreditation Standards for 2026',
-    link: '/about',
-    image: '/images/face_1.webp',
-    alt: 'Skincare',
+  jumbo2: {
+    title: string
   },
-  {
-    id: 3,
-    badge: 'News',
-    title: 'Bringing the natural skincare community together',
-    link: '/events',
-    image: '/images/doctor.avif',
-    alt: 'Skincare',
+  jumbo3: {
+    title: string
   },
-];
+  buttonText: string
+}
+interface JumbotronProps {
+  dict: JumbotronDict;
+}
 
-export default function Jumbotron() {
+export default function Jumbotron({ dict }: JumbotronProps) {
+  const { locale } = useLanguage();
+
+  const SLIDES = [
+    {
+      id: 1,
+      badge: 'Report',
+      title: dict.jumbo1.title,
+      link: '/startupIncubator',
+      image: '/images/jumbo_1.png',
+      alt: 'Dermatology',
+    },
+    {
+      id: 2,
+      badge: 'News',
+      title: dict.jumbo2.title,
+      link: '/about',
+      image: '/images/face_1.webp',
+      alt: 'Skincare',
+    },
+    {
+      id: 3,
+      badge: 'News',
+      title: dict.jumbo3.title,
+      link: '/events',
+      image: '/images/jumbo_2.png',
+      alt: 'Skincare',
+    },
+  ];
+
+  
   return (
     <section className="w-full">
       {/* 2. Plain string ID */}
@@ -57,43 +78,46 @@ export default function Jumbotron() {
           navigation={true}
           className="w-full h-full text-white"
         >
-          {SLIDES.map((slide) => (
-            <SwiperSlide key={slide.id} className="w-full h-full">
-              <div className="flex flex-col-reverse md:grid md:grid-cols-12 h-full w-full">
-                {/* Text Side */}
-                <div className="md:col-span-5 bg-[#5F3F4E] flex flex-col justify-center px-8 md:pl-[100px] md:pr-[50px] text-white h-full">
-                  <span className="inline-block self-start mb-3 text-white text-xs font-semibold uppercase tracking-wider py-2.5 font-montserrat">
-                    {slide.badge}
-                  </span>
+          {SLIDES.map((slide) => {
+            const title = getLocalizedField(slide.title, locale, 'en');
+            return (
+              <SwiperSlide key={slide.id} className="w-full h-full">
+                <div className="flex flex-col-reverse md:grid md:grid-cols-12 h-full w-full">
+                  {/* Text Side */}
+                  <div className="md:col-span-5 bg-[#5F3F4E] flex flex-col justify-center px-8 md:pl-[100px] md:pr-[50px] text-white h-full">
+                    <span className="inline-block self-start mb-3 text-white text-xs font-semibold uppercase tracking-wider py-2.5 font-montserrat">
+                      {slide.badge}
+                    </span>
 
-                  <h2 className="text-2xl lg:text-3xl font-bold mb-4 leading-[1.3] border-t border-white py-5">
-                    {slide.title}
-                  </h2>
+                    <h2 className="text-2xl lg:text-3xl font-bold mb-4 leading-[1.3] border-t border-white py-5">
+                      {slide.title}
+                    </h2>
 
-                  <div>
-                    <Link
-                      href={slide.link}
-                      className="tracking-widest inline-block border border-white text-white px-5 py-2.5 hover:bg-white hover:text-accent text-xs transition-colors font-montserrat"
-                    >
-                      Read More
-                    </Link>
+                    <div>
+                      <Link
+                        href={slide.link}
+                        className="tracking-widest inline-block border border-white text-white px-5 py-2.5 hover:bg-white hover:text-accent text-xs transition-colors font-montserrat"
+                      >
+                        {dict.buttonText}
+                      </Link>
+                    </div>
+                  </div>
+
+                  {/* Image Side */}
+                  <div className="md:col-span-7 relative h-full w-full">
+                    <Image
+                      src={slide.image}
+                      alt={slide.alt}
+                      fill
+                      priority={slide.id === 1}
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 58vw"
+                    />
                   </div>
                 </div>
-
-                {/* Image Side */}
-                <div className="md:col-span-7 relative h-full w-full">
-                  <Image
-                    src={slide.image}
-                    alt={slide.alt}
-                    fill
-                    priority={slide.id === 1}
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 58vw"
-                  />
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
+              </SwiperSlide>
+          );
+          })}
         </Swiper>
       </div>
     </section>

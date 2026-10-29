@@ -1,31 +1,69 @@
 import Image from "next/image";
 
-export function AssessmentSectionSplit() {
+export interface Criteria {
+  num: string,
+  title: string,
+  desc: string,
+}
+
+
+interface AssessmentSectionSplitDict {
+  title: string,
+  subtitle: string,
+  criterias: {
+    criteria1: {
+      title: string,
+      description: string
+    },
+    criteria2: {
+      title: string,
+      description: string
+    },
+    criteria3: {
+      title: string,
+      description: string
+    },
+    criteria4: {
+      title: string,
+      description: string
+    },
+    criteria5: {
+      title: string,
+      description: string
+    },
+  }
+}
+
+interface Props {
+  dict: AssessmentSectionSplitDict;
+}
+
+export function AssessmentSectionSplit({dict}: Props) {
   const criteria = [
     {
       num: "01",
-      title: "Ingredients & Formulation",
-      desc: "Natural and natural-origin ingredients, formulation choices and overall composition.",
+      title: dict.criterias.criteria1.title,
+      desc: dict.criterias.criteria1.description,
     },
     {
       num: "02",
-      title: "Origin & Processing",
-      desc: "Traceability, sourcing, cultivation, harvesting and processing of key raw materials.",
+      title: dict.criterias.criteria2.title,
+      desc: dict.criterias.criteria2.description,
     },
     {
       num: "03",
-      title: "Ethics & Sustainability",
-      desc: "Environmental impact, biodiversity, responsible sourcing and animal welfare.",
+      title: dict.criterias.criteria3.title,
+      desc: dict.criterias.criteria3.description,
     },
     {
       num: "04",
-      title: "Packaging",
-      desc: "Material choices, recyclability, resource use and unnecessary secondary packaging.",
+      title: dict.criterias.criteria4.title,
+      desc: dict.criterias.criteria4.description,
     },
     {
       num: "05",
-      title: "Transparency & Claims",
-      desc: "Accuracy and transparency of product communication, environmental claims and marketing.",
+      title: dict.criterias.criteria5.title,
+      desc: dict.criterias.criteria5.description,
     },
   ];
 
@@ -34,10 +72,10 @@ export function AssessmentSectionSplit() {
       {/* Header */}
       <div className="space-y-2 mb-12">
         <span className="font-montserrat text-xs font-bold uppercase tracking-widest text-second">
-          // What We Assess
+          // {dict.subtitle}
         </span>
         <h2 className="text-3xl md:text-3xl font-bold font-cormorant text-gray-900">
-          A Comprehensive Evaluation
+          {dict.title}
         </h2>
       </div>
 

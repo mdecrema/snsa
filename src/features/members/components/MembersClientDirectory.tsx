@@ -21,13 +21,18 @@ interface MembersClientDirectoryDict {
   memberList: {
     searchBar: {
       [key: string]: string;
+      placeholder: string,
       filterBy: string
       all: string
       brands: string
       laboratories: string
       professionals: string
       retailers: string
-      partners: string
+      partners: string,
+      found: string,
+      certifiedMembers: string,
+      noMembersFound: string,
+      filtersReset: string
     }
   },
   ctaBanner: {
@@ -85,7 +90,7 @@ export default function MembersClientDirectory({
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 font-inter" />
             <input
               type="text"
-              placeholder="Cerca per nome, città (es. Zürich, Lugano) o parola chiave..."
+              placeholder={dict.memberList.searchBar.placeholder}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-12 pr-4 py-3 border border-gray-200 text-[#1A1A1A] placeholder-gray-400 font-inter focus:outline-none focus:border-[#004282] transition-all text-sm font-light"
@@ -132,14 +137,14 @@ export default function MembersClientDirectory({
       <section className="max-w-6xl mx-auto px-6 py-6">
         <div className="flex justify-between items-center mb-6 border-b border-gray-200 pb-3">
           <p className="text-xs uppercase tracking-widest text-gray-500 font-light font-inter">
-            Trovati <span className="text-accent font-semibold">{filteredMembers.length}</span> soci certificati
+            {dict.memberList.searchBar.found} <span className="text-accent font-semibold">{filteredMembers.length}</span> {dict.memberList.searchBar.certifiedMembers}
           </p>
         </div>
 
         {filteredMembers.length === 0 ? (
           <div className="bg-white p-12 text-center border border-dashed border-gray-300">
             <p className="text-gray-500 font-inter italic text-lg">
-              Nessun socio trovato per la ricerca effettuata.
+              {dict.memberList.searchBar.noMembersFound}
             </p>
             <button
               onClick={() => {
@@ -148,7 +153,7 @@ export default function MembersClientDirectory({
               }}
               className="mt-4 text-xs font-semibold text-[#004282] hover:underline uppercase tracking-wider font-inter"
             >
-              Reset Filtri
+              {dict.memberList.searchBar.filtersReset}
             </button>
           </div>
         ) : (

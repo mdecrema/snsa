@@ -39,7 +39,7 @@ export default async function Home() {
 
     return (
         <>
-        <Jumbotron />
+        <Jumbotron dict={dict.home.jumbotron} />
 
             {/* Le 3 Card per Brands, Professionals, Individuals */}
             <CommunityCards dict={dict.home.community_cards} />
