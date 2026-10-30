@@ -1,5 +1,5 @@
 import { generateUploadButton, generateUploadDropzone } from "@uploadthing/react";
-import { OurFileRouter } from "./api/uploadthing/core";
+import { OurFileRouter } from "../app/api/uploadthing/core";
 
 export function getLocalizedField(
   jsonField: Record<string, string> | any,
