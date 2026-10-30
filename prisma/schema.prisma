@@ -113,3 +113,16 @@ model AnalyticsEvent {
   @@index([type])
   @@index([createdAt])
 }
+
+model ContactMessage {
+  id             String   @id @default(cuid())
+  name           String
+  surname        String
+  company        String?
+  email          String
+  phone          String?
+  subject        String
+  privacyConsent Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  isRead         Boolean  @default(false)
+}

@@ -11,6 +11,18 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'utfs.io', // Dominio principale di Uploadthing
+      },
+      {
+        protocol: 'https',
+        hostname: '*.ufs.sh', // Eventuale CDN secondaria di Uploadthing
+      },
+    ],
+  },
 };
 
 export default nextConfig;

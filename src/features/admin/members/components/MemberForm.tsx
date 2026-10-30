@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Building2, MapPin, Globe, Calendar, Image as ImageIcon, Save, Loader2, CheckCircle, AlertCircle, Eye, Tag } from 'lucide-react';
 import { createMemberAction, updateMemberAction } from '../actions/memberActions';
+import Image from 'next/image';
+import { UploadButton } from '@/lib/utils';
 
 export interface CategoryOption {
   id: number;
@@ -34,12 +36,19 @@ export default function MemberForm({
   const [isLoading, setIsLoading] = useState(false);
   const [feedback, setFeedback] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
+  // Stato locale per gestire l'URL dell'immagine caricata
+  const [imageUrl, setimageUrl] = useState<string>(member?.imageUrl ?? '');
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
     setFeedback(null);
 
     const formData = new FormData(e.currentTarget);
+    
+    // Assicuriamoci che l'URL dell'immagine aggiornato tramite Uploadthing sia inserito nei dati del form
+    formData.set('imageUrl', imageUrl);
+
     const result = isEditing && member?.id
       ? await updateMemberAction(member.id, formData)
       : await createMemberAction(formData);
@@ -53,7 +62,10 @@ export default function MemberForm({
         type: 'success',
         text: isEditing ? 'Member updated successfully!' : 'Member created successfully!',
       });
-      if (!isEditing) (e.target as HTMLFormElement).reset();
+      if (!isEditing) {
+        (e.target as HTMLFormElement).reset();
+        setimageUrl('');
+      }
       if (onSuccess) setTimeout(() => onSuccess(), 1000);
     }
   };
@@ -185,21 +197,45 @@ export default function MemberForm({
           </div>
         </div>
 
-        {/* Image URL */}
-        <div>
+        {/* Image Upload con Uploadthing */}
+        <div className="space-y-2">
           <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
-            Image / Logo URL
+            Member Logo / Image
           </label>
-          <div className="relative flex items-center">
-            <ImageIcon className="absolute left-3.5 text-gray-400 pointer-events-none" size={18} />
-            <input
-              name="imageUrl"
-              type="text"
-              defaultValue={member?.imageUrl ?? ''}
-              placeholder="https://example.com/logo.png"
-              className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:bg-white focus:ring-2 focus:ring-[#445238] outline-none transition-all"
-            />
-          </div>
+          
+          {imageUrl ? (
+            <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-xl border border-gray-200">
+              <div className="relative w-16 h-16 rounded-lg overflow-hidden border bg-white shrink-0">
+                <Image src={imageUrl} alt="Preview" fill className="object-cover" />
+              </div>
+              <div className="flex-1 truncate">
+                <p className="text-xs font-mono text-gray-600 truncate">{imageUrl}</p>
+                <button
+                  type="button"
+                  onClick={() => setimageUrl('')}
+                  className="mt-1 text-xs text-red-600 hover:underline font-medium"
+                >
+                  Rimuovi / Cambia immagine
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="p-4 bg-gray-50 border border-dashed border-gray-300 rounded-xl flex flex-col items-center justify-center">
+              <UploadButton
+                endpoint="imageUploader"
+                onClientUploadComplete={(res) => {
+                  if (res && res[0]) {
+                    setimageUrl(res[0].ufsUrl);
+                  }
+                }}
+                onUploadError={(error: Error) => {
+                  alert(`Errore caricamento: ${error.message}`);
+                }}
+              />
+            </div>
+          )}
+          {/* Input nascosto per mantenere la compatibilità con il FormData inviato alla Server Action */}
+          <input type="hidden" name="imageUrl" value={imageUrl} />
         </div>
 
         {/* Description */}

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Send, CheckCircle2 } from "lucide-react";
+import { submitContactForm } from "@/src/features/contacts/actions/submitContactForm";
 
 const SUBJECT_OPTIONS = [
   "Membership",
@@ -50,15 +51,28 @@ export default function ContactForm({dict}: Props) {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulazione invio dati
-    setTimeout(() => {
+    setErrorMessage(null);
+
+    try {
+      // Chiamata alla Server Action
+      const result = await submitContactForm(formData);
+
+      if (result.success) {
+        setIsSubmitted(true);
+      } else {
+        setErrorMessage(result.error || "Si è verificato un errore.");
+      }
+    } catch (error) {
+      console.error(error);
+      setErrorMessage("Errore di connessione. Riprova.");
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 1200);
+    }
   };
 
   return (
@@ -88,6 +102,12 @@ export default function ContactForm({dict}: Props) {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
+          {/* Mostra eventuali errori di invio */}
+          {errorMessage && (
+            <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-red-600 text-xs font-inter">
+              {errorMessage}
+            </div>
+          )}
           {/* Grid per Name & Surname */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1">
