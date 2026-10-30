@@ -410,5 +410,79 @@
                 "buttonText": "Invia un Altro Messaggio"
             }
         }
+    },
+    "privacy": {
+        "title": "Informativa sulla Privacy e Note Legali",
+        "lastUpdate": "Ultimo aggiornamento: ",
+        "description": "La presente Informativa sulla Privacy descrive le modalità con cui questo sito raccoglie, utilizza e protegge i dati personali degli utenti, in conformità alla Legge Federale sulla Protezione dei Dati (nLPD) e, ove applicabile, al Regolamento Generale sulla Protezione dei Dati (GDPR dell'Unione Europea).",
+        "sections": {
+            "dataController": {
+                "title": "Titolare del Trattamento",
+                "desc": "Il Titolare del trattamento dei dati è:",
+                "list": {
+                    "list1": "Nome / Organizzazione:",
+                    "list2": "Indirizzo:",
+                    "list3": "Contatto email:"
+                }
+            },
+            "dataTypes": {
+                "title": "Tipologie di Dati Raccolti e Finalità",
+                "points": {
+                    "pointA": {
+                        "title": "Modulo di Contatto",
+                        "desc": "Quando l'utente utilizza il form di contatto presente sul sito, raccogliamo i seguenti dati:",
+                        "list": {
+                            "list1": "Nome e Cognome",
+                            "list2": "Indirizzo Email",
+                            "list3": "Numero di Telefono",
+                            "list4": "Azienda / Organizzazione",
+                            "list5": "Oggetto e contenuto del messaggio",
+                            "list6": "Consenso Privacy: Registrazione elettronica dell'avvenuta accettazione della privacy policy al momento dell'invio."
+                        },
+                        "desc2": "Finalità: I dati vengono raccolti esclusivamente per rispondere alle richieste di informazioni o di supporto inviate dall'utente.Base Giuridica: Il trattamento si fonda sul consenso esplicito dell'utente prestato al momento dell'invio del modulo e sull'esecuzione di misure precontrattuali."
+                    },
+                    "pointB": {
+                        "title": "Gestione Membri",
+                        "desc": "Per i membri e le organizzazioni inserite nella directory:",
+                        "list": {
+                            "list1": "Dati anagrafici e descrittivi dell'organizzazione, sito web, località e loghi/immagini caricati tramite la dashboard amministrativa."
+                        }
+                    }
+                }
+            },
+            "processing": {
+                "title": "Modalità e Luogo del Trattamento (Infrastruttura e Sicurezza)",
+                "desc": "I dati degli utenti sono trattati con misure di sicurezza tecniche e organizzative volte a prevenire accessi non autorizzati, divulgazione, modifica o distruzione non autorizzata dei dati.",
+                "list": {
+                    "list1": "Database (Neon.tech / PostgreSQL): I dati raccolti tramite i moduli del sito sono salvati su un database cloud sicuro basato su PostgreSQL.",
+                    "list2": "Hosting e Distribuzione (Netlify): Il sito web è ospitato su piattaforme cloud ad alte prestazioni che garantiscono la crittografia dei trasferimenti tramite protocollo HTTPS.",
+                    "list3": "Archiviazione Media (Uploadthing): Le immagini e i loghi caricati vengono salvati su servizi di cloud storage esterni protetti, che agiscono nel rispetto delle normative sulla privacy."
+                }
+            },
+            "dataRetention": {
+                "title": "Data Retention",
+                "desc": "I dati personali inviati tramite il modulo di contatto saranno conservati per il tempo strettamente necessario a evadere la richiesta dell'utente e comunque non oltre [es. 12 mesi], salvo eventuali obblighi di legge o contabili che richiedano una conservazione prolungata."
+            },
+            "sharingData": {
+                "title": "Condivisione dei Dati con Terzi",
+                "desc": "I dati personali non vengono venduti, ceduti o commercializzati a terzi. Possono essere trattati esclusivamente da fornitori di servizi tecnici di fiducia (es. provider di hosting e database) che operano in qualità di responsabili del trattamento vincolati da accordi di riservatezza."
+            },
+            "userRights": {
+                "title": "Diritti dell'Utente (nLPD / GDPR)",
+                "desc": "In conformità alle normative vigenti, l'utente ha il diritto di: ",
+                "list": {
+                    "list1": "Ottenere la conferma dell'esistenza o meno dei propri dati personali e di conoscerne il contenuto e l'origine.",
+                    "list2": "Chiederne l'aggiornamento, la rettifica o, se vi è interesse, l'integrazione.",
+                    "list3": "Chiederne la cancellazione, la trasformazione in forma anonima o il blocco dei dati trattati in violazione di legge.",
+                    "list4": "Opporsi in tutto o in parte, per motivi legittimi, al trattamento dei dati.",
+                    "list5": "Revocare il consenso in qualsiasi momento (senza pregiudicare la liceità del trattamento basata sul consenso prestato prima della revoca)."
+                },
+                "desc2": "Per esercitare questi diritti, è possibile inviare una richiesta scritta all'indirizzo email del Titolare: [Inserire Email]."
+            },
+            "changes": {
+                "title": "Modifiche alla presente Informativa",
+                "desc": "Il Titolare si riserva il diritto di apportare modifiche alla presente informativa sulla privacy in qualunque momento, dandone pubblicità agli utenti su questa pagina. Si consiglia di consultare regolarmente questa pagina."
+            }
+        }
     }
 }

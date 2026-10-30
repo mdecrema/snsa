@@ -430,5 +430,79 @@
                 "buttonText": "Send Another Message"
             }
         }
+    },
+    "privacy": {
+        "title": "Privacy Policy and Legal Notices",
+        "lastUpdate": "Last update: ",
+        "description": "This Privacy Policy describes how this website collects, uses, and protects users' personal data, in accordance with the Swiss Federal Act on Data Protection (FADP) and, where applicable, the General Data Protection Regulation (GDPR) of the European Union.",
+        "sections": {
+        "dataController": {
+            "title": "Data Controller",
+            "desc": "The data controller responsible for processing personal data is:",
+            "list": {
+            "list1": "Name / Organization:",
+            "list2": "Address:",
+            "list3": "Email Contact:"
+            }
+        },
+        "dataTypes": {
+            "title": "Types of Data Collected and Purposes of Processing",
+            "points": {
+            "pointA": {
+                "title": "Contact Form",
+                "desc": "When users submit the contact form available on the website, we collect the following data:",
+                "list": {
+                "list1": "First and Last Name",
+                "list2": "Email Address",
+                "list3": "Phone Number",
+                "list4": "Company / Organization",
+                "list5": "Subject and content of the message",
+                "list6": "Privacy Consent: Electronic record of the user's acceptance of the Privacy Policy at the time of submission."
+                },
+                "desc2": "Purpose: Data is collected exclusively to respond to information or support requests submitted by users. Legal Basis: Processing is based on the user's explicit consent given at the time of form submission and on the implementation of pre-contractual measures."
+            },
+            "pointB": {
+                "title": "Member Management",
+                "desc": "For members and organizations listed in the directory:",
+                "list": {
+                "list1": "Personal and descriptive information about the organization, website, location, and logos/images uploaded through the administrative dashboard."
+                }
+            }
+            }
+        },
+        "processing": {
+            "title": "Processing Methods and Location (Infrastructure and Security)",
+            "desc": "Users' data is processed using technical and organizational security measures designed to prevent unauthorized access, disclosure, alteration, or destruction of data.",
+            "list": {
+            "list1": "Database (Neon.tech / PostgreSQL): Data collected through the website's forms is stored in a secure cloud database powered by PostgreSQL.",
+            "list2": "Hosting and Distribution (Netlify): The website is hosted on high-performance cloud platforms that ensure data transmission is encrypted using the HTTPS protocol.",
+            "list3": "Media Storage (Uploadthing): Uploaded images and logos are stored on secure external cloud storage services that operate in compliance with applicable privacy regulations."
+            }
+        },
+        "dataRetention": {
+            "title": "Data Retention",
+            "desc": "Personal data submitted through the contact form will be retained only for as long as strictly necessary to handle the user's request and, in any case, for no longer than [e.g. 12 months], unless legal or accounting obligations require a longer retention period."
+        },
+        "sharingData": {
+            "title": "Sharing Data with Third Parties",
+            "desc": "Personal data is not sold, transferred, or otherwise commercialized to third parties. It may only be processed by trusted technical service providers (e.g. hosting and database providers) acting as data processors and bound by confidentiality agreements."
+        },
+        "userRights": {
+            "title": "User Rights (nLPD / GDPR)",
+            "desc": "In accordance with applicable regulations, users have the right to: ",
+            "list": {
+            "list1": "Obtain confirmation as to whether or not their personal data is being processed and access its content and source.",
+            "list2": "Request the updating, correction, or, where applicable, completion of their personal data.",
+            "list3": "Request the deletion, anonymization, or blocking of data processed in violation of the law.",
+            "list4": "Object, in whole or in part and on legitimate grounds, to the processing of their personal data.",
+            "list5": "Withdraw their consent at any time (without affecting the lawfulness of processing based on consent given prior to its withdrawal)."
+            },
+            "desc2": "To exercise these rights, users may submit a written request to the Data Controller's email address: [Insert Email]."
+        },
+        "changes": {
+            "title": "Changes to This Privacy Policy",
+            "desc": "The Data Controller reserves the right to amend this Privacy Policy at any time by publishing the updated version on this page. Users are advised to review this page regularly."
+        }
+        }
     }
 }
